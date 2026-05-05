@@ -5,6 +5,7 @@
 #include "ds18b20.h"
 #include "usart.h"
 #include "switch1.h"//Hannah
+#include "pwm.h"
 
 
 #define EI 1
@@ -32,7 +33,7 @@ int main(void){
     eclic_global_interrupt_enable();
     int last_status=-1;
     int status=0;
-    
+    TpowerUpInitPWM(0);
     while(1){
         idle++;
         
@@ -43,12 +44,14 @@ int main(void){
        
         if(status==1){
             set_led_status(1);
+            T2setLEDPercent(100);
             if(last_status==0){
                 LCD_Clear(BLACK);
             }
 
         }else{
             set_led_status(0);
+            T2setLEDPercent(0);
             if (last_status==1){ 
                 LCD_Clear(BLACK);  
             }

@@ -27,7 +27,7 @@ build/main.o: main.c \
  ../../firmware/RISCV/drivers/n200_timer.h \
  ../../firmware/RISCV/drivers/n200_eclic.h \
  ../../firmware/RISCV/drivers/riscv_const.h drivers.h eclicw.h lcd.h \
- ds18b20.h usart.h switch1.h pwm.h
+ ds18b20.h usart.h switch1.h
 
 ../../firmware/GD32VF103_standard_peripheral/gd32vf103.h:
 
@@ -96,5 +96,3 @@ ds18b20.h:
 usart.h:
 
 switch1.h:
-
-pwm.h:
