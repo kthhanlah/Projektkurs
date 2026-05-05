@@ -1,0 +1,168 @@
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s 			page 1
+
+
+   1              		.file	"testSwitch.c"
+   2              		.option nopic
+   3              		.attribute arch, "rv32i2p0_m2p0_a2p0_c2p0"
+   4              		.attribute unaligned_access, 0
+   5              		.attribute stack_align, 16
+   6              		.text
+   7              	.Ltext0:
+   8              		.cfi_sections	.debug_frame
+   9              		.section	.text.startup.main,"ax",@progbits
+  10              		.align	1
+  11              		.globl	main
+  13              	main:
+  14              	.LFB2:
+  15              		.file 1 "testSwitch.c"
+   1:testSwitch.c  **** #include "gd32vf103.h"
+   2:testSwitch.c  **** #include "switch.h"
+   3:testSwitch.c  **** 
+   4:testSwitch.c  **** int main(void){
+  16              		.loc 1 4 15
+  17              		.cfi_startproc
+   5:testSwitch.c  ****     // 1. Initiera hårdvaran (anropar din kod i switch.S)
+   6:testSwitch.c  ****     switch_hw_init();
+  18              		.loc 1 6 5
+   4:testSwitch.c  ****     // 1. Initiera hårdvaran (anropar din kod i switch.S)
+  19              		.loc 1 4 15 is_stmt 0
+  20 0000 4111     		addi	sp,sp,-16
+  21              	.LCFI0:
+  22              		.cfi_def_cfa_offset 16
+  23 0002 22C4     		sw	s0,8(sp)
+  24 0004 06C6     		sw	ra,12(sp)
+  25              		.cfi_offset 8, -8
+  26              		.cfi_offset 1, -4
+  27              	.LBB2:
+   7:testSwitch.c  **** 
+   8:testSwitch.c  ****     while(1) {
+   9:testSwitch.c  ****         // 2. Läs av switchens status (returnerar värdet från a0 i switch.S)
+  10:testSwitch.c  ****         int status = get_switch_status();
+  11:testSwitch.c  **** 
+  12:testSwitch.c  ****         if (status == 1) { // Om switchen är på, tänd lampan
+  28              		.loc 1 12 12
+  29 0006 0544     		li	s0,1
+  30              	.LBE2:
+   6:testSwitch.c  **** 
+  31              		.loc 1 6 5
+  32 0008 97000000 		call	switch_hw_init
+  32      E7800000 
+  33              	.LVL0:
+  34              	.L2:
+   8:testSwitch.c  ****         // 2. Läs av switchens status (returnerar värdet från a0 i switch.S)
+  35              		.loc 1 8 5 is_stmt 1
+  36              	.LBB3:
+  10:testSwitch.c  **** 
+  37              		.loc 1 10 9
+  10:testSwitch.c  **** 
+  38              		.loc 1 10 22 is_stmt 0
+  39 0010 97000000 		call	get_switch_status
+  39      E7800000 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s 			page 2
+
+
+  40              	.LVL1:
+  41              		.loc 1 12 9 is_stmt 1
+  42              		.loc 1 12 12 is_stmt 0
+  43 0018 63178500 		bne	a0,s0,.L3
+  44              	.LVL2:
+  45              	.L6:
+  13:testSwitch.c  ****             set_led_status(1);
+  14:testSwitch.c  ****         } else {
+  15:testSwitch.c  ****             set_led_status(0);
+  46              		.loc 1 15 13
+  47 001c 97000000 		call	set_led_status
+  47      E7800000 
+  48              	.LVL3:
+  49 0024 F5B7     		j	.L2
+  50              	.LVL4:
+  51              	.L3:
+  52              		.loc 1 15 13 is_stmt 1
+  53 0026 0145     		li	a0,0
+  54              	.LVL5:
+  55 0028 D5BF     		j	.L6
+  56              	.LBE3:
+  57              		.cfi_endproc
+  58              	.LFE2:
+  60              		.text
+  61              	.Letext0:
+  62              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+  63              		.file 3 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+  64              		.file 4 "switch.h"
+  65              		.file 5 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 testSwitch.c
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:13     .text.startup.main:0000000000000000 main
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:17     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:18     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:19     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:20     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:22     .text.startup.main:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:25     .text.startup.main:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:26     .text.startup.main:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:29     .text.startup.main:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:32     .text.startup.main:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:37     .text.startup.main:0000000000000010 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:38     .text.startup.main:0000000000000010 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:39     .text.startup.main:0000000000000010 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:42     .text.startup.main:0000000000000018 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:43     .text.startup.main:0000000000000018 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:47     .text.startup.main:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:53     .text.startup.main:0000000000000026 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:57     .text.startup.main:000000000000002a .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:60     .text.startup.main:000000000000002a .L0 
+                     .debug_frame:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:51     .text.startup.main:0000000000000026 .L3
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:34     .text.startup.main:0000000000000010 .L2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:45     .text.startup.main:000000000000001c .L6
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:205    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:446    .debug_str:00000000000000ac .LASF15
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:454    .debug_str:00000000000001bc .LASF16
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:452    .debug_str:0000000000000153 .LASF17
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:406    .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:418    .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:422    .debug_str:000000000000000e .LASF0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:450    .debug_str:0000000000000147 .LASF1
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:436    .debug_str:0000000000000077 .LASF2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:458    .debug_str:00000000000001d5 .LASF3
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:448    .debug_str:0000000000000134 .LASF4
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:444    .debug_str:00000000000000a3 .LASF5
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:426    .debug_str:000000000000002a .LASF9
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:432    .debug_str:000000000000004e .LASF6
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:420    .debug_str:0000000000000000 .LASF7
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:434    .debug_str:0000000000000060 .LASF8
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:440    .debug_str:000000000000008a .LASF10
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:442    .debug_str:0000000000000093 .LASF18
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:456    .debug_str:00000000000001c9 .LASF11
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:438    .debug_str:0000000000000085 .LASF19
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:14     .text.startup.main:0000000000000000 .LFB2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:58     .text.startup.main:000000000000002a .LFE2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:369    .debug_loc:0000000000000000 .LLST0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:430    .debug_str:0000000000000047 .LASF20
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:382    .debug_loc:0000000000000020 .LLST1
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:40     .text.startup.main:0000000000000018 .LVL1
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:48     .text.startup.main:0000000000000024 .LVL3
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:33     .text.startup.main:0000000000000010 .LVL0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:428    .debug_str:0000000000000035 .LASF12
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:424    .debug_str:000000000000001b .LASF13
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:460    .debug_str:00000000000001df .LASF14
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:21     .text.startup.main:0000000000000002 .LCFI0
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s 			page 4
+
+
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:44     .text.startup.main:000000000000001c .LVL2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:50     .text.startup.main:0000000000000026 .LVL4
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:54     .text.startup.main:0000000000000028 .LVL5
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:67     .debug_info:0000000000000000 .Ldebug_info0
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:27     .text.startup.main:0000000000000006 .LBB2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:30     .text.startup.main:0000000000000008 .LBE2
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:36     .text.startup.main:0000000000000010 .LBB3
+C:\Users\hanna\AppData\Local\Temp\cc4beNXW.s:56     .text.startup.main:000000000000002a .LBE3
+
+UNDEFINED SYMBOLS
+switch_hw_init
+get_switch_status
+set_led_status

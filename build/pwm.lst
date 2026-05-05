@@ -1,0 +1,1393 @@
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 1
+
+
+   1              		.file	"pwm.c"
+   2              		.option nopic
+   3              		.attribute arch, "rv32i2p0_m2p0_a2p0_c2p0"
+   4              		.attribute unaligned_access, 0
+   5              		.attribute stack_align, 16
+   6              		.text
+   7              	.Ltext0:
+   8              		.cfi_sections	.debug_frame
+   9              		.section	.text.T1powerUpInitPWM,"ax",@progbits
+  10              		.align	1
+  11              		.globl	T1powerUpInitPWM
+  13              	T1powerUpInitPWM:
+  14              	.LFB2:
+  15              		.file 1 "pwm.c"
+   1:pwm.c         **** #include "pwm.h"
+   2:pwm.c         **** 
+   3:pwm.c         **** 
+   4:pwm.c         **** void T1powerUpInitPWM(uint16_t ch){
+  16              		.loc 1 4 35
+  17              		.cfi_startproc
+  18              	.LVL0:
+   5:pwm.c         ****    timer_oc_parameter_struct timer_ocinitpara;
+  19              		.loc 1 5 4
+   6:pwm.c         ****    timer_parameter_struct timer_initpara;
+  20              		.loc 1 6 4
+   7:pwm.c         ****    rcu_periph_clock_enable(RCU_GPIOA);
+  21              		.loc 1 7 4
+   4:pwm.c         ****    timer_oc_parameter_struct timer_ocinitpara;
+  22              		.loc 1 4 35 is_stmt 0
+  23 0000 3971     		addi	sp,sp,-64
+  24              	.LCFI0:
+  25              		.cfi_def_cfa_offset 64
+  26 0002 22DC     		sw	s0,56(sp)
+  27              		.cfi_offset 8, -8
+  28 0004 2A84     		mv	s0,a0
+  29              		.loc 1 7 4
+  30 0006 13052060 		li	a0,1538
+  31              	.LVL1:
+   4:pwm.c         ****    timer_oc_parameter_struct timer_ocinitpara;
+  32              		.loc 1 4 35
+  33 000a 06DE     		sw	ra,60(sp)
+  34 000c 4ED6     		sw	s3,44(sp)
+  35 000e 26DA     		sw	s1,52(sp)
+  36 0010 4AD8     		sw	s2,48(sp)
+  37              		.cfi_offset 1, -4
+  38              		.cfi_offset 19, -20
+  39              		.cfi_offset 9, -12
+  40              		.cfi_offset 18, -16
+  41              		.loc 1 7 4
+  42 0012 97000000 		call	rcu_periph_clock_enable
+  42      E7800000 
+  43              	.LVL2:
+   8:pwm.c         ****    rcu_periph_clock_enable(RCU_AF);
+  44              		.loc 1 8 4 is_stmt 1
+  45 001a 13050060 		li	a0,1536
+  46 001e 93791400 		andi	s3,s0,1
+  47 0022 97000000 		call	rcu_periph_clock_enable
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 2
+
+
+  47      E7800000 
+  48              	.LVL3:
+   9:pwm.c         ****    if (ch&0x1) gpio_init(GPIOA, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_0);
+  49              		.loc 1 9 4
+  50              		.loc 1 9 7 is_stmt 0
+  51 002a 638D0900 		beq	s3,zero,.L2
+  52              		.loc 1 9 16 is_stmt 1 discriminator 1
+  53 002e 37150140 		li	a0,1073811456
+  54 0032 8546     		li	a3,1
+  55 0034 0D46     		li	a2,3
+  56 0036 E145     		li	a1,24
+  57 0038 13050580 		addi	a0,a0,-2048
+  58 003c 97000000 		call	gpio_init
+  58      E7800000 
+  59              	.LVL4:
+  60              	.L2:
+  10:pwm.c         ****    if (ch&0x2) gpio_init(GPIOA, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_1);
+  61              		.loc 1 10 4
+  62 0044 13792400 		andi	s2,s0,2
+  63              		.loc 1 10 7 is_stmt 0
+  64 0048 630D0900 		beq	s2,zero,.L3
+  65              		.loc 1 10 16 is_stmt 1 discriminator 1
+  66 004c 37150140 		li	a0,1073811456
+  67 0050 8946     		li	a3,2
+  68 0052 0D46     		li	a2,3
+  69 0054 E145     		li	a1,24
+  70 0056 13050580 		addi	a0,a0,-2048
+  71 005a 97000000 		call	gpio_init
+  71      E7800000 
+  72              	.LVL5:
+  73              	.L3:
+  11:pwm.c         ****    if (ch&0x4) gpio_init(GPIOA, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
+  74              		.loc 1 11 4
+  75 0062 93744400 		andi	s1,s0,4
+  76              		.loc 1 11 7 is_stmt 0
+  77 0066 81CC     		beq	s1,zero,.L4
+  78              		.loc 1 11 16 is_stmt 1 discriminator 1
+  79 0068 37150140 		li	a0,1073811456
+  80 006c 9146     		li	a3,4
+  81 006e 0D46     		li	a2,3
+  82 0070 E145     		li	a1,24
+  83 0072 13050580 		addi	a0,a0,-2048
+  84 0076 97000000 		call	gpio_init
+  84      E7800000 
+  85              	.LVL6:
+  86              	.L4:
+  12:pwm.c         ****    if (ch&0x8) gpio_init(GPIOA, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_3);
+  87              		.loc 1 12 4
+  88 007e 2188     		andi	s0,s0,8
+  89              		.loc 1 12 7 is_stmt 0
+  90 0080 01CC     		beq	s0,zero,.L5
+  91              		.loc 1 12 16 is_stmt 1 discriminator 1
+  92 0082 37150140 		li	a0,1073811456
+  93 0086 A146     		li	a3,8
+  94 0088 0D46     		li	a2,3
+  95 008a E145     		li	a1,24
+  96 008c 13050580 		addi	a0,a0,-2048
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 3
+
+
+  97 0090 97000000 		call	gpio_init
+  97      E7800000 
+  98              	.LVL7:
+  99              	.L5:
+  13:pwm.c         ****    rcu_periph_clock_enable(RCU_TIMER1);
+ 100              		.loc 1 13 4
+ 101 0098 13050070 		li	a0,1792
+ 102 009c 97000000 		call	rcu_periph_clock_enable
+ 102      E7800000 
+ 103              	.LVL8:
+  14:pwm.c         **** 
+  15:pwm.c         **** 
+  16:pwm.c         ****    timer_deinit(TIMER1);
+ 104              		.loc 1 16 4
+ 105 00a4 37050040 		li	a0,1073741824
+ 106 00a8 97000000 		call	timer_deinit
+ 106      E7800000 
+ 107              	.LVL9:
+  17:pwm.c         ****    timer_struct_para_init(&timer_initpara);
+ 108              		.loc 1 17 4
+ 109 00b0 0808     		addi	a0,sp,16
+ 110 00b2 97000000 		call	timer_struct_para_init
+ 110      E7800000 
+ 111              	.LVL10:
+  18:pwm.c         ****    timer_initpara.prescaler         = 107;
+ 112              		.loc 1 18 4
+  19:pwm.c         ****    timer_initpara.alignedmode       = TIMER_COUNTER_EDGE;
+ 113              		.loc 1 19 4
+  20:pwm.c         ****    timer_initpara.counterdirection  = TIMER_COUNTER_UP;
+ 114              		.loc 1 20 4
+  18:pwm.c         ****    timer_initpara.prescaler         = 107;
+ 115              		.loc 1 18 37 is_stmt 0
+ 116 00ba 9307B006 		li	a5,107
+ 117 00be 3EC8     		sw	a5,16(sp)
+  21:pwm.c         ****    timer_initpara.period            = 15999;
+ 118              		.loc 1 21 37
+ 119 00c0 9167     		li	a5,16384
+ 120 00c2 9387F7E7 		addi	a5,a5,-385
+  22:pwm.c         ****    timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+  23:pwm.c         ****    timer_initpara.repetitioncounter = 0;
+  24:pwm.c         ****    timer_init(TIMER1, &timer_initpara);
+ 121              		.loc 1 24 4
+ 122 00c6 0C08     		addi	a1,sp,16
+ 123 00c8 37050040 		li	a0,1073741824
+  21:pwm.c         ****    timer_initpara.period            = 15999;
+ 124              		.loc 1 21 37
+ 125 00cc 3ECC     		sw	a5,24(sp)
+  20:pwm.c         ****    timer_initpara.period            = 15999;
+ 126              		.loc 1 20 37
+ 127 00ce 231A0100 		sh	zero,20(sp)
+  21:pwm.c         ****    timer_initpara.period            = 15999;
+ 128              		.loc 1 21 4 is_stmt 1
+  22:pwm.c         ****    timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 129              		.loc 1 22 4
+  22:pwm.c         ****    timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 130              		.loc 1 22 37 is_stmt 0
+ 131 00d2 231E0100 		sh	zero,28(sp)
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 4
+
+
+  23:pwm.c         ****    timer_init(TIMER1, &timer_initpara);
+ 132              		.loc 1 23 4 is_stmt 1
+  23:pwm.c         ****    timer_init(TIMER1, &timer_initpara);
+ 133              		.loc 1 23 37 is_stmt 0
+ 134 00d6 230F0100 		sb	zero,30(sp)
+ 135              		.loc 1 24 4 is_stmt 1
+ 136 00da 97000000 		call	timer_init
+ 136      E7800000 
+ 137              	.LVL11:
+  25:pwm.c         **** 
+  26:pwm.c         **** 
+  27:pwm.c         ****    timer_channel_output_struct_para_init(&timer_ocinitpara);
+ 138              		.loc 1 27 4
+ 139 00e2 4800     		addi	a0,sp,4
+ 140 00e4 97000000 		call	timer_channel_output_struct_para_init
+ 140      E7800000 
+ 141              	.LVL12:
+  28:pwm.c         ****    timer_ocinitpara.outputstate  = TIMER_CCX_ENABLE;
+ 142              		.loc 1 28 4
+  29:pwm.c         ****    timer_ocinitpara.outputnstate = TIMER_CCXN_DISABLE;
+ 143              		.loc 1 29 4
+  30:pwm.c         ****    timer_ocinitpara.ocpolarity   = TIMER_OC_POLARITY_HIGH;
+ 144              		.loc 1 30 4
+  31:pwm.c         ****    timer_ocinitpara.ocnpolarity  = TIMER_OCN_POLARITY_HIGH;
+ 145              		.loc 1 31 4
+  32:pwm.c         ****    timer_ocinitpara.ocidlestate  = TIMER_OC_IDLE_STATE_LOW;
+ 146              		.loc 1 32 4
+  33:pwm.c         ****    timer_ocinitpara.ocnidlestate = TIMER_OCN_IDLE_STATE_LOW;
+ 147              		.loc 1 33 4
+  28:pwm.c         ****    timer_ocinitpara.outputnstate = TIMER_CCXN_DISABLE;
+ 148              		.loc 1 28 34 is_stmt 0
+ 149 00ec 8547     		li	a5,1
+ 150 00ee 3EC2     		sw	a5,4(sp)
+  30:pwm.c         ****    timer_ocinitpara.ocnpolarity  = TIMER_OCN_POLARITY_HIGH;
+ 151              		.loc 1 30 34
+ 152 00f0 02C4     		sw	zero,8(sp)
+  32:pwm.c         ****    timer_ocinitpara.ocnidlestate = TIMER_OCN_IDLE_STATE_LOW;
+ 153              		.loc 1 32 34
+ 154 00f2 02C6     		sw	zero,12(sp)
+  34:pwm.c         ****    if (ch&0x1) timer_channel_output_config(TIMER1,TIMER_CH_0,&timer_ocinitpara);
+ 155              		.loc 1 34 4 is_stmt 1
+ 156              		.loc 1 34 7 is_stmt 0
+ 157 00f4 638A0900 		beq	s3,zero,.L6
+ 158              		.loc 1 34 16 is_stmt 1 discriminator 1
+ 159 00f8 5000     		addi	a2,sp,4
+ 160 00fa 8145     		li	a1,0
+ 161 00fc 37050040 		li	a0,1073741824
+ 162 0100 97000000 		call	timer_channel_output_config
+ 162      E7800000 
+ 163              	.LVL13:
+ 164              	.L6:
+  35:pwm.c         ****    if (ch&0x2) timer_channel_output_config(TIMER1,TIMER_CH_1,&timer_ocinitpara);
+ 165              		.loc 1 35 4
+ 166              		.loc 1 35 7 is_stmt 0
+ 167 0108 630A0900 		beq	s2,zero,.L7
+ 168              		.loc 1 35 16 is_stmt 1 discriminator 1
+ 169 010c 5000     		addi	a2,sp,4
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 5
+
+
+ 170 010e 8545     		li	a1,1
+ 171 0110 37050040 		li	a0,1073741824
+ 172 0114 97000000 		call	timer_channel_output_config
+ 172      E7800000 
+ 173              	.LVL14:
+ 174              	.L7:
+  36:pwm.c         ****    if (ch&0x4) timer_channel_output_config(TIMER1,TIMER_CH_2,&timer_ocinitpara);
+ 175              		.loc 1 36 4
+ 176              		.loc 1 36 7 is_stmt 0
+ 177 011c 89C8     		beq	s1,zero,.L8
+ 178              		.loc 1 36 16 is_stmt 1 discriminator 1
+ 179 011e 5000     		addi	a2,sp,4
+ 180 0120 8945     		li	a1,2
+ 181 0122 37050040 		li	a0,1073741824
+ 182 0126 97000000 		call	timer_channel_output_config
+ 182      E7800000 
+ 183              	.LVL15:
+ 184              	.L8:
+  37:pwm.c         ****    if (ch&0x8) timer_channel_output_config(TIMER1,TIMER_CH_0,&timer_ocinitpara);
+ 185              		.loc 1 37 4
+ 186              		.loc 1 37 7 is_stmt 0
+ 187 012e 09C8     		beq	s0,zero,.L9
+ 188              		.loc 1 37 16 is_stmt 1 discriminator 1
+ 189 0130 5000     		addi	a2,sp,4
+ 190 0132 8145     		li	a1,0
+ 191 0134 37050040 		li	a0,1073741824
+ 192 0138 97000000 		call	timer_channel_output_config
+ 192      E7800000 
+ 193              	.LVL16:
+ 194              	.L9:
+  38:pwm.c         **** 
+  39:pwm.c         **** 
+  40:pwm.c         ****    if (ch&0x1) {
+ 195              		.loc 1 40 4
+ 196              		.loc 1 40 7 is_stmt 0
+ 197 0140 638D0902 		beq	s3,zero,.L10
+  41:pwm.c         ****        timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,11999);
+ 198              		.loc 1 41 8 is_stmt 1
+ 199 0144 0D66     		li	a2,12288
+ 200 0146 1306F6ED 		addi	a2,a2,-289
+ 201 014a 8145     		li	a1,0
+ 202 014c 37050040 		li	a0,1073741824
+ 203 0150 97000000 		call	timer_channel_output_pulse_value_config
+ 203      E7800000 
+ 204              	.LVL17:
+  42:pwm.c         ****        timer_channel_output_mode_config(TIMER1,TIMER_CH_0,TIMER_OC_MODE_PWM0);
+ 205              		.loc 1 42 8
+ 206 0158 13060006 		li	a2,96
+ 207 015c 8145     		li	a1,0
+ 208 015e 37050040 		li	a0,1073741824
+ 209 0162 97000000 		call	timer_channel_output_mode_config
+ 209      E7800000 
+ 210              	.LVL18:
+  43:pwm.c         ****        timer_channel_output_shadow_config(TIMER1,TIMER_CH_0,TIMER_OC_SHADOW_DISABLE);
+ 211              		.loc 1 43 8
+ 212 016a 0146     		li	a2,0
+ 213 016c 8145     		li	a1,0
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 6
+
+
+ 214 016e 37050040 		li	a0,1073741824
+ 215 0172 97000000 		call	timer_channel_output_shadow_config
+ 215      E7800000 
+ 216              	.LVL19:
+ 217              	.L10:
+  44:pwm.c         ****    }
+  45:pwm.c         ****   if (ch&0x2) {
+ 218              		.loc 1 45 3
+ 219              		.loc 1 45 6 is_stmt 0
+ 220 017a 630D0902 		beq	s2,zero,.L11
+  46:pwm.c         ****        timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_1,11999);
+ 221              		.loc 1 46 8 is_stmt 1
+ 222 017e 0D66     		li	a2,12288
+ 223 0180 1306F6ED 		addi	a2,a2,-289
+ 224 0184 8545     		li	a1,1
+ 225 0186 37050040 		li	a0,1073741824
+ 226 018a 97000000 		call	timer_channel_output_pulse_value_config
+ 226      E7800000 
+ 227              	.LVL20:
+  47:pwm.c         ****        timer_channel_output_mode_config(TIMER1,TIMER_CH_1,TIMER_OC_MODE_PWM0);
+ 228              		.loc 1 47 8
+ 229 0192 13060006 		li	a2,96
+ 230 0196 8545     		li	a1,1
+ 231 0198 37050040 		li	a0,1073741824
+ 232 019c 97000000 		call	timer_channel_output_mode_config
+ 232      E7800000 
+ 233              	.LVL21:
+  48:pwm.c         ****        timer_channel_output_shadow_config(TIMER1,TIMER_CH_1,TIMER_OC_SHADOW_DISABLE);
+ 234              		.loc 1 48 8
+ 235 01a4 0146     		li	a2,0
+ 236 01a6 8545     		li	a1,1
+ 237 01a8 37050040 		li	a0,1073741824
+ 238 01ac 97000000 		call	timer_channel_output_shadow_config
+ 238      E7800000 
+ 239              	.LVL22:
+ 240              	.L11:
+  49:pwm.c         ****    }
+  50:pwm.c         ****   if (ch&0x4) {
+ 241              		.loc 1 50 3
+ 242              		.loc 1 50 6 is_stmt 0
+ 243 01b4 85CC     		beq	s1,zero,.L12
+  51:pwm.c         ****        timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_2,11999);
+ 244              		.loc 1 51 8 is_stmt 1
+ 245 01b6 0D66     		li	a2,12288
+ 246 01b8 1306F6ED 		addi	a2,a2,-289
+ 247 01bc 8945     		li	a1,2
+ 248 01be 37050040 		li	a0,1073741824
+ 249 01c2 97000000 		call	timer_channel_output_pulse_value_config
+ 249      E7800000 
+ 250              	.LVL23:
+  52:pwm.c         ****        timer_channel_output_mode_config(TIMER1,TIMER_CH_2,TIMER_OC_MODE_PWM0);
+ 251              		.loc 1 52 8
+ 252 01ca 13060006 		li	a2,96
+ 253 01ce 8945     		li	a1,2
+ 254 01d0 37050040 		li	a0,1073741824
+ 255 01d4 97000000 		call	timer_channel_output_mode_config
+ 255      E7800000 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 7
+
+
+ 256              	.LVL24:
+  53:pwm.c         ****        timer_channel_output_shadow_config(TIMER1,TIMER_CH_2,TIMER_OC_SHADOW_DISABLE);
+ 257              		.loc 1 53 8
+ 258 01dc 0146     		li	a2,0
+ 259 01de 8945     		li	a1,2
+ 260 01e0 37050040 		li	a0,1073741824
+ 261 01e4 97000000 		call	timer_channel_output_shadow_config
+ 261      E7800000 
+ 262              	.LVL25:
+ 263              	.L12:
+  54:pwm.c         ****    }
+  55:pwm.c         ****   if (ch&0x8) {
+ 264              		.loc 1 55 3
+ 265              		.loc 1 55 6 is_stmt 0
+ 266 01ec 05CC     		beq	s0,zero,.L13
+  56:pwm.c         ****        timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,11999);
+ 267              		.loc 1 56 8 is_stmt 1
+ 268 01ee 0D66     		li	a2,12288
+ 269 01f0 1306F6ED 		addi	a2,a2,-289
+ 270 01f4 8145     		li	a1,0
+ 271 01f6 37050040 		li	a0,1073741824
+ 272 01fa 97000000 		call	timer_channel_output_pulse_value_config
+ 272      E7800000 
+ 273              	.LVL26:
+  57:pwm.c         ****        timer_channel_output_mode_config(TIMER1,TIMER_CH_0,TIMER_OC_MODE_PWM0);
+ 274              		.loc 1 57 8
+ 275 0202 13060006 		li	a2,96
+ 276 0206 8145     		li	a1,0
+ 277 0208 37050040 		li	a0,1073741824
+ 278 020c 97000000 		call	timer_channel_output_mode_config
+ 278      E7800000 
+ 279              	.LVL27:
+  58:pwm.c         ****        timer_channel_output_shadow_config(TIMER1,TIMER_CH_0,TIMER_OC_SHADOW_DISABLE);
+ 280              		.loc 1 58 8
+ 281 0214 0146     		li	a2,0
+ 282 0216 8145     		li	a1,0
+ 283 0218 37050040 		li	a0,1073741824
+ 284 021c 97000000 		call	timer_channel_output_shadow_config
+ 284      E7800000 
+ 285              	.LVL28:
+ 286              	.L13:
+  59:pwm.c         ****    }
+  60:pwm.c         ****   
+  61:pwm.c         ****    timer_auto_reload_shadow_enable(TIMER1);
+ 287              		.loc 1 61 4
+ 288 0224 37050040 		li	a0,1073741824
+ 289 0228 97000000 		call	timer_auto_reload_shadow_enable
+ 289      E7800000 
+ 290              	.LVL29:
+  62:pwm.c         ****    timer_enable(TIMER1);
+ 291              		.loc 1 62 4
+ 292 0230 37050040 		li	a0,1073741824
+ 293 0234 97000000 		call	timer_enable
+ 293      E7800000 
+ 294              	.LVL30:
+  63:pwm.c         **** }
+ 295              		.loc 1 63 1 is_stmt 0
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 8
+
+
+ 296 023c F250     		lw	ra,60(sp)
+ 297              		.cfi_restore 1
+ 298 023e 6254     		lw	s0,56(sp)
+ 299              		.cfi_restore 8
+ 300 0240 D254     		lw	s1,52(sp)
+ 301              		.cfi_restore 9
+ 302 0242 4259     		lw	s2,48(sp)
+ 303              		.cfi_restore 18
+ 304 0244 B259     		lw	s3,44(sp)
+ 305              		.cfi_restore 19
+ 306 0246 2161     		addi	sp,sp,64
+ 307              	.LCFI1:
+ 308              		.cfi_def_cfa_offset 0
+ 309 0248 8280     		jr	ra
+ 310              		.cfi_endproc
+ 311              	.LFE2:
+ 313              		.section	.text.T1setPWMch0,"ax",@progbits
+ 314              		.align	1
+ 315              		.globl	T1setPWMch0
+ 317              	T1setPWMch0:
+ 318              	.LFB3:
+  64:pwm.c         **** 
+  65:pwm.c         **** 
+  66:pwm.c         **** void T1setPWMch0(int value){
+ 319              		.loc 1 66 28 is_stmt 1
+ 320              		.cfi_startproc
+ 321              	.LVL31:
+  67:pwm.c         ****    timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,value); //här ändrades T1setPWMch2 t
+ 322              		.loc 1 67 4
+ 323 0000 2A86     		mv	a2,a0
+ 324 0002 8145     		li	a1,0
+ 325 0004 37050040 		li	a0,1073741824
+ 326              	.LVL32:
+ 327 0008 17030000 		tail	timer_channel_output_pulse_value_config
+ 327      67000300 
+ 328              	.LVL33:
+ 329              		.cfi_endproc
+ 330              	.LFE3:
+ 332              		.section	.text.T1setLEDPercent,"ax",@progbits
+ 333              		.align	1
+ 334              		.globl	T1setLEDPercent
+ 336              	T1setLEDPercent:
+ 337              	.LFB4:
+  68:pwm.c         **** }
+  69:pwm.c         **** 
+  70:pwm.c         **** 
+  71:pwm.c         **** void T1setLEDPercent(int percent){ //lagt till här från rad 65 till 72 för att timer förväntar
+ 338              		.loc 1 71 34
+ 339              		.cfi_startproc
+ 340              	.LVL34:
+  72:pwm.c         ****    if (percent > 100) percent = 100;
+ 341              		.loc 1 72 4
+  73:pwm.c         **** 
+  74:pwm.c         ****    //Omvandlar 0 till 100% till 0-1600
+  75:pwm.c         ****    int rawValue = (percent * 16000) / 100;
+ 342              		.loc 1 75 4
+  76:pwm.c         ****    T1setPWMch0(rawValue);
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 9
+
+
+ 343              		.loc 1 76 4
+  75:pwm.c         ****    T1setPWMch0(rawValue);
+ 344              		.loc 1 75 8 is_stmt 0
+ 345 0000 93074006 		li	a5,100
+ 346 0004 63D4A700 		ble	a0,a5,.L53
+ 347 0008 13054006 		li	a0,100
+ 348              	.L53:
+ 349              		.loc 1 76 4
+ 350 000c 9307000A 		li	a5,160
+ 351 0010 3305F502 		mul	a0,a0,a5
+ 352 0014 17030000 		tail	T1setPWMch0
+ 352      67000300 
+ 353              	.LVL35:
+ 354              		.cfi_endproc
+ 355              	.LFE4:
+ 357              		.globl	__floatsidf
+ 358              		.globl	__divdf3
+ 359              		.globl	__muldf3
+ 360              		.globl	__fixunsdfsi
+ 361              		.section	.text.T1setPWMmotorB,"ax",@progbits
+ 362              		.align	1
+ 363              		.globl	T1setPWMmotorB
+ 365              	T1setPWMmotorB:
+ 366              	.LFB5:
+  77:pwm.c         **** }
+  78:pwm.c         **** 
+  79:pwm.c         **** 
+  80:pwm.c         **** void T1setPWMmotorB(int throttel){
+ 367              		.loc 1 80 34 is_stmt 1
+ 368              		.cfi_startproc
+ 369              	.LVL36:
+  81:pwm.c         ****    if (throttel>0) {
+ 370              		.loc 1 81 4
+  80:pwm.c         ****    if (throttel>0) {
+ 371              		.loc 1 80 34 is_stmt 0
+ 372 0000 4111     		addi	sp,sp,-16
+ 373              	.LCFI2:
+ 374              		.cfi_def_cfa_offset 16
+ 375 0002 22C4     		sw	s0,8(sp)
+ 376 0004 26C2     		sw	s1,4(sp)
+ 377 0006 06C6     		sw	ra,12(sp)
+ 378 0008 4AC0     		sw	s2,0(sp)
+ 379              		.cfi_offset 8, -8
+ 380              		.cfi_offset 9, -12
+ 381              		.cfi_offset 1, -4
+ 382              		.cfi_offset 18, -16
+ 383 000a B7040000 		lui	s1,%hi(.LC0)
+ 384 000e 37040000 		lui	s0,%hi(.LC1)
+ 385              		.loc 1 81 7
+ 386 0012 635FA004 		ble	a0,zero,.L55
+  82:pwm.c         ****       timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_2,(throttel/100.0)*16000);
+ 387              		.loc 1 82 7 is_stmt 1
+ 388              		.loc 1 82 74 is_stmt 0
+ 389 0016 97000000 		call	__floatsidf
+ 389      E7800000 
+ 390              	.LVL37:
+ 391 001e 03A60400 		lw	a2,%lo(.LC0)(s1)
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 10
+
+
+ 392 0022 83A64400 		lw	a3,%lo(.LC0+4)(s1)
+ 393 0026 97000000 		call	__divdf3
+ 393      E7800000 
+ 394              	.LVL38:
+ 395              		.loc 1 82 81
+ 396 002e 03260400 		lw	a2,%lo(.LC1)(s0)
+ 397 0032 83264400 		lw	a3,%lo(.LC1+4)(s0)
+ 398 0036 97000000 		call	__muldf3
+ 398      E7800000 
+ 399              	.LVL39:
+ 400              		.loc 1 82 7
+ 401 003e 97000000 		call	__fixunsdfsi
+ 401      E7800000 
+ 402              	.LVL40:
+ 403 0046 2A86     		mv	a2,a0
+ 404 0048 8945     		li	a1,2
+ 405 004a 37050040 		li	a0,1073741824
+ 406 004e 97000000 		call	timer_channel_output_pulse_value_config
+ 406      E7800000 
+ 407              	.LVL41:
+  83:pwm.c         ****       timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,0);
+ 408              		.loc 1 83 7 is_stmt 1
+ 409 0056 0146     		li	a2,0
+ 410              	.L57:
+  84:pwm.c         ****    } else {
+  85:pwm.c         ****       timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_2,0);
+  86:pwm.c         ****       timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,(-throttel/100.0)*16000);
+  87:pwm.c         ****    }
+  88:pwm.c         **** }
+ 411              		.loc 1 88 1 is_stmt 0
+ 412 0058 2244     		lw	s0,8(sp)
+ 413              		.cfi_remember_state
+ 414              		.cfi_restore 8
+ 415 005a B240     		lw	ra,12(sp)
+ 416              		.cfi_restore 1
+ 417 005c 9244     		lw	s1,4(sp)
+ 418              		.cfi_restore 9
+ 419 005e 0249     		lw	s2,0(sp)
+ 420              		.cfi_restore 18
+  86:pwm.c         ****    }
+ 421              		.loc 1 86 7
+ 422 0060 8145     		li	a1,0
+ 423              		.loc 1 88 1
+  86:pwm.c         ****    }
+ 424              		.loc 1 86 7
+ 425 0062 37050040 		li	a0,1073741824
+ 426              		.loc 1 88 1
+ 427 0066 4101     		addi	sp,sp,16
+ 428              	.LCFI3:
+ 429              		.cfi_def_cfa_offset 0
+  86:pwm.c         ****    }
+ 430              		.loc 1 86 7
+ 431 0068 17030000 		tail	timer_channel_output_pulse_value_config
+ 431      67000300 
+ 432              	.LVL42:
+ 433              	.L55:
+ 434              	.LCFI4:
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 11
+
+
+ 435              		.cfi_restore_state
+  85:pwm.c         ****       timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,(-throttel/100.0)*16000);
+ 436              		.loc 1 85 7
+ 437 0070 0146     		li	a2,0
+ 438 0072 2A89     		mv	s2,a0
+  85:pwm.c         ****       timer_channel_output_pulse_value_config(TIMER1,TIMER_CH_0,(-throttel/100.0)*16000);
+ 439              		.loc 1 85 7 is_stmt 1
+ 440 0074 8945     		li	a1,2
+ 441 0076 37050040 		li	a0,1073741824
+ 442              	.LVL43:
+ 443 007a 97000000 		call	timer_channel_output_pulse_value_config
+ 443      E7800000 
+ 444              	.LVL44:
+  86:pwm.c         ****    }
+ 445              		.loc 1 86 7
+  86:pwm.c         ****    }
+ 446              		.loc 1 86 75 is_stmt 0
+ 447 0082 33052041 		neg	a0,s2
+ 448 0086 97000000 		call	__floatsidf
+ 448      E7800000 
+ 449              	.LVL45:
+ 450 008e 03A60400 		lw	a2,%lo(.LC0)(s1)
+ 451 0092 83A64400 		lw	a3,%lo(.LC0+4)(s1)
+ 452 0096 97000000 		call	__divdf3
+ 452      E7800000 
+ 453              	.LVL46:
+  86:pwm.c         ****    }
+ 454              		.loc 1 86 82
+ 455 009e 03260400 		lw	a2,%lo(.LC1)(s0)
+ 456 00a2 83264400 		lw	a3,%lo(.LC1+4)(s0)
+ 457 00a6 97000000 		call	__muldf3
+ 457      E7800000 
+ 458              	.LVL47:
+  86:pwm.c         ****    }
+ 459              		.loc 1 86 7
+ 460 00ae 97000000 		call	__fixunsdfsi
+ 460      E7800000 
+ 461              	.LVL48:
+ 462 00b6 2A86     		mv	a2,a0
+ 463 00b8 45B7     		j	.L57
+ 464              		.cfi_endproc
+ 465              	.LFE5:
+ 467              		.section	.text.T2powerUpInitPWM_Relay,"ax",@progbits
+ 468              		.align	1
+ 469              		.globl	T2powerUpInitPWM_Relay
+ 471              	T2powerUpInitPWM_Relay:
+ 472              	.LFB6:
+  89:pwm.c         **** 
+  90:pwm.c         **** // NY KOD
+  91:pwm.c         **** void T2powerUpInitPWM_Relay(void) {
+ 473              		.loc 1 91 35 is_stmt 1
+ 474              		.cfi_startproc
+  92:pwm.c         ****     timer_oc_parameter_struct timer_ocinitpara;
+ 475              		.loc 1 92 5
+  93:pwm.c         ****     timer_parameter_struct timer_initpara;
+ 476              		.loc 1 93 5
+  94:pwm.c         **** 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 12
+
+
+  95:pwm.c         ****     // 1. Aktivera klockor för GPIOB och TIMER2
+  96:pwm.c         ****     rcu_periph_clock_enable(RCU_GPIOB);
+ 477              		.loc 1 96 5
+  91:pwm.c         ****     timer_oc_parameter_struct timer_ocinitpara;
+ 478              		.loc 1 91 35 is_stmt 0
+ 479 0000 7971     		addi	sp,sp,-48
+ 480              	.LCFI5:
+ 481              		.cfi_def_cfa_offset 48
+ 482              		.loc 1 96 5
+ 483 0002 13053060 		li	a0,1539
+  91:pwm.c         ****     timer_oc_parameter_struct timer_ocinitpara;
+ 484              		.loc 1 91 35
+ 485 0006 06D6     		sw	ra,44(sp)
+ 486 0008 22D4     		sw	s0,40(sp)
+ 487              		.cfi_offset 1, -4
+ 488              		.cfi_offset 8, -8
+ 489              		.loc 1 96 5
+ 490 000a 97000000 		call	rcu_periph_clock_enable
+ 490      E7800000 
+ 491              	.LVL49:
+  97:pwm.c         ****     rcu_periph_clock_enable(RCU_AF);
+ 492              		.loc 1 97 5 is_stmt 1
+ 493 0012 13050060 		li	a0,1536
+ 494 0016 97000000 		call	rcu_periph_clock_enable
+ 494      E7800000 
+ 495              	.LVL50:
+  98:pwm.c         ****     rcu_periph_clock_enable(RCU_TIMER2);
+ 496              		.loc 1 98 5
+ 497 001e 13051070 		li	a0,1793
+ 498 0022 97000000 		call	rcu_periph_clock_enable
+ 498      E7800000 
+ 499              	.LVL51:
+  99:pwm.c         **** 
+ 100:pwm.c         ****     // 2. Initiera PB0 som Alternativ Funktion Push-Pull
+ 101:pwm.c         ****     gpio_init(GPIOB, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_0);
+ 500              		.loc 1 101 5
+ 501 002a 37150140 		li	a0,1073811456
+ 502 002e 8546     		li	a3,1
+ 503 0030 0D46     		li	a2,3
+ 504 0032 E145     		li	a1,24
+ 505 0034 130505C0 		addi	a0,a0,-1024
+ 506 0038 97000000 		call	gpio_init
+ 506      E7800000 
+ 507              	.LVL52:
+ 102:pwm.c         **** 
+ 103:pwm.c         ****     // 3. Timer-konfiguration för 10 Hz
+ 104:pwm.c         ****     timer_deinit(TIMER2);
+ 508              		.loc 1 104 5
+ 509 0040 37040040 		li	s0,1073741824
+ 510 0044 13050440 		addi	a0,s0,1024
+ 511 0048 97000000 		call	timer_deinit
+ 511      E7800000 
+ 512              	.LVL53:
+ 105:pwm.c         ****     timer_struct_para_init(&timer_initpara);
+ 513              		.loc 1 105 5
+ 514 0050 0808     		addi	a0,sp,16
+ 515 0052 97000000 		call	timer_struct_para_init
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 13
+
+
+ 515      E7800000 
+ 516              	.LVL54:
+ 106:pwm.c         ****     
+ 107:pwm.c         ****     // Prescaler 1079 ger 100kHz klocka (108MHz / 1080)
+ 108:pwm.c         ****     timer_initpara.prescaler         = 10799; 
+ 517              		.loc 1 108 5
+ 109:pwm.c         ****     timer_initpara.alignedmode       = TIMER_COUNTER_EDGE;
+ 518              		.loc 1 109 5
+ 110:pwm.c         ****     timer_initpara.counterdirection  = TIMER_COUNTER_UP;
+ 519              		.loc 1 110 5
+ 108:pwm.c         ****     timer_initpara.alignedmode       = TIMER_COUNTER_EDGE;
+ 520              		.loc 1 108 38 is_stmt 0
+ 521 005a 8D67     		li	a5,12288
+ 522 005c 9387F7A2 		addi	a5,a5,-1489
+ 523 0060 3EC8     		sw	a5,16(sp)
+ 111:pwm.c         ****     // Period 9999 ger 10 Hz (100kHz / 10000)
+ 112:pwm.c         ****     timer_initpara.period            = 19999; 
+ 524              		.loc 1 112 38
+ 525 0062 9567     		li	a5,20480
+ 526 0064 9387F7E1 		addi	a5,a5,-481
+ 113:pwm.c         ****     timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 114:pwm.c         ****     timer_initpara.repetitioncounter = 0;
+ 115:pwm.c         ****     timer_init(TIMER2, &timer_initpara);
+ 527              		.loc 1 115 5
+ 528 0068 0C08     		addi	a1,sp,16
+ 529 006a 13050440 		addi	a0,s0,1024
+ 112:pwm.c         ****     timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 530              		.loc 1 112 38
+ 531 006e 3ECC     		sw	a5,24(sp)
+ 110:pwm.c         ****     // Period 9999 ger 10 Hz (100kHz / 10000)
+ 532              		.loc 1 110 38
+ 533 0070 231A0100 		sh	zero,20(sp)
+ 112:pwm.c         ****     timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 534              		.loc 1 112 5 is_stmt 1
+ 113:pwm.c         ****     timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 535              		.loc 1 113 5
+ 113:pwm.c         ****     timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;
+ 536              		.loc 1 113 38 is_stmt 0
+ 537 0074 231E0100 		sh	zero,28(sp)
+ 114:pwm.c         ****     timer_init(TIMER2, &timer_initpara);
+ 538              		.loc 1 114 5 is_stmt 1
+ 114:pwm.c         ****     timer_init(TIMER2, &timer_initpara);
+ 539              		.loc 1 114 38 is_stmt 0
+ 540 0078 230F0100 		sb	zero,30(sp)
+ 541              		.loc 1 115 5 is_stmt 1
+ 542 007c 97000000 		call	timer_init
+ 542      E7800000 
+ 543              	.LVL55:
+ 116:pwm.c         **** 
+ 117:pwm.c         ****     // 4. Kanal-konfiguration (Kanal 2 för PB0)
+ 118:pwm.c         ****     timer_channel_output_struct_para_init(&timer_ocinitpara);
+ 544              		.loc 1 118 5
+ 545 0084 4800     		addi	a0,sp,4
+ 546 0086 97000000 		call	timer_channel_output_struct_para_init
+ 546      E7800000 
+ 547              	.LVL56:
+ 119:pwm.c         ****     timer_ocinitpara.outputstate  = TIMER_CCX_ENABLE;
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 14
+
+
+ 548              		.loc 1 119 5
+ 549              		.loc 1 119 35 is_stmt 0
+ 550 008e 8547     		li	a5,1
+ 120:pwm.c         ****     timer_ocinitpara.ocpolarity   = TIMER_OC_POLARITY_HIGH;
+ 121:pwm.c         ****     timer_ocinitpara.ocidlestate  = TIMER_OC_IDLE_STATE_LOW;
+ 122:pwm.c         ****     
+ 123:pwm.c         ****     timer_channel_output_config(TIMER2, TIMER_CH_2, &timer_ocinitpara);
+ 551              		.loc 1 123 5
+ 552 0090 5000     		addi	a2,sp,4
+ 553 0092 13050440 		addi	a0,s0,1024
+ 554 0096 8945     		li	a1,2
+ 119:pwm.c         ****     timer_ocinitpara.outputstate  = TIMER_CCX_ENABLE;
+ 555              		.loc 1 119 35
+ 556 0098 2312F100 		sh	a5,4(sp)
+ 120:pwm.c         ****     timer_ocinitpara.ocpolarity   = TIMER_OC_POLARITY_HIGH;
+ 557              		.loc 1 120 5 is_stmt 1
+ 120:pwm.c         ****     timer_ocinitpara.ocpolarity   = TIMER_OC_POLARITY_HIGH;
+ 558              		.loc 1 120 35 is_stmt 0
+ 559 009c 23140100 		sh	zero,8(sp)
+ 121:pwm.c         ****     
+ 560              		.loc 1 121 5 is_stmt 1
+ 121:pwm.c         ****     
+ 561              		.loc 1 121 35 is_stmt 0
+ 562 00a0 23160100 		sh	zero,12(sp)
+ 563              		.loc 1 123 5 is_stmt 1
+ 564 00a4 97000000 		call	timer_channel_output_config
+ 564      E7800000 
+ 565              	.LVL57:
+ 124:pwm.c         **** 
+ 125:pwm.c         ****     // 5. PWM-läge
+ 126:pwm.c         ****     timer_channel_output_pulse_value_config(TIMER2, TIMER_CH_2, 0); // Starta på 0%
+ 566              		.loc 1 126 5
+ 567 00ac 13050440 		addi	a0,s0,1024
+ 568 00b0 0146     		li	a2,0
+ 569 00b2 8945     		li	a1,2
+ 570 00b4 97000000 		call	timer_channel_output_pulse_value_config
+ 570      E7800000 
+ 571              	.LVL58:
+ 127:pwm.c         ****     timer_channel_output_mode_config(TIMER2, TIMER_CH_2, TIMER_OC_MODE_PWM0);
+ 572              		.loc 1 127 5
+ 573 00bc 13050440 		addi	a0,s0,1024
+ 574 00c0 13060006 		li	a2,96
+ 575 00c4 8945     		li	a1,2
+ 576 00c6 97000000 		call	timer_channel_output_mode_config
+ 576      E7800000 
+ 577              	.LVL59:
+ 128:pwm.c         ****     timer_channel_output_shadow_config(TIMER2, TIMER_CH_2, TIMER_OC_SHADOW_DISABLE);
+ 578              		.loc 1 128 5
+ 579 00ce 0146     		li	a2,0
+ 580 00d0 8945     		li	a1,2
+ 581 00d2 13050440 		addi	a0,s0,1024
+ 582 00d6 97000000 		call	timer_channel_output_shadow_config
+ 582      E7800000 
+ 583              	.LVL60:
+ 129:pwm.c         **** 
+ 130:pwm.c         ****     timer_auto_reload_shadow_enable(TIMER2);
+ 584              		.loc 1 130 5
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 15
+
+
+ 585 00de 13050440 		addi	a0,s0,1024
+ 586 00e2 97000000 		call	timer_auto_reload_shadow_enable
+ 586      E7800000 
+ 587              	.LVL61:
+ 131:pwm.c         ****     timer_enable(TIMER2);
+ 588              		.loc 1 131 5
+ 589 00ea 13050440 		addi	a0,s0,1024
+ 590 00ee 97000000 		call	timer_enable
+ 590      E7800000 
+ 591              	.LVL62:
+ 132:pwm.c         **** }
+ 592              		.loc 1 132 1 is_stmt 0
+ 593 00f6 B250     		lw	ra,44(sp)
+ 594              		.cfi_restore 1
+ 595 00f8 2254     		lw	s0,40(sp)
+ 596              		.cfi_restore 8
+ 597 00fa 4561     		addi	sp,sp,48
+ 598              	.LCFI6:
+ 599              		.cfi_def_cfa_offset 0
+ 600 00fc 8280     		jr	ra
+ 601              		.cfi_endproc
+ 602              	.LFE6:
+ 604              		.section	.text.setPeltierPercent,"ax",@progbits
+ 605              		.align	1
+ 606              		.globl	setPeltierPercent
+ 608              	setPeltierPercent:
+ 609              	.LFB7:
+ 133:pwm.c         **** 
+ 134:pwm.c         **** // Funktion för att styra Peltier (0-100%)
+ 135:pwm.c         **** void setPeltierPercent(int percent) {
+ 610              		.loc 1 135 37 is_stmt 1
+ 611              		.cfi_startproc
+ 612              	.LVL63:
+ 136:pwm.c         ****     if (percent > 100) percent = 100;
+ 613              		.loc 1 136 5
+ 614 0000 63530500 		bge	a0,zero,.L61
+ 615 0004 0145     		li	a0,0
+ 616              	.LVL64:
+ 617              	.L61:
+ 137:pwm.c         ****     if (percent < 0) percent = 0;
+ 138:pwm.c         ****     
+ 139:pwm.c         ****     // Mappa 0-100 till 0-10000 (vår period)
+ 140:pwm.c         ****     int pulseValue = (percent * 10000) / 100;
+ 618              		.loc 1 140 5
+ 141:pwm.c         ****     timer_channel_output_pulse_value_config(TIMER2, TIMER_CH_2, pulseValue);
+ 619              		.loc 1 141 5
+ 140:pwm.c         ****     timer_channel_output_pulse_value_config(TIMER2, TIMER_CH_2, pulseValue);
+ 620              		.loc 1 140 9 is_stmt 0
+ 621 0006 93074006 		li	a5,100
+ 622 000a 63D4A700 		ble	a0,a5,.L62
+ 623 000e 13054006 		li	a0,100
+ 624              	.LVL65:
+ 625              	.L62:
+ 626              		.loc 1 141 5
+ 627 0012 13064006 		li	a2,100
+ 628 0016 3306C502 		mul	a2,a0,a2
+ 629 001a 37050040 		li	a0,1073741824
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 16
+
+
+ 630 001e 8945     		li	a1,2
+ 631 0020 13050540 		addi	a0,a0,1024
+ 632 0024 17030000 		tail	timer_channel_output_pulse_value_config
+ 632      67000300 
+ 633              	.LVL66:
+ 634              		.cfi_endproc
+ 635              	.LFE7:
+ 637              		.section	.rodata.T1setPWMmotorB.cst8,"aM",@progbits,8
+ 638              		.align	3
+ 639              	.LC0:
+ 640 0000 00000000 		.word	0
+ 641 0004 00005940 		.word	1079574528
+ 642              	.LC1:
+ 643 0008 00000000 		.word	0
+ 644 000c 0040CF40 		.word	1087324160
+ 645              		.text
+ 646              	.Letext0:
+ 647              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 648              		.file 3 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 649              		.file 4 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_timer.h"
+ 650              		.file 5 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_rcu.h"
+ 651              		.file 6 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_gpio.h"
+ 652              		.file 7 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 pwm.c
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:13     .text.T1powerUpInitPWM:0000000000000000 T1powerUpInitPWM
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:17     .text.T1powerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:19     .text.T1powerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:20     .text.T1powerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:21     .text.T1powerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:22     .text.T1powerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:23     .text.T1powerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:25     .text.T1powerUpInitPWM:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:27     .text.T1powerUpInitPWM:0000000000000004 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:30     .text.T1powerUpInitPWM:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:33     .text.T1powerUpInitPWM:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:37     .text.T1powerUpInitPWM:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:38     .text.T1powerUpInitPWM:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:39     .text.T1powerUpInitPWM:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:40     .text.T1powerUpInitPWM:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:42     .text.T1powerUpInitPWM:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:45     .text.T1powerUpInitPWM:000000000000001a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:50     .text.T1powerUpInitPWM:000000000000002a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:51     .text.T1powerUpInitPWM:000000000000002a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:53     .text.T1powerUpInitPWM:000000000000002e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:62     .text.T1powerUpInitPWM:0000000000000044 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:64     .text.T1powerUpInitPWM:0000000000000048 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:66     .text.T1powerUpInitPWM:000000000000004c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:75     .text.T1powerUpInitPWM:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:77     .text.T1powerUpInitPWM:0000000000000066 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:79     .text.T1powerUpInitPWM:0000000000000068 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:88     .text.T1powerUpInitPWM:000000000000007e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:90     .text.T1powerUpInitPWM:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:92     .text.T1powerUpInitPWM:0000000000000082 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:101    .text.T1powerUpInitPWM:0000000000000098 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:105    .text.T1powerUpInitPWM:00000000000000a4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:109    .text.T1powerUpInitPWM:00000000000000b0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:113    .text.T1powerUpInitPWM:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:114    .text.T1powerUpInitPWM:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:115    .text.T1powerUpInitPWM:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:116    .text.T1powerUpInitPWM:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:119    .text.T1powerUpInitPWM:00000000000000c0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:122    .text.T1powerUpInitPWM:00000000000000c6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:125    .text.T1powerUpInitPWM:00000000000000cc .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:127    .text.T1powerUpInitPWM:00000000000000ce .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:129    .text.T1powerUpInitPWM:00000000000000d2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:130    .text.T1powerUpInitPWM:00000000000000d2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:131    .text.T1powerUpInitPWM:00000000000000d2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:133    .text.T1powerUpInitPWM:00000000000000d6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:134    .text.T1powerUpInitPWM:00000000000000d6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:136    .text.T1powerUpInitPWM:00000000000000da .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:139    .text.T1powerUpInitPWM:00000000000000e2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:143    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:144    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:145    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:146    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:147    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:148    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:149    .text.T1powerUpInitPWM:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:152    .text.T1powerUpInitPWM:00000000000000f0 .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 18
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:154    .text.T1powerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:156    .text.T1powerUpInitPWM:00000000000000f4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:157    .text.T1powerUpInitPWM:00000000000000f4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:159    .text.T1powerUpInitPWM:00000000000000f8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:166    .text.T1powerUpInitPWM:0000000000000108 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:167    .text.T1powerUpInitPWM:0000000000000108 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:169    .text.T1powerUpInitPWM:000000000000010c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:176    .text.T1powerUpInitPWM:000000000000011c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:177    .text.T1powerUpInitPWM:000000000000011c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:179    .text.T1powerUpInitPWM:000000000000011e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:186    .text.T1powerUpInitPWM:000000000000012e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:187    .text.T1powerUpInitPWM:000000000000012e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:189    .text.T1powerUpInitPWM:0000000000000130 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:196    .text.T1powerUpInitPWM:0000000000000140 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:197    .text.T1powerUpInitPWM:0000000000000140 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:199    .text.T1powerUpInitPWM:0000000000000144 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:206    .text.T1powerUpInitPWM:0000000000000158 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:212    .text.T1powerUpInitPWM:000000000000016a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:219    .text.T1powerUpInitPWM:000000000000017a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:220    .text.T1powerUpInitPWM:000000000000017a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:222    .text.T1powerUpInitPWM:000000000000017e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:229    .text.T1powerUpInitPWM:0000000000000192 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:235    .text.T1powerUpInitPWM:00000000000001a4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:242    .text.T1powerUpInitPWM:00000000000001b4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:243    .text.T1powerUpInitPWM:00000000000001b4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:245    .text.T1powerUpInitPWM:00000000000001b6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:252    .text.T1powerUpInitPWM:00000000000001ca .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:258    .text.T1powerUpInitPWM:00000000000001dc .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:265    .text.T1powerUpInitPWM:00000000000001ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:266    .text.T1powerUpInitPWM:00000000000001ec .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:268    .text.T1powerUpInitPWM:00000000000001ee .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:275    .text.T1powerUpInitPWM:0000000000000202 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:281    .text.T1powerUpInitPWM:0000000000000214 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:288    .text.T1powerUpInitPWM:0000000000000224 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:292    .text.T1powerUpInitPWM:0000000000000230 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:296    .text.T1powerUpInitPWM:000000000000023c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:297    .text.T1powerUpInitPWM:000000000000023e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:299    .text.T1powerUpInitPWM:0000000000000240 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:301    .text.T1powerUpInitPWM:0000000000000242 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:303    .text.T1powerUpInitPWM:0000000000000244 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:305    .text.T1powerUpInitPWM:0000000000000246 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:308    .text.T1powerUpInitPWM:0000000000000248 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:310    .text.T1powerUpInitPWM:000000000000024a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:317    .text.T1setPWMch0:0000000000000000 T1setPWMch0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:320    .text.T1setPWMch0:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:322    .text.T1setPWMch0:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:323    .text.T1setPWMch0:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:329    .text.T1setPWMch0:0000000000000010 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:336    .text.T1setLEDPercent:0000000000000000 T1setLEDPercent
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:339    .text.T1setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:341    .text.T1setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:342    .text.T1setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:343    .text.T1setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:344    .text.T1setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:345    .text.T1setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:350    .text.T1setLEDPercent:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:354    .text.T1setLEDPercent:000000000000001c .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 19
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:365    .text.T1setPWMmotorB:0000000000000000 T1setPWMmotorB
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:368    .text.T1setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:370    .text.T1setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:371    .text.T1setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:372    .text.T1setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:374    .text.T1setPWMmotorB:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:379    .text.T1setPWMmotorB:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:380    .text.T1setPWMmotorB:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:381    .text.T1setPWMmotorB:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:382    .text.T1setPWMmotorB:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:386    .text.T1setPWMmotorB:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:388    .text.T1setPWMmotorB:0000000000000016 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:389    .text.T1setPWMmotorB:0000000000000016 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:396    .text.T1setPWMmotorB:000000000000002e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:401    .text.T1setPWMmotorB:000000000000003e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:409    .text.T1setPWMmotorB:0000000000000056 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:412    .text.T1setPWMmotorB:0000000000000058 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:413    .text.T1setPWMmotorB:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:414    .text.T1setPWMmotorB:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:416    .text.T1setPWMmotorB:000000000000005c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:418    .text.T1setPWMmotorB:000000000000005e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:420    .text.T1setPWMmotorB:0000000000000060 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:422    .text.T1setPWMmotorB:0000000000000060 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:424    .text.T1setPWMmotorB:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:425    .text.T1setPWMmotorB:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:427    .text.T1setPWMmotorB:0000000000000066 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:429    .text.T1setPWMmotorB:0000000000000068 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:431    .text.T1setPWMmotorB:0000000000000068 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:435    .text.T1setPWMmotorB:0000000000000070 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:437    .text.T1setPWMmotorB:0000000000000070 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:440    .text.T1setPWMmotorB:0000000000000074 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:446    .text.T1setPWMmotorB:0000000000000082 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:447    .text.T1setPWMmotorB:0000000000000082 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:455    .text.T1setPWMmotorB:000000000000009e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:460    .text.T1setPWMmotorB:00000000000000ae .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:464    .text.T1setPWMmotorB:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:471    .text.T2powerUpInitPWM_Relay:0000000000000000 T2powerUpInitPWM_Relay
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:474    .text.T2powerUpInitPWM_Relay:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:475    .text.T2powerUpInitPWM_Relay:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:476    .text.T2powerUpInitPWM_Relay:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:477    .text.T2powerUpInitPWM_Relay:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:478    .text.T2powerUpInitPWM_Relay:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:479    .text.T2powerUpInitPWM_Relay:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:481    .text.T2powerUpInitPWM_Relay:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:483    .text.T2powerUpInitPWM_Relay:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:485    .text.T2powerUpInitPWM_Relay:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:487    .text.T2powerUpInitPWM_Relay:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:488    .text.T2powerUpInitPWM_Relay:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:490    .text.T2powerUpInitPWM_Relay:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:493    .text.T2powerUpInitPWM_Relay:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:497    .text.T2powerUpInitPWM_Relay:000000000000001e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:501    .text.T2powerUpInitPWM_Relay:000000000000002a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:509    .text.T2powerUpInitPWM_Relay:0000000000000040 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:514    .text.T2powerUpInitPWM_Relay:0000000000000050 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:518    .text.T2powerUpInitPWM_Relay:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:519    .text.T2powerUpInitPWM_Relay:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:520    .text.T2powerUpInitPWM_Relay:000000000000005a .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 20
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:521    .text.T2powerUpInitPWM_Relay:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:525    .text.T2powerUpInitPWM_Relay:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:528    .text.T2powerUpInitPWM_Relay:0000000000000068 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:531    .text.T2powerUpInitPWM_Relay:000000000000006e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:533    .text.T2powerUpInitPWM_Relay:0000000000000070 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:535    .text.T2powerUpInitPWM_Relay:0000000000000074 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:536    .text.T2powerUpInitPWM_Relay:0000000000000074 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:537    .text.T2powerUpInitPWM_Relay:0000000000000074 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:539    .text.T2powerUpInitPWM_Relay:0000000000000078 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:540    .text.T2powerUpInitPWM_Relay:0000000000000078 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:542    .text.T2powerUpInitPWM_Relay:000000000000007c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:545    .text.T2powerUpInitPWM_Relay:0000000000000084 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:549    .text.T2powerUpInitPWM_Relay:000000000000008e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:550    .text.T2powerUpInitPWM_Relay:000000000000008e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:552    .text.T2powerUpInitPWM_Relay:0000000000000090 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:556    .text.T2powerUpInitPWM_Relay:0000000000000098 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:558    .text.T2powerUpInitPWM_Relay:000000000000009c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:559    .text.T2powerUpInitPWM_Relay:000000000000009c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:561    .text.T2powerUpInitPWM_Relay:00000000000000a0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:562    .text.T2powerUpInitPWM_Relay:00000000000000a0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:564    .text.T2powerUpInitPWM_Relay:00000000000000a4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:567    .text.T2powerUpInitPWM_Relay:00000000000000ac .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:573    .text.T2powerUpInitPWM_Relay:00000000000000bc .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:579    .text.T2powerUpInitPWM_Relay:00000000000000ce .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:585    .text.T2powerUpInitPWM_Relay:00000000000000de .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:589    .text.T2powerUpInitPWM_Relay:00000000000000ea .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:593    .text.T2powerUpInitPWM_Relay:00000000000000f6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:594    .text.T2powerUpInitPWM_Relay:00000000000000f8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:596    .text.T2powerUpInitPWM_Relay:00000000000000fa .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:599    .text.T2powerUpInitPWM_Relay:00000000000000fc .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:601    .text.T2powerUpInitPWM_Relay:00000000000000fe .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:608    .text.setPeltierPercent:0000000000000000 setPeltierPercent
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:611    .text.setPeltierPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:613    .text.setPeltierPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:614    .text.setPeltierPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:619    .text.setPeltierPercent:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:620    .text.setPeltierPercent:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:621    .text.setPeltierPercent:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:627    .text.setPeltierPercent:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:634    .text.setPeltierPercent:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:313    .text.T1powerUpInitPWM:000000000000024a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:332    .text.T1setPWMch0:0000000000000010 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:361    .text.T1setLEDPercent:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:467    .text.T1setPWMmotorB:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:604    .text.T2powerUpInitPWM_Relay:00000000000000fe .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:637    .text.setPeltierPercent:000000000000002c .L0 
+                     .debug_frame:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:60     .text.T1powerUpInitPWM:0000000000000044 .L2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:73     .text.T1powerUpInitPWM:0000000000000062 .L3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:86     .text.T1powerUpInitPWM:000000000000007e .L4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:99     .text.T1powerUpInitPWM:0000000000000098 .L5
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:164    .text.T1powerUpInitPWM:0000000000000108 .L6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:174    .text.T1powerUpInitPWM:000000000000011c .L7
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:184    .text.T1powerUpInitPWM:000000000000012e .L8
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:194    .text.T1powerUpInitPWM:0000000000000140 .L9
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:217    .text.T1powerUpInitPWM:000000000000017a .L10
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:240    .text.T1powerUpInitPWM:00000000000001b4 .L11
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 21
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:263    .text.T1powerUpInitPWM:00000000000001ec .L12
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:286    .text.T1powerUpInitPWM:0000000000000224 .L13
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:348    .text.T1setLEDPercent:000000000000000c .L53
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:639    .rodata.T1setPWMmotorB.cst8:0000000000000000 .LC0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:642    .rodata.T1setPWMmotorB.cst8:0000000000000008 .LC1
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:433    .text.T1setPWMmotorB:0000000000000070 .L55
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:410    .text.T1setPWMmotorB:0000000000000058 .L57
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:617    .text.setPeltierPercent:0000000000000006 .L61
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:625    .text.setPeltierPercent:0000000000000012 .L62
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2168   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2809   .debug_str:0000000000000000 .LASF91
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2841   .debug_str:0000000000000152 .LASF92
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2947   .debug_str:0000000000000413 .LASF93
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2791   .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2807   .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2915   .debug_str:0000000000000334 .LASF0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2909   .debug_str:0000000000000308 .LASF1
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2999   .debug_str:00000000000005cf .LASF4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2899   .debug_str:00000000000002c8 .LASF2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2877   .debug_str:000000000000021a .LASF3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2831   .debug_str:00000000000000f6 .LASF5
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2925   .debug_str:0000000000000376 .LASF6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2865   .debug_str:00000000000001dd .LASF7
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2827   .debug_str:00000000000000e3 .LASF8
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2953   .debug_str:000000000000048a .LASF9
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2825   .debug_str:00000000000000d5 .LASF10
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2911   .debug_str:0000000000000314 .LASF11
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2845   .debug_str:0000000000000167 .LASF12
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2917   .debug_str:0000000000000341 .LASF13
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2913   .debug_str:000000000000032b .LASF14
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2943   .debug_str:00000000000003fa .LASF94
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2847   .debug_str:000000000000016f .LASF15
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2945   .debug_str:000000000000040a .LASF16
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2993   .debug_str:000000000000059e .LASF17
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2989   .debug_str:0000000000000589 .LASF18
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2985   .debug_str:0000000000000572 .LASF19
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2883   .debug_str:0000000000000257 .LASF20
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2885   .debug_str:0000000000000262 .LASF21
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2887   .debug_str:000000000000026d .LASF22
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2889   .debug_str:0000000000000278 .LASF23
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2891   .debug_str:0000000000000283 .LASF24
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2893   .debug_str:000000000000028e .LASF25
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2857   .debug_str:00000000000001a2 .LASF26
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2869   .debug_str:00000000000001ef .LASF27
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2871   .debug_str:00000000000001f8 .LASF28
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2963   .debug_str:00000000000004cb .LASF29
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2965   .debug_str:00000000000004d6 .LASF30
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2969   .debug_str:00000000000004f1 .LASF31
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2971   .debug_str:00000000000004fb .LASF32
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2933   .debug_str:00000000000003c3 .LASF33
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2935   .debug_str:00000000000003cc .LASF34
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2853   .debug_str:0000000000000190 .LASF35
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2855   .debug_str:0000000000000199 .LASF36
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2907   .debug_str:00000000000002ff .LASF37
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2905   .debug_str:00000000000002f7 .LASF38
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2995   .debug_str:00000000000005a6 .LASF39
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2829   .debug_str:00000000000000ee .LASF40
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 22
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2951   .debug_str:0000000000000483 .LASF41
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2811   .debug_str:0000000000000088 .LASF42
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2813   .debug_str:0000000000000092 .LASF43
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2815   .debug_str:000000000000009c .LASF44
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2817   .debug_str:00000000000000a6 .LASF45
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2819   .debug_str:00000000000000b0 .LASF46
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2903   .debug_str:00000000000002ee .LASF47
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2941   .debug_str:00000000000003f1 .LASF48
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2881   .debug_str:000000000000024c .LASF49
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2867   .debug_str:00000000000001e6 .LASF50
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2961   .debug_str:00000000000004c0 .LASF51
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2921   .debug_str:000000000000035b .LASF52
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2873   .debug_str:0000000000000201 .LASF53
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2937   .debug_str:00000000000003d5 .LASF54
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2949   .debug_str:000000000000047c .LASF55
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2837   .debug_str:000000000000013e .LASF56
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2975   .debug_str:000000000000050d .LASF57
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2835   .debug_str:0000000000000127 .LASF58
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2851   .debug_str:0000000000000184 .LASF59
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2959   .debug_str:00000000000004b3 .LASF60
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2979   .debug_str:000000000000053f .LASF61
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2991   .debug_str:0000000000000592 .LASF62
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2849   .debug_str:0000000000000178 .LASF63
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2955   .debug_str:000000000000049c .LASF64
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2929   .debug_str:00000000000003a0 .LASF65
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2895   .debug_str:0000000000000299 .LASF66
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2821   .debug_str:00000000000000ba .LASF67
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:609    .text.setPeltierPercent:0000000000000000 .LFB7
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:635    .text.setPeltierPercent:000000000000002c .LFE7
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2973   .debug_str:0000000000000505 .LASF73
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2603   .debug_loc:0000000000000000 .LLST7
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2939   .debug_str:00000000000003e6 .LASF69
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2626   .debug_loc:000000000000002b .LLST8
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:633    .text.setPeltierPercent:000000000000002c .LVL66
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2863   .debug_str:00000000000001c6 .LASF68
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:472    .text.T2powerUpInitPWM_Relay:0000000000000000 .LFB6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:602    .text.T2powerUpInitPWM_Relay:00000000000000fe .LFE6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2648   .debug_loc:000000000000004e .LLST6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2919   .debug_str:000000000000034a .LASF70
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2843   .debug_str:0000000000000158 .LASF71
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:491    .text.T2powerUpInitPWM_Relay:0000000000000012 .LVL49
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:495    .text.T2powerUpInitPWM_Relay:000000000000001e .LVL50
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:499    .text.T2powerUpInitPWM_Relay:000000000000002a .LVL51
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:507    .text.T2powerUpInitPWM_Relay:0000000000000040 .LVL52
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:512    .text.T2powerUpInitPWM_Relay:0000000000000050 .LVL53
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:516    .text.T2powerUpInitPWM_Relay:000000000000005a .LVL54
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:543    .text.T2powerUpInitPWM_Relay:0000000000000084 .LVL55
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:547    .text.T2powerUpInitPWM_Relay:000000000000008e .LVL56
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:565    .text.T2powerUpInitPWM_Relay:00000000000000ac .LVL57
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:571    .text.T2powerUpInitPWM_Relay:00000000000000bc .LVL58
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:577    .text.T2powerUpInitPWM_Relay:00000000000000ce .LVL59
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:583    .text.T2powerUpInitPWM_Relay:00000000000000de .LVL60
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:587    .text.T2powerUpInitPWM_Relay:00000000000000ea .LVL61
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:591    .text.T2powerUpInitPWM_Relay:00000000000000f6 .LVL62
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2859   .debug_str:00000000000001ac .LASF72
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:366    .text.T1setPWMmotorB:0000000000000000 .LFB5
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:465    .text.T1setPWMmotorB:00000000000000ba .LFE5
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 23
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2666   .debug_loc:000000000000007a .LLST4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2823   .debug_str:00000000000000cc .LASF74
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2689   .debug_loc:00000000000000b2 .LLST5
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:407    .text.T1setPWMmotorB:0000000000000056 .LVL41
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:432    .text.T1setPWMmotorB:0000000000000070 .LVL42
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:444    .text.T1setPWMmotorB:0000000000000082 .LVL44
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2967   .debug_str:00000000000004e1 .LASF75
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:337    .text.T1setLEDPercent:0000000000000000 .LFB4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:355    .text.T1setLEDPercent:000000000000001c .LFE4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2711   .debug_loc:00000000000000e9 .LLST3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2931   .debug_str:00000000000003ba .LASF95
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:353    .text.T1setLEDPercent:000000000000001c .LVL35
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2983   .debug_str:0000000000000566 .LASF76
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:318    .text.T1setPWMch0:0000000000000000 .LFB3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:330    .text.T1setPWMch0:0000000000000010 .LFE3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2839   .debug_str:000000000000014c .LASF77
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2718   .debug_loc:00000000000000fc .LLST2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:328    .text.T1setPWMch0:0000000000000010 .LVL33
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2923   .debug_str:0000000000000365 .LASF78
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:14     .text.T1powerUpInitPWM:0000000000000000 .LFB2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:311    .text.T1powerUpInitPWM:000000000000024a .LFE2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2736   .debug_loc:0000000000000128 .LLST0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2754   .debug_loc:0000000000000155 .LLST1
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:43     .text.T1powerUpInitPWM:000000000000001a .LVL2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:48     .text.T1powerUpInitPWM:000000000000002a .LVL3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:59     .text.T1powerUpInitPWM:0000000000000044 .LVL4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:72     .text.T1powerUpInitPWM:0000000000000062 .LVL5
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:85     .text.T1powerUpInitPWM:000000000000007e .LVL6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:98     .text.T1powerUpInitPWM:0000000000000098 .LVL7
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:103    .text.T1powerUpInitPWM:00000000000000a4 .LVL8
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:107    .text.T1powerUpInitPWM:00000000000000b0 .LVL9
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:111    .text.T1powerUpInitPWM:00000000000000ba .LVL10
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:137    .text.T1powerUpInitPWM:00000000000000e2 .LVL11
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:141    .text.T1powerUpInitPWM:00000000000000ec .LVL12
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:163    .text.T1powerUpInitPWM:0000000000000108 .LVL13
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:173    .text.T1powerUpInitPWM:000000000000011c .LVL14
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:183    .text.T1powerUpInitPWM:000000000000012e .LVL15
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:193    .text.T1powerUpInitPWM:0000000000000140 .LVL16
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:204    .text.T1powerUpInitPWM:0000000000000158 .LVL17
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:210    .text.T1powerUpInitPWM:000000000000016a .LVL18
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:216    .text.T1powerUpInitPWM:000000000000017a .LVL19
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:227    .text.T1powerUpInitPWM:0000000000000192 .LVL20
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:233    .text.T1powerUpInitPWM:00000000000001a4 .LVL21
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:239    .text.T1powerUpInitPWM:00000000000001b4 .LVL22
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:250    .text.T1powerUpInitPWM:00000000000001ca .LVL23
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:256    .text.T1powerUpInitPWM:00000000000001dc .LVL24
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:262    .text.T1powerUpInitPWM:00000000000001ec .LVL25
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:273    .text.T1powerUpInitPWM:0000000000000202 .LVL26
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:279    .text.T1powerUpInitPWM:0000000000000214 .LVL27
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:285    .text.T1powerUpInitPWM:0000000000000224 .LVL28
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:290    .text.T1powerUpInitPWM:0000000000000230 .LVL29
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:294    .text.T1powerUpInitPWM:000000000000023c .LVL30
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2879   .debug_str:0000000000000224 .LASF79
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2901   .debug_str:00000000000002d6 .LASF80
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2957   .debug_str:00000000000004a9 .LASF81
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2987   .debug_str:000000000000057c .LASF82
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2927   .debug_str:0000000000000389 .LASF83
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s 			page 24
+
+
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2861   .debug_str:00000000000001bb .LASF84
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2833   .debug_str:0000000000000101 .LASF85
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2981   .debug_str:000000000000054a .LASF86
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2997   .debug_str:00000000000005ae .LASF87
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2897   .debug_str:00000000000002a5 .LASF88
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2977   .debug_str:000000000000051f .LASF89
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:2875   .debug_str:000000000000020d .LASF90
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:612    .text.setPeltierPercent:0000000000000000 .LVL63
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:616    .text.setPeltierPercent:0000000000000006 .LVL64
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:624    .text.setPeltierPercent:0000000000000012 .LVL65
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:480    .text.T2powerUpInitPWM_Relay:0000000000000002 .LCFI5
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:598    .text.T2powerUpInitPWM_Relay:00000000000000fc .LCFI6
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:373    .text.T1setPWMmotorB:0000000000000002 .LCFI2
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:428    .text.T1setPWMmotorB:0000000000000068 .LCFI3
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:434    .text.T1setPWMmotorB:0000000000000070 .LCFI4
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:369    .text.T1setPWMmotorB:0000000000000000 .LVL36
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:390    .text.T1setPWMmotorB:000000000000001e .LVL37
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:442    .text.T1setPWMmotorB:000000000000007a .LVL43
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:340    .text.T1setLEDPercent:0000000000000000 .LVL34
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:321    .text.T1setPWMch0:0000000000000000 .LVL31
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:326    .text.T1setPWMch0:0000000000000008 .LVL32
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:24     .text.T1powerUpInitPWM:0000000000000002 .LCFI0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:307    .text.T1powerUpInitPWM:0000000000000248 .LCFI1
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:18     .text.T1powerUpInitPWM:0000000000000000 .LVL0
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:31     .text.T1powerUpInitPWM:000000000000000a .LVL1
+C:\Users\hanna\AppData\Local\Temp\ccSdaEZM.s:654    .debug_info:0000000000000000 .Ldebug_info0
+
+UNDEFINED SYMBOLS
+rcu_periph_clock_enable
+gpio_init
+timer_deinit
+timer_struct_para_init
+timer_init
+timer_channel_output_struct_para_init
+timer_channel_output_config
+timer_channel_output_pulse_value_config
+timer_channel_output_mode_config
+timer_channel_output_shadow_config
+timer_auto_reload_shadow_enable
+timer_enable
+__floatsidf
+__divdf3
+__muldf3
+__fixunsdfsi

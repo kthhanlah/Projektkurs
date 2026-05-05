@@ -1,0 +1,857 @@
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 1
+
+
+   1              		.file	"ds18b20.c"
+   2              		.option nopic
+   3              		.attribute arch, "rv32i2p0_m2p0_a2p0_c2p0"
+   4              		.attribute unaligned_access, 0
+   5              		.attribute stack_align, 16
+   6              		.text
+   7              	.Ltext0:
+   8              		.cfi_sections	.debug_frame
+   9              		.section	.text.ds18B20fsm,"ax",@progbits
+  10              		.align	1
+  11              		.globl	ds18B20fsm
+  13              	ds18B20fsm:
+  14              	.LFB3:
+  15              		.file 1 "ds18b20.c"
+   1:ds18b20.c     **** #include "gd32vf103.h"
+   2:ds18b20.c     **** #include "ds18b20.h"
+   3:ds18b20.c     **** #include "eclicw.h"
+   4:ds18b20.c     **** #define Z (1<<31)
+   5:ds18b20.c     **** #define U 27
+   6:ds18b20.c     **** #define W1L 2*U
+   7:ds18b20.c     **** #define W1H Z+93*U
+   8:ds18b20.c     **** #define W0L 65*U
+   9:ds18b20.c     **** #define W0H Z+30*U
+  10:ds18b20.c     **** #define RL 2*U
+  11:ds18b20.c     **** #define RD Z+10*U
+  12:ds18b20.c     **** #define RS Z
+  13:ds18b20.c     **** #define RW 83*U
+  14:ds18b20.c     **** #define RC Z+100000*U
+  15:ds18b20.c     **** 
+  16:ds18b20.c     **** unsigned int temp=0;
+  17:ds18b20.c     **** unsigned int ds18B20cmd[]=                                                          // LSB first!
+  18:ds18b20.c     ****    {500*U, Z+500*U,                                                                 // Reset
+  19:ds18b20.c     ****     W0L, W0H, W0L, W0H, W1L, W1H, W1L, W1H, W0L, W0H, W0L, W0H, W1L, W1H, W1L, W1H, // Skip ROM 0xC
+  20:ds18b20.c     ****     W0L, W0H, W0L, W0H, W1L, W1H, W0L, W0H, W0L, W0H, W0L, W0H, W1L, W1H, W0L, W0H, // Convert  0x4
+  21:ds18b20.c     ****     RC, RL, RD, RS,                                                                 // Wait 100ms, 
+  22:ds18b20.c     ****     500*U, Z+500*U,                                                                 // Reset
+  23:ds18b20.c     ****     W0L, W0H, W0L, W0H, W1L, W1H, W1L, W1H, W0L, W0H, W0L, W0H, W1L, W1H, W1L, W1H, // Skip ROM 0xC
+  24:ds18b20.c     ****     W0L, W0H, W1L, W1H, W1L, W1H, W1L, W1H, W1L, W1H, W1L, W1H, W0L, W0H, W1L, W1H, // Read SP  0xB
+  25:ds18b20.c     ****     RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, // Read 1:st by
+  26:ds18b20.c     ****     RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, RL,RD,RS, // Read 2:nd by
+  27:ds18b20.c     ****     0};
+  28:ds18b20.c     **** void (*pCB)(unsigned int tmp)=NULL;
+  29:ds18b20.c     **** 
+  30:ds18b20.c     **** void ds18B20init(void (*pISR)(unsigned int tmp)){
+  31:ds18b20.c     ****    pCB=pISR;
+  32:ds18b20.c     ****    eclicw_enable(CLIC_INT_TMR, 1, 1, &ds18B20fsm);
+  33:ds18b20.c     ****    //Turn on GPIOB if neede!
+  34:ds18b20.c     ****    gpio_init(GPIOB, GPIO_MODE_OUT_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_5);
+  35:ds18b20.c     ****    gpio_bit_write(GPIOB, GPIO_PIN_5, 1);
+  36:ds18b20.c     ****    //Start the first conversion after a 1s shake-down...
+  37:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIME ) = 0;
+  38:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = 1000000*27;
+  39:ds18b20.c     **** }
+  40:ds18b20.c     **** 
+  41:ds18b20.c     **** void ds18B20fsm(void){
+  16              		.loc 1 41 22
+  17              		.cfi_startproc
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 2
+
+
+  42:ds18b20.c     ****     static unsigned int s=0,t=0, d=0;
+  18              		.loc 1 42 5
+  43:ds18b20.c     **** 
+  44:ds18b20.c     ****     if (!ds18B20cmd[s]) {
+  19              		.loc 1 44 5
+  41:ds18b20.c     ****     static unsigned int s=0,t=0, d=0;
+  20              		.loc 1 41 22 is_stmt 0
+  21 0000 0111     		addi	sp,sp,-32
+  22              	.LCFI0:
+  23              		.cfi_def_cfa_offset 32
+  24 0002 22CC     		sw	s0,24(sp)
+  25              		.cfi_offset 8, -8
+  26              		.loc 1 44 20
+  27 0004 37040000 		lui	s0,%hi(.LANCHOR1)
+  28 0008 03270400 		lw	a4,%lo(.LANCHOR1)(s0)
+  41:ds18b20.c     ****     static unsigned int s=0,t=0, d=0;
+  29              		.loc 1 41 22
+  30 000c 26CA     		sw	s1,20(sp)
+  31              		.cfi_offset 9, -12
+  32              		.loc 1 44 20
+  33 000e B7040000 		lui	s1,%hi(.LANCHOR0)
+  34 0012 93870400 		addi	a5,s1,%lo(.LANCHOR0)
+  35 0016 0A07     		slli	a4,a4,2
+  36 0018 BA97     		add	a5,a5,a4
+  37              		.loc 1 44 8
+  38 001a 9C43     		lw	a5,0(a5)
+  41:ds18b20.c     ****     static unsigned int s=0,t=0, d=0;
+  39              		.loc 1 41 22
+  40 001c 06CE     		sw	ra,28(sp)
+  41 001e 4AC8     		sw	s2,16(sp)
+  42 0020 4EC6     		sw	s3,12(sp)
+  43              		.cfi_offset 1, -4
+  44              		.cfi_offset 18, -16
+  45              		.cfi_offset 19, -20
+  46 0022 93840400 		addi	s1,s1,%lo(.LANCHOR0)
+  47 0026 13040400 		addi	s0,s0,%lo(.LANCHOR1)
+  48              		.loc 1 44 8
+  49 002a 85E3     		bne	a5,zero,.L2
+  45:ds18b20.c     ****       (*pCB)(t);s=0;t=0;
+  50              		.loc 1 45 7 is_stmt 1
+  51              		.loc 1 45 8 is_stmt 0
+  52 002c 37090000 		lui	s2,%hi(.LANCHOR2)
+  53 0030 13090900 		addi	s2,s2,%lo(.LANCHOR2)
+  54 0034 B7070000 		lui	a5,%hi(.LANCHOR3)
+  55 0038 83A70700 		lw	a5,%lo(.LANCHOR3)(a5)
+  56 003c 03250900 		lw	a0,0(s2)
+  57 0040 8297     		jalr	a5
+  58              	.LVL0:
+  59              		.loc 1 45 17 is_stmt 1
+  60              		.loc 1 45 18 is_stmt 0
+  61 0042 23200400 		sw	zero,0(s0)
+  62              		.loc 1 45 21 is_stmt 1
+  63              		.loc 1 45 22 is_stmt 0
+  64 0046 23200900 		sw	zero,0(s2)
+  65              	.L2:
+  46:ds18b20.c     ****     }      
+  47:ds18b20.c     **** 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 3
+
+
+  48:ds18b20.c     ****     if (!(ds18B20cmd[s]<<1)) {
+  66              		.loc 1 48 5 is_stmt 1
+  67              		.loc 1 48 21 is_stmt 0
+  68 004a 1840     		lw	a4,0(s0)
+  69 004c B7090000 		lui	s3,%hi(.LANCHOR4)
+  70 0050 93890900 		addi	s3,s3,%lo(.LANCHOR4)
+  71 0054 93172700 		slli	a5,a4,2
+  72 0058 A697     		add	a5,s1,a5
+  73 005a 9C43     		lw	a5,0(a5)
+  74              		.loc 1 48 24
+  75 005c 93961700 		slli	a3,a5,1
+  76              		.loc 1 48 8
+  77 0060 E9E2     		bne	a3,zero,.L3
+  49:ds18b20.c     ****       if (s==37) {
+  78              		.loc 1 49 7 is_stmt 1
+  79              		.loc 1 49 10 is_stmt 0
+  80 0062 93075002 		li	a5,37
+  81 0066 6311F708 		bne	a4,a5,.L4
+  50:ds18b20.c     ****         if (gpio_input_bit_get(GPIOB, GPIO_PIN_5)) {
+  82              		.loc 1 50 9 is_stmt 1
+  83              		.loc 1 50 13 is_stmt 0
+  84 006a 37150140 		li	a0,1073811456
+  85 006e 93050002 		li	a1,32
+  86 0072 130505C0 		addi	a0,a0,-1024
+  87 0076 97000000 		call	gpio_input_bit_get
+  87      E7800000 
+  88              	.LVL1:
+  89              		.loc 1 50 12
+  90 007e 19C5     		beq	a0,zero,.L5
+  51:ds18b20.c     ****           d=80*U;
+  91              		.loc 1 51 11 is_stmt 1
+  92              		.loc 1 51 12 is_stmt 0
+  93 0080 8567     		li	a5,4096
+  94 0082 93870787 		addi	a5,a5,-1936
+  95              	.L8:
+  52:ds18b20.c     ****         } else {
+  53:ds18b20.c     ****           d=100000*U; s=34;
+  54:ds18b20.c     ****         }
+  55:ds18b20.c     ****       } else {
+  56:ds18b20.c     ****          t>>=1;
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+  58:ds18b20.c     ****          d=RW;
+  59:ds18b20.c     ****       }
+  60:ds18b20.c     ****     } else {
+  61:ds18b20.c     ****       d=ds18B20cmd[s]&0xFFFFFFF;
+  96              		.loc 1 61 8
+  97 0086 23A0F900 		sw	a5,0(s3)
+  98 008a 11A8     		j	.L6
+  99              	.L5:
+  53:ds18b20.c     ****         }
+ 100              		.loc 1 53 11 is_stmt 1
+  53:ds18b20.c     ****         }
+ 101              		.loc 1 53 12 is_stmt 0
+ 102 008c B7372900 		li	a5,2699264
+ 103 0090 9387072E 		addi	a5,a5,736
+ 104 0094 23A0F900 		sw	a5,0(s3)
+  53:ds18b20.c     ****         }
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 4
+
+
+ 105              		.loc 1 53 23 is_stmt 1
+  53:ds18b20.c     ****         }
+ 106              		.loc 1 53 24 is_stmt 0
+ 107 0098 93072002 		li	a5,34
+ 108 009c 1CC0     		sw	a5,0(s0)
+ 109              	.L6:
+  62:ds18b20.c     ****     }
+  63:ds18b20.c     **** 
+  64:ds18b20.c     ****     gpio_bit_write(GPIOB, GPIO_PIN_5, ds18B20cmd[s++]>>31);
+ 110              		.loc 1 64 5 is_stmt 1
+ 111              		.loc 1 64 51 is_stmt 0
+ 112 009e 1C40     		lw	a5,0(s0)
+ 113              		.loc 1 64 5
+ 114 00a0 37150140 		li	a0,1073811456
+ 115 00a4 93050002 		li	a1,32
+ 116              		.loc 1 64 51
+ 117 00a8 13871700 		addi	a4,a5,1
+ 118              		.loc 1 64 49
+ 119 00ac 8A07     		slli	a5,a5,2
+ 120 00ae BE94     		add	s1,s1,a5
+ 121              		.loc 1 64 54
+ 122 00b0 9040     		lw	a2,0(s1)
+ 123              		.loc 1 64 5
+ 124 00b2 130505C0 		addi	a0,a0,-1024
+ 125              		.loc 1 64 51
+ 126 00b6 18C0     		sw	a4,0(s0)
+ 127              		.loc 1 64 5
+ 128 00b8 7D82     		srli	a2,a2,31
+ 129 00ba 97000000 		call	gpio_bit_write
+ 129      E7800000 
+ 130              	.LVL2:
+  65:ds18b20.c     ****     // Be aware of possible spirous int updating mtimecmp...
+  66:ds18b20.c     ****     // LSW = -1; MSW = update; LSW = update, in this case safe.
+  67:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIME ) = 0;
+ 131              		.loc 1 67 5 is_stmt 1
+ 132              		.loc 1 67 63 is_stmt 0
+ 133 00c2 B70600D1 		li	a3,-788529152
+  68:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = d;
+ 134              		.loc 1 68 66
+ 135 00c6 03A70900 		lw	a4,0(s3)
+  67:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = d;
+ 136              		.loc 1 67 63
+ 137 00ca 8147     		li	a5,0
+ 138 00cc 9CC2     		sw	a5,0(a3)
+ 139 00ce 0148     		li	a6,0
+ 140 00d0 23A20601 		sw	a6,4(a3)
+ 141              		.loc 1 68 5 is_stmt 1
+  69:ds18b20.c     **** }...
+ 142              		.loc 1 69 1 is_stmt 0
+ 143 00d4 F240     		lw	ra,28(sp)
+ 144              		.cfi_remember_state
+ 145              		.cfi_restore 1
+ 146 00d6 6244     		lw	s0,24(sp)
+ 147              		.cfi_restore 8
+  68:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = d;
+ 148              		.loc 1 68 66
+ 149 00d8 98C6     		sw	a4,8(a3)
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 5
+
+
+ 150 00da 8147     		li	a5,0
+ 151 00dc DCC6     		sw	a5,12(a3)
+ 152              		.loc 1 69 1
+ 153 00de D244     		lw	s1,20(sp)
+ 154              		.cfi_restore 9
+ 155 00e0 4249     		lw	s2,16(sp)
+ 156              		.cfi_restore 18
+ 157 00e2 B249     		lw	s3,12(sp)
+ 158              		.cfi_restore 19
+ 159 00e4 0561     		addi	sp,sp,32
+ 160              	.LCFI1:
+ 161              		.cfi_def_cfa_offset 0
+ 162 00e6 8280     		jr	ra
+ 163              	.L4:
+ 164              	.LCFI2:
+ 165              		.cfi_restore_state
+  56:ds18b20.c     ****          t>>=1;
+ 166              		.loc 1 56 10 is_stmt 1
+  56:ds18b20.c     ****          t>>=1;
+ 167              		.loc 1 56 11 is_stmt 0
+ 168 00e8 37090000 		lui	s2,%hi(.LANCHOR2)
+ 169 00ec 13090900 		addi	s2,s2,%lo(.LANCHOR2)
+ 170 00f0 83270900 		lw	a5,0(s2)
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 171              		.loc 1 57 14
+ 172 00f4 37150140 		li	a0,1073811456
+ 173 00f8 93050002 		li	a1,32
+  56:ds18b20.c     ****          t>>=1;
+ 174              		.loc 1 56 11
+ 175 00fc 8583     		srli	a5,a5,1
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 176              		.loc 1 57 14
+ 177 00fe 130505C0 		addi	a0,a0,-1024
+  56:ds18b20.c     ****          t>>=1;
+ 178              		.loc 1 56 11
+ 179 0102 2320F900 		sw	a5,0(s2)
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 180              		.loc 1 57 10 is_stmt 1
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 181              		.loc 1 57 14 is_stmt 0
+ 182 0106 97000000 		call	gpio_input_bit_get
+ 182      E7800000 
+ 183              	.LVL3:
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 184              		.loc 1 57 11
+ 185 010e 83270900 		lw	a5,0(s2)
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 186              		.loc 1 57 51
+ 187 0112 3E05     		slli	a0,a0,15
+  57:ds18b20.c     ****          t+=(gpio_input_bit_get(GPIOB, GPIO_PIN_5)<<15);
+ 188              		.loc 1 57 11
+ 189 0114 AA97     		add	a5,a5,a0
+ 190 0116 2320F900 		sw	a5,0(s2)
+  58:ds18b20.c     ****          d=RW;
+ 191              		.loc 1 58 10 is_stmt 1
+  58:ds18b20.c     ****          d=RW;
+ 192              		.loc 1 58 11 is_stmt 0
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 6
+
+
+ 193 011a 8567     		li	a5,4096
+ 194 011c 9387178C 		addi	a5,a5,-1855
+ 195 0120 9DB7     		j	.L8
+ 196              	.L3:
+  61:ds18b20.c     ****       d=ds18B20cmd[s]&0xFFFFFFF;
+ 197              		.loc 1 61 7 is_stmt 1
+  61:ds18b20.c     ****       d=ds18B20cmd[s]&0xFFFFFFF;
+ 198              		.loc 1 61 22 is_stmt 0
+ 199 0122 9207     		slli	a5,a5,4
+ 200 0124 9183     		srli	a5,a5,4
+ 201 0126 85B7     		j	.L8
+ 202              		.cfi_endproc
+ 203              	.LFE3:
+ 205              		.section	.text.ds18B20init,"ax",@progbits
+ 206              		.align	1
+ 207              		.globl	ds18B20init
+ 209              	ds18B20init:
+ 210              	.LFB2:
+  30:ds18b20.c     **** void ds18B20init(void (*pISR)(unsigned int tmp)){
+ 211              		.loc 1 30 49 is_stmt 1
+ 212              		.cfi_startproc
+ 213              	.LVL4:
+  31:ds18b20.c     ****    pCB=pISR;
+ 214              		.loc 1 31 4
+  31:ds18b20.c     ****    pCB=pISR;
+ 215              		.loc 1 31 7 is_stmt 0
+ 216 0000 B7070000 		lui	a5,%hi(.LANCHOR3)
+  32:ds18b20.c     ****    eclicw_enable(CLIC_INT_TMR, 1, 1, &ds18B20fsm);
+ 217              		.loc 1 32 4
+ 218 0004 B7060000 		lui	a3,%hi(ds18B20fsm)
+  30:ds18b20.c     **** void ds18B20init(void (*pISR)(unsigned int tmp)){
+ 219              		.loc 1 30 49
+ 220 0008 4111     		addi	sp,sp,-16
+ 221              	.LCFI3:
+ 222              		.cfi_def_cfa_offset 16
+  31:ds18b20.c     ****    pCB=pISR;
+ 223              		.loc 1 31 7
+ 224 000a 23A0A700 		sw	a0,%lo(.LANCHOR3)(a5)
+  32:ds18b20.c     ****    eclicw_enable(CLIC_INT_TMR, 1, 1, &ds18B20fsm);
+ 225              		.loc 1 32 4 is_stmt 1
+ 226 000e 93860600 		addi	a3,a3,%lo(ds18B20fsm)
+ 227 0012 0546     		li	a2,1
+ 228 0014 8545     		li	a1,1
+ 229 0016 1D45     		li	a0,7
+ 230              	.LVL5:
+  30:ds18b20.c     **** void ds18B20init(void (*pISR)(unsigned int tmp)){
+ 231              		.loc 1 30 49 is_stmt 0
+ 232 0018 06C6     		sw	ra,12(sp)
+ 233 001a 22C4     		sw	s0,8(sp)
+ 234              		.cfi_offset 1, -4
+ 235              		.cfi_offset 8, -8
+  32:ds18b20.c     ****    eclicw_enable(CLIC_INT_TMR, 1, 1, &ds18B20fsm);
+ 236              		.loc 1 32 4
+ 237 001c 97000000 		call	eclicw_enable
+ 237      E7800000 
+ 238              	.LVL6:
+  34:ds18b20.c     ****    gpio_init(GPIOB, GPIO_MODE_OUT_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_5);
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 7
+
+
+ 239              		.loc 1 34 4 is_stmt 1
+ 240 0024 37140140 		li	s0,1073811456
+ 241 0028 93060002 		li	a3,32
+ 242 002c 130504C0 		addi	a0,s0,-1024
+ 243 0030 0D46     		li	a2,3
+ 244 0032 D145     		li	a1,20
+ 245 0034 97000000 		call	gpio_init
+ 245      E7800000 
+ 246              	.LVL7:
+  35:ds18b20.c     ****    gpio_bit_write(GPIOB, GPIO_PIN_5, 1);
+ 247              		.loc 1 35 4
+ 248 003c 0546     		li	a2,1
+ 249 003e 130504C0 		addi	a0,s0,-1024
+ 250 0042 93050002 		li	a1,32
+ 251 0046 97000000 		call	gpio_bit_write
+ 251      E7800000 
+ 252              	.LVL8:
+  37:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIME ) = 0;
+ 253              		.loc 1 37 5
+  37:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIME ) = 0;
+ 254              		.loc 1 37 63 is_stmt 0
+ 255 004e B70700D1 		li	a5,-788529152
+ 256 0052 8146     		li	a3,0
+ 257 0054 94C3     		sw	a3,0(a5)
+ 258 0056 0147     		li	a4,0
+  38:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = 1000000*27;
+ 259              		.loc 1 38 66
+ 260 0058 37069C01 		li	a2,27000832
+  37:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIME ) = 0;
+ 261              		.loc 1 37 63
+ 262 005c D8C3     		sw	a4,4(a5)
+  38:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = 1000000*27;
+ 263              		.loc 1 38 5 is_stmt 1
+  39:ds18b20.c     **** }
+ 264              		.loc 1 39 1 is_stmt 0
+ 265 005e B240     		lw	ra,12(sp)
+ 266              		.cfi_restore 1
+ 267 0060 2244     		lw	s0,8(sp)
+ 268              		.cfi_restore 8
+  38:ds18b20.c     ****     *( volatile uint64_t * )( TIMER_CTRL_ADDR + TIMER_MTIMECMP ) = 1000000*27;
+ 269              		.loc 1 38 66
+ 270 0062 130606CC 		addi	a2,a2,-832
+ 271 0066 90C7     		sw	a2,8(a5)
+ 272 0068 8146     		li	a3,0
+ 273 006a D4C7     		sw	a3,12(a5)
+  39:ds18b20.c     **** }
+ 274              		.loc 1 39 1
+ 275 006c 4101     		addi	sp,sp,16
+ 276              	.LCFI4:
+ 277              		.cfi_def_cfa_offset 0
+ 278 006e 8280     		jr	ra
+ 279              		.cfi_endproc
+ 280              	.LFE2:
+ 282              		.globl	pCB
+ 283              		.globl	ds18B20cmd
+ 284              		.globl	temp
+ 285              		.section	.data.ds18B20cmd,"aw"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 8
+
+
+ 286              		.align	2
+ 287              		.set	.LANCHOR0,. + 0
+ 290              	ds18B20cmd:
+ 291 0000 BC340000 		.word	13500
+ 292 0004 BC340080 		.word	-2147470148
+ 293 0008 DB060000 		.word	1755
+ 294 000c 2A030080 		.word	-2147482838
+ 295 0010 DB060000 		.word	1755
+ 296 0014 2A030080 		.word	-2147482838
+ 297 0018 36000000 		.word	54
+ 298 001c CF090080 		.word	-2147481137
+ 299 0020 36000000 		.word	54
+ 300 0024 CF090080 		.word	-2147481137
+ 301 0028 DB060000 		.word	1755
+ 302 002c 2A030080 		.word	-2147482838
+ 303 0030 DB060000 		.word	1755
+ 304 0034 2A030080 		.word	-2147482838
+ 305 0038 36000000 		.word	54
+ 306 003c CF090080 		.word	-2147481137
+ 307 0040 36000000 		.word	54
+ 308 0044 CF090080 		.word	-2147481137
+ 309 0048 DB060000 		.word	1755
+ 310 004c 2A030080 		.word	-2147482838
+ 311 0050 DB060000 		.word	1755
+ 312 0054 2A030080 		.word	-2147482838
+ 313 0058 36000000 		.word	54
+ 314 005c CF090080 		.word	-2147481137
+ 315 0060 DB060000 		.word	1755
+ 316 0064 2A030080 		.word	-2147482838
+ 317 0068 DB060000 		.word	1755
+ 318 006c 2A030080 		.word	-2147482838
+ 319 0070 DB060000 		.word	1755
+ 320 0074 2A030080 		.word	-2147482838
+ 321 0078 36000000 		.word	54
+ 322 007c CF090080 		.word	-2147481137
+ 323 0080 DB060000 		.word	1755
+ 324 0084 2A030080 		.word	-2147482838
+ 325 0088 E0322980 		.word	-2144783648
+ 326 008c 36000000 		.word	54
+ 327 0090 0E010080 		.word	-2147483378
+ 328 0094 00000080 		.word	-2147483648
+ 329 0098 BC340000 		.word	13500
+ 330 009c BC340080 		.word	-2147470148
+ 331 00a0 DB060000 		.word	1755
+ 332 00a4 2A030080 		.word	-2147482838
+ 333 00a8 DB060000 		.word	1755
+ 334 00ac 2A030080 		.word	-2147482838
+ 335 00b0 36000000 		.word	54
+ 336 00b4 CF090080 		.word	-2147481137
+ 337 00b8 36000000 		.word	54
+ 338 00bc CF090080 		.word	-2147481137
+ 339 00c0 DB060000 		.word	1755
+ 340 00c4 2A030080 		.word	-2147482838
+ 341 00c8 DB060000 		.word	1755
+ 342 00cc 2A030080 		.word	-2147482838
+ 343 00d0 36000000 		.word	54
+ 344 00d4 CF090080 		.word	-2147481137
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 9
+
+
+ 345 00d8 36000000 		.word	54
+ 346 00dc CF090080 		.word	-2147481137
+ 347 00e0 DB060000 		.word	1755
+ 348 00e4 2A030080 		.word	-2147482838
+ 349 00e8 36000000 		.word	54
+ 350 00ec CF090080 		.word	-2147481137
+ 351 00f0 36000000 		.word	54
+ 352 00f4 CF090080 		.word	-2147481137
+ 353 00f8 36000000 		.word	54
+ 354 00fc CF090080 		.word	-2147481137
+ 355 0100 36000000 		.word	54
+ 356 0104 CF090080 		.word	-2147481137
+ 357 0108 36000000 		.word	54
+ 358 010c CF090080 		.word	-2147481137
+ 359 0110 DB060000 		.word	1755
+ 360 0114 2A030080 		.word	-2147482838
+ 361 0118 36000000 		.word	54
+ 362 011c CF090080 		.word	-2147481137
+ 363 0120 36000000 		.word	54
+ 364 0124 0E010080 		.word	-2147483378
+ 365 0128 00000080 		.word	-2147483648
+ 366 012c 36000000 		.word	54
+ 367 0130 0E010080 		.word	-2147483378
+ 368 0134 00000080 		.word	-2147483648
+ 369 0138 36000000 		.word	54
+ 370 013c 0E010080 		.word	-2147483378
+ 371 0140 00000080 		.word	-2147483648
+ 372 0144 36000000 		.word	54
+ 373 0148 0E010080 		.word	-2147483378
+ 374 014c 00000080 		.word	-2147483648
+ 375 0150 36000000 		.word	54
+ 376 0154 0E010080 		.word	-2147483378
+ 377 0158 00000080 		.word	-2147483648
+ 378 015c 36000000 		.word	54
+ 379 0160 0E010080 		.word	-2147483378
+ 380 0164 00000080 		.word	-2147483648
+ 381 0168 36000000 		.word	54
+ 382 016c 0E010080 		.word	-2147483378
+ 383 0170 00000080 		.word	-2147483648
+ 384 0174 36000000 		.word	54
+ 385 0178 0E010080 		.word	-2147483378
+ 386 017c 00000080 		.word	-2147483648
+ 387 0180 36000000 		.word	54
+ 388 0184 0E010080 		.word	-2147483378
+ 389 0188 00000080 		.word	-2147483648
+ 390 018c 36000000 		.word	54
+ 391 0190 0E010080 		.word	-2147483378
+ 392 0194 00000080 		.word	-2147483648
+ 393 0198 36000000 		.word	54
+ 394 019c 0E010080 		.word	-2147483378
+ 395 01a0 00000080 		.word	-2147483648
+ 396 01a4 36000000 		.word	54
+ 397 01a8 0E010080 		.word	-2147483378
+ 398 01ac 00000080 		.word	-2147483648
+ 399 01b0 36000000 		.word	54
+ 400 01b4 0E010080 		.word	-2147483378
+ 401 01b8 00000080 		.word	-2147483648
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 10
+
+
+ 402 01bc 36000000 		.word	54
+ 403 01c0 0E010080 		.word	-2147483378
+ 404 01c4 00000080 		.word	-2147483648
+ 405 01c8 36000000 		.word	54
+ 406 01cc 0E010080 		.word	-2147483378
+ 407 01d0 00000080 		.word	-2147483648
+ 408 01d4 36000000 		.word	54
+ 409 01d8 0E010080 		.word	-2147483378
+ 410 01dc 00000080 		.word	-2147483648
+ 411 01e0 00000000 		.word	0
+ 412              		.section	.sbss.d.3508,"aw",@nobits
+ 413              		.align	2
+ 414              		.set	.LANCHOR4,. + 0
+ 417              	d.3508:
+ 418 0000 00000000 		.zero	4
+ 419              		.section	.sbss.pCB,"aw",@nobits
+ 420              		.align	2
+ 421              		.set	.LANCHOR3,. + 0
+ 424              	pCB:
+ 425 0000 00000000 		.zero	4
+ 426              		.section	.sbss.s.3506,"aw",@nobits
+ 427              		.align	2
+ 428              		.set	.LANCHOR1,. + 0
+ 431              	s.3506:
+ 432 0000 00000000 		.zero	4
+ 433              		.section	.sbss.t.3507,"aw",@nobits
+ 434              		.align	2
+ 435              		.set	.LANCHOR2,. + 0
+ 438              	t.3507:
+ 439 0000 00000000 		.zero	4
+ 440              		.section	.sbss.temp,"aw",@nobits
+ 441              		.align	2
+ 444              	temp:
+ 445 0000 00000000 		.zero	4
+ 446              		.text
+ 447              	.Letext0:
+ 448              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 449              		.file 3 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 450              		.file 4 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
+ 451              		.file 5 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_gpio.h"
+ 452              		.file 6 "eclicw.h"
+ 453              		.file 7 "./../../firmware/GD32VF103_standard_peripheral/gd32vf103.h"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 ds18b20.c
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:13     .text.ds18B20fsm:0000000000000000 ds18B20fsm
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:17     .text.ds18B20fsm:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:18     .text.ds18B20fsm:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:19     .text.ds18B20fsm:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:20     .text.ds18B20fsm:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:21     .text.ds18B20fsm:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:23     .text.ds18B20fsm:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:25     .text.ds18B20fsm:0000000000000004 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:27     .text.ds18B20fsm:0000000000000004 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:30     .text.ds18B20fsm:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:31     .text.ds18B20fsm:000000000000000e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:33     .text.ds18B20fsm:000000000000000e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:38     .text.ds18B20fsm:000000000000001a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:40     .text.ds18B20fsm:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:43     .text.ds18B20fsm:0000000000000022 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:44     .text.ds18B20fsm:0000000000000022 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:45     .text.ds18B20fsm:0000000000000022 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:49     .text.ds18B20fsm:000000000000002a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:51     .text.ds18B20fsm:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:52     .text.ds18B20fsm:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:60     .text.ds18B20fsm:0000000000000042 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:61     .text.ds18B20fsm:0000000000000042 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:63     .text.ds18B20fsm:0000000000000046 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:64     .text.ds18B20fsm:0000000000000046 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:67     .text.ds18B20fsm:000000000000004a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:68     .text.ds18B20fsm:000000000000004a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:75     .text.ds18B20fsm:000000000000005c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:77     .text.ds18B20fsm:0000000000000060 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:79     .text.ds18B20fsm:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:80     .text.ds18B20fsm:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:83     .text.ds18B20fsm:000000000000006a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:84     .text.ds18B20fsm:000000000000006a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:90     .text.ds18B20fsm:000000000000007e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:92     .text.ds18B20fsm:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:93     .text.ds18B20fsm:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:97     .text.ds18B20fsm:0000000000000086 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:101    .text.ds18B20fsm:000000000000008c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:102    .text.ds18B20fsm:000000000000008c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:106    .text.ds18B20fsm:0000000000000098 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:107    .text.ds18B20fsm:0000000000000098 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:111    .text.ds18B20fsm:000000000000009e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:112    .text.ds18B20fsm:000000000000009e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:114    .text.ds18B20fsm:00000000000000a0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:117    .text.ds18B20fsm:00000000000000a8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:119    .text.ds18B20fsm:00000000000000ac .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:122    .text.ds18B20fsm:00000000000000b0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:124    .text.ds18B20fsm:00000000000000b2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:126    .text.ds18B20fsm:00000000000000b6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:128    .text.ds18B20fsm:00000000000000b8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:132    .text.ds18B20fsm:00000000000000c2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:133    .text.ds18B20fsm:00000000000000c2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:135    .text.ds18B20fsm:00000000000000c6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:137    .text.ds18B20fsm:00000000000000ca .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:142    .text.ds18B20fsm:00000000000000d4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:143    .text.ds18B20fsm:00000000000000d4 .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 12
+
+
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:144    .text.ds18B20fsm:00000000000000d6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:145    .text.ds18B20fsm:00000000000000d6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:147    .text.ds18B20fsm:00000000000000d8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:149    .text.ds18B20fsm:00000000000000d8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:153    .text.ds18B20fsm:00000000000000de .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:154    .text.ds18B20fsm:00000000000000e0 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:156    .text.ds18B20fsm:00000000000000e2 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:158    .text.ds18B20fsm:00000000000000e4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:161    .text.ds18B20fsm:00000000000000e6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:165    .text.ds18B20fsm:00000000000000e8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:167    .text.ds18B20fsm:00000000000000e8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:168    .text.ds18B20fsm:00000000000000e8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:172    .text.ds18B20fsm:00000000000000f4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:175    .text.ds18B20fsm:00000000000000fc .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:177    .text.ds18B20fsm:00000000000000fe .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:179    .text.ds18B20fsm:0000000000000102 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:181    .text.ds18B20fsm:0000000000000106 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:182    .text.ds18B20fsm:0000000000000106 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:185    .text.ds18B20fsm:000000000000010e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:187    .text.ds18B20fsm:0000000000000112 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:189    .text.ds18B20fsm:0000000000000114 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:192    .text.ds18B20fsm:000000000000011a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:193    .text.ds18B20fsm:000000000000011a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:198    .text.ds18B20fsm:0000000000000122 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:199    .text.ds18B20fsm:0000000000000122 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:202    .text.ds18B20fsm:0000000000000128 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:209    .text.ds18B20init:0000000000000000 ds18B20init
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:212    .text.ds18B20init:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:214    .text.ds18B20init:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:215    .text.ds18B20init:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:216    .text.ds18B20init:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:218    .text.ds18B20init:0000000000000004 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:220    .text.ds18B20init:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:222    .text.ds18B20init:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:224    .text.ds18B20init:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:226    .text.ds18B20init:000000000000000e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:232    .text.ds18B20init:0000000000000018 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:234    .text.ds18B20init:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:235    .text.ds18B20init:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:237    .text.ds18B20init:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:240    .text.ds18B20init:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:248    .text.ds18B20init:000000000000003c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:254    .text.ds18B20init:000000000000004e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:255    .text.ds18B20init:000000000000004e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:260    .text.ds18B20init:0000000000000058 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:262    .text.ds18B20init:000000000000005c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:264    .text.ds18B20init:000000000000005e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:265    .text.ds18B20init:000000000000005e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:266    .text.ds18B20init:0000000000000060 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:268    .text.ds18B20init:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:270    .text.ds18B20init:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:275    .text.ds18B20init:000000000000006c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:277    .text.ds18B20init:000000000000006e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:279    .text.ds18B20init:0000000000000070 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:424    .sbss.pCB:0000000000000000 pCB
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:290    .data.ds18B20cmd:0000000000000000 ds18B20cmd
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:444    .sbss.temp:0000000000000000 temp
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 13
+
+
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:287    .data.ds18B20cmd:0000000000000000 .LANCHOR0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:414    .sbss.d.3508:0000000000000000 .LANCHOR4
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:417    .sbss.d.3508:0000000000000000 d.3508
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:421    .sbss.pCB:0000000000000000 .LANCHOR3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:428    .sbss.s.3506:0000000000000000 .LANCHOR1
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:431    .sbss.s.3506:0000000000000000 s.3506
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:435    .sbss.t.3507:0000000000000000 .LANCHOR2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:438    .sbss.t.3507:0000000000000000 t.3507
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:205    .text.ds18B20fsm:0000000000000128 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:285    .text.ds18B20init:0000000000000070 .L0 
+                     .debug_frame:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:65     .text.ds18B20fsm:000000000000004a .L2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:196    .text.ds18B20fsm:0000000000000122 .L3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:163    .text.ds18B20fsm:00000000000000e8 .L4
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:99     .text.ds18B20fsm:000000000000008c .L5
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:109    .text.ds18B20fsm:000000000000009e .L6
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:95     .text.ds18B20fsm:0000000000000086 .L8
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1029   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1465   .debug_str:0000000000000026 .LASF91
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1535   .debug_str:00000000000002b2 .LASF92
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1501   .debug_str:000000000000017f .LASF93
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1451   .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1459   .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1487   .debug_str:0000000000000130 .LASF94
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1649   .debug_str:00000000000005ba .LASF0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1597   .debug_str:000000000000045d .LASF1
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1505   .debug_str:00000000000001fb .LASF2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1489   .debug_str:0000000000000135 .LASF3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1613   .debug_str:00000000000004d1 .LASF4
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1641   .debug_str:000000000000058c .LASF5
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1511   .debug_str:0000000000000227 .LASF6
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1589   .debug_str:000000000000042d .LASF7
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1523   .debug_str:0000000000000270 .LASF8
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1529   .debug_str:0000000000000291 .LASF9
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1585   .debug_str:0000000000000411 .LASF10
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1571   .debug_str:00000000000003ae .LASF11
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1471   .debug_str:00000000000000cc .LASF12
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1567   .debug_str:0000000000000396 .LASF13
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1633   .debug_str:000000000000055d .LASF14
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1469   .debug_str:00000000000000c1 .LASF15
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1485   .debug_str:000000000000011d .LASF16
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1467   .debug_str:00000000000000ae .LASF17
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1559   .debug_str:0000000000000357 .LASF18
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1537   .debug_str:00000000000002bc .LASF19
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1463   .debug_str:0000000000000013 .LASF20
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1557   .debug_str:0000000000000344 .LASF21
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1651   .debug_str:00000000000005cc .LASF22
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1475   .debug_str:00000000000000e0 .LASF23
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1513   .debug_str:0000000000000230 .LASF24
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1575   .debug_str:00000000000003cb .LASF25
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1517   .debug_str:0000000000000248 .LASF26
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1533   .debug_str:00000000000002a3 .LASF27
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1595   .debug_str:0000000000000450 .LASF28
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1493   .debug_str:000000000000014d .LASF29
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1631   .debug_str:000000000000054e .LASF30
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1603   .debug_str:0000000000000485 .LASF31
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1483   .debug_str:0000000000000109 .LASF32
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 14
+
+
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1623   .debug_str:0000000000000519 .LASF33
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1509   .debug_str:000000000000021b .LASF34
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1615   .debug_str:00000000000004e0 .LASF35
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1541   .debug_str:00000000000002d9 .LASF36
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1545   .debug_str:00000000000002f1 .LASF37
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1549   .debug_str:000000000000030e .LASF38
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1643   .debug_str:0000000000000597 .LASF39
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1593   .debug_str:0000000000000446 .LASF40
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1491   .debug_str:0000000000000143 .LASF41
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1521   .debug_str:0000000000000264 .LASF42
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1525   .debug_str:0000000000000279 .LASF43
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1629   .debug_str:0000000000000542 .LASF44
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1551   .debug_str:000000000000031b .LASF45
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1587   .debug_str:000000000000041e .LASF46
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1547   .debug_str:00000000000002fe .LASF47
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1647   .debug_str:00000000000005b0 .LASF48
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1527   .debug_str:0000000000000285 .LASF49
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1637   .debug_str:0000000000000577 .LASF50
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1639   .debug_str:0000000000000581 .LASF51
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1543   .debug_str:00000000000002e6 .LASF52
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1499   .debug_str:0000000000000173 .LASF53
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1609   .debug_str:00000000000004b2 .LASF54
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1617   .debug_str:00000000000004ec .LASF55
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1507   .debug_str:0000000000000208 .LASF56
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1611   .debug_str:00000000000004be .LASF57
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1627   .debug_str:000000000000052f .LASF58
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1503   .debug_str:00000000000001e8 .LASF59
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1591   .debug_str:0000000000000439 .LASF60
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1495   .debug_str:000000000000015d .LASF61
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1605   .debug_str:0000000000000499 .LASF62
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1619   .debug_str:00000000000004ff .LASF63
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1607   .debug_str:00000000000004a7 .LASF64
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1583   .debug_str:00000000000003fc .LASF65
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1569   .debug_str:00000000000003a1 .LASF66
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1561   .debug_str:000000000000036a .LASF67
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1539   .debug_str:00000000000002cf .LASF72
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1555   .debug_str:0000000000000336 .LASF68
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1479   .debug_str:00000000000000f1 .LASF69
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1581   .debug_str:00000000000003e9 .LASF70
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1531   .debug_str:000000000000029a .LASF71
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1621   .debug_str:000000000000050e .LASF73
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1573   .debug_str:00000000000003b9 .LASF74
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1519   .debug_str:0000000000000256 .LASF75
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1601   .debug_str:000000000000047a .LASF76
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1563   .debug_str:0000000000000376 .LASF77
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1497   .debug_str:000000000000016b .LASF78
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1565   .debug_str:000000000000038d .LASF79
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1473   .debug_str:00000000000000d7 .LASF80
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1599   .debug_str:000000000000046a .LASF82
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1553   .debug_str:000000000000032a .LASF81
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1477   .debug_str:00000000000000ec .LASF83
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1515   .debug_str:000000000000023d .LASF84
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1579   .debug_str:00000000000003de .LASF85
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:14     .text.ds18B20fsm:0000000000000000 .LFB3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:203    .text.ds18B20fsm:0000000000000128 .LFE3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1376   .debug_loc:0000000000000000 .LLST0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:88     .text.ds18B20fsm:000000000000007e .LVL1
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s 			page 15
+
+
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:130    .text.ds18B20fsm:00000000000000c2 .LVL2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:183    .text.ds18B20fsm:000000000000010e .LVL3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1645   .debug_str:00000000000005a4 .LASF86
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:210    .text.ds18B20init:0000000000000000 .LFB2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:280    .text.ds18B20init:0000000000000070 .LFE2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1399   .debug_loc:0000000000000038 .LLST1
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1577   .debug_str:00000000000003d9 .LASF95
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1417   .debug_loc:0000000000000064 .LLST2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:238    .text.ds18B20init:0000000000000024 .LVL6
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:246    .text.ds18B20init:000000000000003c .LVL7
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:252    .text.ds18B20init:000000000000004e .LVL8
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1461   .debug_str:0000000000000000 .LASF87
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1635   .debug_str:0000000000000568 .LASF88
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1481   .debug_str:00000000000000fb .LASF89
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:1625   .debug_str:0000000000000525 .LASF90
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:22     .text.ds18B20fsm:0000000000000002 .LCFI0
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:160    .text.ds18B20fsm:00000000000000e6 .LCFI1
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:164    .text.ds18B20fsm:00000000000000e8 .LCFI2
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:221    .text.ds18B20init:000000000000000a .LCFI3
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:276    .text.ds18B20init:000000000000006e .LCFI4
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:213    .text.ds18B20init:0000000000000000 .LVL4
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:230    .text.ds18B20init:0000000000000018 .LVL5
+C:\Users\hanna\AppData\Local\Temp\ccB9gfbk.s:455    .debug_info:0000000000000000 .Ldebug_info0
+
+UNDEFINED SYMBOLS
+gpio_input_bit_get
+gpio_bit_write
+eclicw_enable
+gpio_init

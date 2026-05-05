@@ -1,0 +1,555 @@
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 1
+
+
+   1              		.file	"mainASRAR.c"
+   2              		.option nopic
+   3              		.attribute arch, "rv32i2p0_m2p0_a2p0_c2p0"
+   4              		.attribute unaligned_access, 0
+   5              		.attribute stack_align, 16
+   6              		.text
+   7              	.Ltext0:
+   8              		.cfi_sections	.debug_frame
+   9              		.section	.text.startup.main,"ax",@progbits
+  10              		.align	1
+  11              		.globl	main
+  13              	main:
+  14              	.LFB2:
+  15              		.file 1 "mainASRAR.c"
+   1:mainASRAR.c   **** #include "gd32vf103.h"
+   2:mainASRAR.c   **** #include "drivers.h"
+   3:mainASRAR.c   **** #include "lcd.h"
+   4:mainASRAR.c   **** 
+   5:mainASRAR.c   **** int main(void) {
+  16              		.loc 1 5 16
+  17              		.cfi_startproc
+   6:mainASRAR.c   ****     // Enkla testvariabler
+   7:mainASRAR.c   ****     int test_value = 50;  // Startvärde
+  18              		.loc 1 7 5
+  19              	.LVL0:
+   8:mainASRAR.c   ****     int key = -1;         // För att lagra knapptryck
+  20              		.loc 1 8 5
+   9:mainASRAR.c   ****     int ms_counter = 0;   // För att styra hur ofta skärmen ritar om
+  21              		.loc 1 9 5
+  10:mainASRAR.c   ****    
+  11:mainASRAR.c   ****     // Mappning för att kontrollera att alla knappar fungerar
+  12:mainASRAR.c   ****     // Rad 0: 1, 2, 3, A(10) | Rad 1: 4, 5, 6, B(11) | Rad 2: 7, 8, 9, C(12) | Rad 3: *(14), 0, #(1
+  13:mainASRAR.c   ****     int lookUpTbl[16] = {1, 2, 3, 10, 4, 5, 6, 11, 7, 8, 9, 12, 14, 0, 15, 13};
+  22              		.loc 1 13 5
+   5:mainASRAR.c   ****     // Enkla testvariabler
+  23              		.loc 1 5 16 is_stmt 0
+  24 0000 5971     		addi	sp,sp,-112
+  25              	.LCFI0:
+  26              		.cfi_def_cfa_offset 112
+  27              		.loc 1 13 9
+  28 0002 B7050000 		lui	a1,%hi(.LANCHOR0)
+  29 0006 13060004 		li	a2,64
+  30 000a 93850500 		addi	a1,a1,%lo(.LANCHOR0)
+  31 000e 0A85     		mv	a0,sp
+   5:mainASRAR.c   ****     // Enkla testvariabler
+  32              		.loc 1 5 16
+  33 0010 86D6     		sw	ra,108(sp)
+  34 0012 A2D4     		sw	s0,104(sp)
+  35 0014 A6D2     		sw	s1,100(sp)
+  36 0016 CAD0     		sw	s2,96(sp)
+  37 0018 CECE     		sw	s3,92(sp)
+  38 001a D2CC     		sw	s4,88(sp)
+  39 001c D6CA     		sw	s5,84(sp)
+  40 001e DAC8     		sw	s6,80(sp)
+  41 0020 DEC6     		sw	s7,76(sp)
+  42 0022 E2C4     		sw	s8,72(sp)
+  43              		.cfi_offset 1, -4
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 2
+
+
+  44              		.cfi_offset 8, -8
+  45              		.cfi_offset 9, -12
+  46              		.cfi_offset 18, -16
+  47              		.cfi_offset 19, -20
+  48              		.cfi_offset 20, -24
+  49              		.cfi_offset 21, -28
+  50              		.cfi_offset 22, -32
+  51              		.cfi_offset 23, -36
+  52              		.cfi_offset 24, -40
+  53              		.loc 1 13 9
+  54 0024 97000000 		call	memcpy
+  54      E7800000 
+  55              	.LVL1:
+  14:mainASRAR.c   **** 
+  15:mainASRAR.c   ****     // --- 1. INITIALISERING ---
+  16:mainASRAR.c   ****     t5omsi();      // Starta 1ms timern
+  56              		.loc 1 16 5 is_stmt 1
+  57 002c 97000000 		call	t5omsi
+  57      E7800000 
+  58              	.LVL2:
+  17:mainASRAR.c   ****     colinit();     // Initiera kolumn-pinnar (Port B)
+  59              		.loc 1 17 5
+  60 0034 97000000 		call	colinit
+  60      E7800000 
+  61              	.LVL3:
+  18:mainASRAR.c   ****     keyinit();     // Initiera rad-pinnar (Port A)
+  62              		.loc 1 18 5
+  63 003c 97000000 		call	keyinit
+  63      E7800000 
+  64              	.LVL4:
+  19:mainASRAR.c   ****     Lcd_Init();    // Initiera skärmen
+  65              		.loc 1 19 5
+  66 0044 97000000 		call	Lcd_Init
+  66      E7800000 
+  67              	.LVL5:
+  20:mainASRAR.c   **** 
+  21:mainASRAR.c   ****     // Rensa skärmen och skriv starttext
+  22:mainASRAR.c   ****     LCD_Clear(BLACK);
+  68              		.loc 1 22 5
+  69 004c 0145     		li	a0,0
+  70 004e 97000000 		call	LCD_Clear
+  70      E7800000 
+  71              	.LVL6:
+  23:mainASRAR.c   ****     BACK_COLOR = BLACK;
+  72              		.loc 1 23 5
+  24:mainASRAR.c   ****     LCD_ShowString(10, 10, "DRIVRUTINSTEST", GREEN);
+  73              		.loc 1 24 5 is_stmt 0
+  74 0056 37060000 		lui	a2,%hi(.LC1)
+  23:mainASRAR.c   ****     BACK_COLOR = BLACK;
+  75              		.loc 1 23 16
+  76 005a B7070000 		lui	a5,%hi(BACK_COLOR)
+  77              		.loc 1 24 5
+  78 005e 9306007E 		li	a3,2016
+  79 0062 13060600 		addi	a2,a2,%lo(.LC1)
+  80 0066 A945     		li	a1,10
+  81 0068 2945     		li	a0,10
+  23:mainASRAR.c   ****     BACK_COLOR = BLACK;
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 3
+
+
+  82              		.loc 1 23 16
+  83 006a 23A00700 		sw	zero,%lo(BACK_COLOR)(a5)
+  84              		.loc 1 24 5 is_stmt 1
+  85 006e 97000000 		call	LCD_ShowString
+  85      E7800000 
+  86              	.LVL7:
+  25:mainASRAR.c   ****     LCD_ShowString(10, 40, "VARDE:", WHITE);
+  87              		.loc 1 25 5
+  88 0076 4164     		li	s0,65536
+  89 0078 37060000 		lui	a2,%hi(.LC2)
+  90 007c 9306F4FF 		addi	a3,s0,-1
+  91 0080 13060600 		addi	a2,a2,%lo(.LC2)
+  92 0084 93058002 		li	a1,40
+  93 0088 2945     		li	a0,10
+  94 008a 97000000 		call	LCD_ShowString
+  94      E7800000 
+  95              	.LVL8:
+  26:mainASRAR.c   ****     LCD_ShowString(10, 60, "KNAPP :", YELLOW);
+  96              		.loc 1 26 5
+  97 0092 37060000 		lui	a2,%hi(.LC3)
+  98 0096 930604FE 		addi	a3,s0,-32
+  99 009a 13060600 		addi	a2,a2,%lo(.LC3)
+ 100 009e 9305C003 		li	a1,60
+ 101 00a2 2945     		li	a0,10
+ 102              	.LBB2:
+  27:mainASRAR.c   **** 
+  28:mainASRAR.c   ****     while(1) {
+  29:mainASRAR.c   ****         // Kontrollera timern (varje millisekund)
+  30:mainASRAR.c   ****         if (t5expq()) {
+  31:mainASRAR.c   ****             ms_counter++;
+  32:mainASRAR.c   **** 
+  33:mainASRAR.c   ****             // Rotera kolumner och scanna rader
+  34:mainASRAR.c   ****             colset();
+  35:mainASRAR.c   ****             key = keyscan();
+  36:mainASRAR.c   **** 
+  37:mainASRAR.c   ****             // Om en knapp trycks ned
+  38:mainASRAR.c   ****             if (key != -1) {
+  39:mainASRAR.c   ****                 int val = lookUpTbl[key];
+  40:mainASRAR.c   ****                
+  41:mainASRAR.c   ****                 // Visa rå-indexet från keyscan för att felsöka
+  42:mainASRAR.c   ****                 LCD_ShowNum(70, 60, val, 2, YELLOW);
+ 103              		.loc 1 42 17 is_stmt 0
+ 104 00a4 930A04FE 		addi	s5,s0,-32
+ 105              	.LBE2:
+  26:mainASRAR.c   ****     LCD_ShowString(10, 60, "KNAPP :", YELLOW);
+ 106              		.loc 1 26 5
+ 107 00a8 97000000 		call	LCD_ShowString
+ 107      E7800000 
+ 108              	.LVL9:
+   9:mainASRAR.c   ****    
+ 109              		.loc 1 9 9
+ 110 00b0 0149     		li	s2,0
+   7:mainASRAR.c   ****     int key = -1;         // För att lagra knapptryck
+ 111              		.loc 1 7 9
+ 112 00b2 93042003 		li	s1,50
+  38:mainASRAR.c   ****                 int val = lookUpTbl[key];
+ 113              		.loc 1 38 16
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 4
+
+
+ 114 00b6 FD59     		li	s3,-1
+ 115              	.LBB3:
+  43:mainASRAR.c   **** 
+  44:mainASRAR.c   ****                 if (val == 10) { // Knapp A
+ 116              		.loc 1 44 20
+ 117 00b8 294B     		li	s6,10
+  45:mainASRAR.c   ****                     test_value++;
+  46:mainASRAR.c   ****                 }
+  47:mainASRAR.c   ****                 else if (val == 11) { // Knapp B
+ 118              		.loc 1 47 25
+ 119 00ba AD4B     		li	s7,11
+ 120              	.LBE3:
+  48:mainASRAR.c   ****                     test_value--;
+  49:mainASRAR.c   ****                 }
+  50:mainASRAR.c   ****             }
+  51:mainASRAR.c   **** 
+  52:mainASRAR.c   ****             // Uppdatera skärmen var 100:e ms (för att slippa flimmer)
+  53:mainASRAR.c   ****             if (ms_counter >= 100) {
+ 121              		.loc 1 53 16
+ 122 00bc 130A3006 		li	s4,99
+  54:mainASRAR.c   ****                 ms_counter = 0;
+  55:mainASRAR.c   ****                
+  56:mainASRAR.c   ****                 // Visa det aktuella test-värdet
+  57:mainASRAR.c   ****                 // Vi använder 3 i längd för att kunna visa 0-999
+  58:mainASRAR.c   ****                 LCD_ShowNum(70, 40, test_value, 3, WHITE);
+ 123              		.loc 1 58 17
+ 124 00c0 7D14     		addi	s0,s0,-1
+ 125              	.LVL10:
+ 126              	.L3:
+  28:mainASRAR.c   ****         // Kontrollera timern (varje millisekund)
+ 127              		.loc 1 28 5 is_stmt 1
+  30:mainASRAR.c   ****             ms_counter++;
+ 128              		.loc 1 30 9
+  30:mainASRAR.c   ****             ms_counter++;
+ 129              		.loc 1 30 13 is_stmt 0
+ 130 00c2 97000000 		call	t5expq
+ 130      E7800000 
+ 131              	.LVL11:
+  30:mainASRAR.c   ****             ms_counter++;
+ 132              		.loc 1 30 12
+ 133 00ca 65DD     		beq	a0,zero,.L3
+  31:mainASRAR.c   **** 
+ 134              		.loc 1 31 13 is_stmt 1
+  31:mainASRAR.c   **** 
+ 135              		.loc 1 31 23 is_stmt 0
+ 136 00cc 0509     		addi	s2,s2,1
+ 137              	.LVL12:
+  34:mainASRAR.c   ****             key = keyscan();
+ 138              		.loc 1 34 13 is_stmt 1
+ 139 00ce 97000000 		call	colset
+ 139      E7800000 
+ 140              	.LVL13:
+  35:mainASRAR.c   **** 
+ 141              		.loc 1 35 13
+  35:mainASRAR.c   **** 
+ 142              		.loc 1 35 19 is_stmt 0
+ 143 00d6 97000000 		call	keyscan
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 5
+
+
+ 143      E7800000 
+ 144              	.LVL14:
+  38:mainASRAR.c   ****                 int val = lookUpTbl[key];
+ 145              		.loc 1 38 13 is_stmt 1
+  38:mainASRAR.c   ****                 int val = lookUpTbl[key];
+ 146              		.loc 1 38 16 is_stmt 0
+ 147 00de 63053503 		beq	a0,s3,.L4
+ 148              	.LBB4:
+  39:mainASRAR.c   ****                
+ 149              		.loc 1 39 17 is_stmt 1
+  39:mainASRAR.c   ****                
+ 150              		.loc 1 39 21 is_stmt 0
+ 151 00e2 0A05     		slli	a0,a0,2
+ 152              	.LVL15:
+ 153 00e4 9C00     		addi	a5,sp,64
+ 154 00e6 3E95     		add	a0,a5,a0
+ 155 00e8 032C05FC 		lw	s8,-64(a0)
+ 156              	.LVL16:
+  42:mainASRAR.c   **** 
+ 157              		.loc 1 42 17 is_stmt 1
+ 158 00ec 5687     		mv	a4,s5
+ 159 00ee 8946     		li	a3,2
+ 160 00f0 6286     		mv	a2,s8
+ 161 00f2 9305C003 		li	a1,60
+ 162 00f6 13056004 		li	a0,70
+ 163 00fa 97000000 		call	LCD_ShowNum
+ 163      E7800000 
+ 164              	.LVL17:
+  44:mainASRAR.c   ****                     test_value++;
+ 165              		.loc 1 44 17
+  44:mainASRAR.c   ****                     test_value++;
+ 166              		.loc 1 44 20 is_stmt 0
+ 167 0102 63126C03 		bne	s8,s6,.L5
+  45:mainASRAR.c   ****                 }
+ 168              		.loc 1 45 21 is_stmt 1
+  45:mainASRAR.c   ****                 }
+ 169              		.loc 1 45 31 is_stmt 0
+ 170 0106 8504     		addi	s1,s1,1
+ 171              	.LVL18:
+ 172              	.L4:
+ 173              	.LBE4:
+  53:mainASRAR.c   ****                 ms_counter = 0;
+ 174              		.loc 1 53 13 is_stmt 1
+  53:mainASRAR.c   ****                 ms_counter = 0;
+ 175              		.loc 1 53 16 is_stmt 0
+ 176 0108 E35D2AFB 		ble	s2,s4,.L3
+  54:mainASRAR.c   ****                
+ 177              		.loc 1 54 17 is_stmt 1
+ 178              	.LVL19:
+ 179              		.loc 1 58 17
+ 180 010c 2287     		mv	a4,s0
+ 181 010e 8D46     		li	a3,3
+ 182 0110 2686     		mv	a2,s1
+ 183 0112 93058002 		li	a1,40
+ 184 0116 13056004 		li	a0,70
+ 185 011a 97000000 		call	LCD_ShowNum
+ 185      E7800000 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 6
+
+
+ 186              	.LVL20:
+  54:mainASRAR.c   ****                
+ 187              		.loc 1 54 28 is_stmt 0
+ 188 0122 0149     		li	s2,0
+ 189 0124 79BF     		j	.L3
+ 190              	.LVL21:
+ 191              	.L5:
+ 192              	.LBB5:
+  47:mainASRAR.c   ****                     test_value--;
+ 193              		.loc 1 47 22 is_stmt 1
+  47:mainASRAR.c   ****                     test_value--;
+ 194              		.loc 1 47 25 is_stmt 0
+ 195 0126 E3117CFF 		bne	s8,s7,.L4
+  48:mainASRAR.c   ****                 }
+ 196              		.loc 1 48 21 is_stmt 1
+  48:mainASRAR.c   ****                 }
+ 197              		.loc 1 48 31 is_stmt 0
+ 198 012a FD14     		addi	s1,s1,-1
+ 199              	.LVL22:
+ 200 012c F1BF     		j	.L4
+ 201              	.LBE5:
+ 202              		.cfi_endproc
+ 203              	.LFE2:
+ 205              		.section	.rodata
+ 206              		.align	2
+ 207              		.set	.LANCHOR0,. + 0
+ 208              	.LC0:
+ 209 0000 01000000 		.word	1
+ 210 0004 02000000 		.word	2
+ 211 0008 03000000 		.word	3
+ 212 000c 0A000000 		.word	10
+ 213 0010 04000000 		.word	4
+ 214 0014 05000000 		.word	5
+ 215 0018 06000000 		.word	6
+ 216 001c 0B000000 		.word	11
+ 217 0020 07000000 		.word	7
+ 218 0024 08000000 		.word	8
+ 219 0028 09000000 		.word	9
+ 220 002c 0C000000 		.word	12
+ 221 0030 0E000000 		.word	14
+ 222 0034 00000000 		.word	0
+ 223 0038 0F000000 		.word	15
+ 224 003c 0D000000 		.word	13
+ 225              		.section	.rodata.main.str1.4,"aMS",@progbits,1
+ 226              		.align	2
+ 227              	.LC1:
+ 228 0000 44524956 		.string	"DRIVRUTINSTEST"
+ 228      52555449 
+ 228      4E535445 
+ 228      535400
+ 229 000f 00       		.zero	1
+ 230              	.LC2:
+ 231 0010 56415244 		.string	"VARDE:"
+ 231      453A00
+ 232 0017 00       		.zero	1
+ 233              	.LC3:
+ 234 0018 4B4E4150 		.string	"KNAPP :"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 7
+
+
+ 234      50203A00 
+ 235              		.text
+ 236              	.Letext0:
+ 237              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 238              		.file 3 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 239              		.file 4 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
+ 240              		.file 5 "lcd.h"
+ 241              		.file 6 "drivers.h"
+ 242              		.file 7 "<built-in>"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 mainASRAR.c
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:13     .text.startup.main:0000000000000000 main
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:17     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:18     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:20     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:21     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:22     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:23     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:24     .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:26     .text.startup.main:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:28     .text.startup.main:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:33     .text.startup.main:0000000000000010 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:43     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:44     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:45     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:46     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:47     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:48     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:49     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:50     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:51     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:52     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:54     .text.startup.main:0000000000000024 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:57     .text.startup.main:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:60     .text.startup.main:0000000000000034 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:63     .text.startup.main:000000000000003c .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:66     .text.startup.main:0000000000000044 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:69     .text.startup.main:000000000000004c .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:73     .text.startup.main:0000000000000056 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:74     .text.startup.main:0000000000000056 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:76     .text.startup.main:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:78     .text.startup.main:000000000000005e .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:83     .text.startup.main:000000000000006a .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:85     .text.startup.main:000000000000006e .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:88     .text.startup.main:0000000000000076 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:97     .text.startup.main:0000000000000092 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:104    .text.startup.main:00000000000000a4 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:107    .text.startup.main:00000000000000a8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:110    .text.startup.main:00000000000000b0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:112    .text.startup.main:00000000000000b2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:114    .text.startup.main:00000000000000b6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:117    .text.startup.main:00000000000000b8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:119    .text.startup.main:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:122    .text.startup.main:00000000000000bc .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:124    .text.startup.main:00000000000000c0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:128    .text.startup.main:00000000000000c2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:129    .text.startup.main:00000000000000c2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:130    .text.startup.main:00000000000000c2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:133    .text.startup.main:00000000000000ca .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:135    .text.startup.main:00000000000000cc .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:136    .text.startup.main:00000000000000cc .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:139    .text.startup.main:00000000000000ce .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:142    .text.startup.main:00000000000000d6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:143    .text.startup.main:00000000000000d6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:146    .text.startup.main:00000000000000de .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:147    .text.startup.main:00000000000000de .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 9
+
+
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:150    .text.startup.main:00000000000000e2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:151    .text.startup.main:00000000000000e2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:158    .text.startup.main:00000000000000ec .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:166    .text.startup.main:0000000000000102 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:167    .text.startup.main:0000000000000102 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:169    .text.startup.main:0000000000000106 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:170    .text.startup.main:0000000000000106 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:175    .text.startup.main:0000000000000108 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:176    .text.startup.main:0000000000000108 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:179    .text.startup.main:000000000000010c .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:180    .text.startup.main:000000000000010c .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:188    .text.startup.main:0000000000000122 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:194    .text.startup.main:0000000000000126 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:195    .text.startup.main:0000000000000126 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:197    .text.startup.main:000000000000012a .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:198    .text.startup.main:000000000000012a .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:202    .text.startup.main:000000000000012e .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:207    .rodata:0000000000000000 .LANCHOR0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:205    .text.startup.main:000000000000012e .L0 
+                     .debug_frame:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:227    .rodata.main.str1.4:0000000000000000 .LC1
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:230    .rodata.main.str1.4:0000000000000010 .LC2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:233    .rodata.main.str1.4:0000000000000018 .LC3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:126    .text.startup.main:00000000000000c2 .L3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:172    .text.startup.main:0000000000000108 .L4
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:191    .text.startup.main:0000000000000126 .L5
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:690    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1125   .debug_str:00000000000001a8 .LASF27
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1095   .debug_str:000000000000010f .LASF28
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1093   .debug_str:00000000000000a1 .LASF29
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1051   .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1067   .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1105   .debug_str:000000000000013c .LASF0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1133   .debug_str:000000000000024d .LASF1
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1083   .debug_str:0000000000000058 .LASF2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1121   .debug_str:0000000000000196 .LASF3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1091   .debug_str:000000000000008e .LASF4
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1077   .debug_str:000000000000002c .LASF5
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1099   .debug_str:0000000000000125 .LASF9
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1089   .debug_str:000000000000007c .LASF6
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1113   .debug_str:000000000000016a .LASF7
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1081   .debug_str:0000000000000041 .LASF8
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1127   .debug_str:0000000000000230 .LASF10
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1117   .debug_str:000000000000017f .LASF12
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1131   .debug_str:0000000000000241 .LASF11
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1085   .debug_str:0000000000000066 .LASF13
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1103   .debug_str:0000000000000137 .LASF30
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:14     .text.startup.main:0000000000000000 .LFB2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:203    .text.startup.main:000000000000012e .LFE2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:967    .debug_loc:0000000000000000 .LLST0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1087   .debug_str:0000000000000071 .LASF14
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:980    .debug_loc:0000000000000021 .LLST1
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:993    .debug_loc:0000000000000041 .LLST2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1069   .debug_str:0000000000000000 .LASF15
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1006   .debug_loc:0000000000000061 .LLST3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1097   .debug_str:000000000000011b .LASF16
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1027   .debug_loc:0000000000000097 .LLST4
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 10
+
+
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:164    .text.startup.main:0000000000000102 .LVL17
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:55     .text.startup.main:000000000000002c .LVL1
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:58     .text.startup.main:0000000000000034 .LVL2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:61     .text.startup.main:000000000000003c .LVL3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:64     .text.startup.main:0000000000000044 .LVL4
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:67     .text.startup.main:000000000000004c .LVL5
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:71     .text.startup.main:0000000000000056 .LVL6
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:86     .text.startup.main:0000000000000076 .LVL7
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:95     .text.startup.main:0000000000000092 .LVL8
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:108    .text.startup.main:00000000000000b0 .LVL9
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:131    .text.startup.main:00000000000000ca .LVL11
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:140    .text.startup.main:00000000000000d6 .LVL13
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:144    .text.startup.main:00000000000000de .LVL14
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:186    .text.startup.main:0000000000000122 .LVL20
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1079   .debug_str:0000000000000035 .LASF17
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1115   .debug_str:0000000000000178 .LASF31
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1111   .debug_str:0000000000000159 .LASF32
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1107   .debug_str:0000000000000149 .LASF18
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1071   .debug_str:000000000000000b .LASF19
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1123   .debug_str:00000000000001a0 .LASF20
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1109   .debug_str:0000000000000150 .LASF21
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1073   .debug_str:0000000000000013 .LASF22
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1075   .debug_str:000000000000001d .LASF23
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1119   .debug_str:000000000000018f .LASF24
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1101   .debug_str:0000000000000130 .LASF25
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:1129   .debug_str:0000000000000239 .LASF26
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:25     .text.startup.main:0000000000000002 .LCFI0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:19     .text.startup.main:0000000000000000 .LVL0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:125    .text.startup.main:00000000000000c2 .LVL10
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:152    .text.startup.main:00000000000000e4 .LVL15
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:178    .text.startup.main:000000000000010c .LVL19
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:190    .text.startup.main:0000000000000126 .LVL21
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:156    .text.startup.main:00000000000000ec .LVL16
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:171    .text.startup.main:0000000000000108 .LVL18
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:244    .debug_info:0000000000000000 .Ldebug_info0
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:102    .text.startup.main:00000000000000a4 .LBB2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:105    .text.startup.main:00000000000000a8 .LBE2
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:115    .text.startup.main:00000000000000b8 .LBB3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:120    .text.startup.main:00000000000000bc .LBE3
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:148    .text.startup.main:00000000000000e2 .LBB4
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:173    .text.startup.main:0000000000000108 .LBE4
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:192    .text.startup.main:0000000000000126 .LBB5
+C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s:201    .text.startup.main:000000000000012e .LBE5
+
+UNDEFINED SYMBOLS
+memcpy
+t5omsi
+colinit
+keyinit
+Lcd_Init
+LCD_Clear
+BACK_COLOR
+LCD_ShowString
+t5expq
+colset
+keyscan
+LCD_ShowNum
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cckVb3CD.s 			page 11
+
+
