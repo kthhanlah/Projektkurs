@@ -10,3 +10,8 @@ void l88mem(int row, int data);     //Update LED8*8 <row> info with <data>.
 
 void keyinit(void);                 //Initialzie the Keyboard hw driver.
 int keyscan(void);                  //Scan the keybord, and return any key data.
+
+//NY
+void TpowerUpInitPWM(uint16_t ch);
+
+void setPB0_PWM(int percent);

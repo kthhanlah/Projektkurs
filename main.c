@@ -44,14 +44,14 @@ int main(void){
        
         if(status==1){
             set_led_status(1);
-            T2setLEDPercent(100);
+            setPB0_PWM(100);
             if(last_status==0){
                 LCD_Clear(BLACK);
             }
 
         }else{
             set_led_status(0);
-            T2setLEDPercent(0);
+            setPB0_PWM(0);
             if (last_status==1){ 
                 LCD_Clear(BLACK);  
             }
