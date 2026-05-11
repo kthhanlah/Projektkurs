@@ -44,14 +44,13 @@ int main(void){
        
         if(status==1){
             set_led_status(1);
-            setPB0_PWM(100);
+            
             if(last_status==0){
                 LCD_Clear(BLACK);
             }
 
         }else{
             set_led_status(0);
-            setPB0_PWM(0);
             if (last_status==1){ 
                 LCD_Clear(BLACK);  
             }
@@ -67,6 +66,3 @@ void ds18B20callBack(unsigned int temp){
         LCD_ShowString(30, 10, (unsigned char *)"C", WHITE);
     }
 }
-
-
-  

@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s 			page 1
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s 			page 1
 
 
    1              		.file	"isatty.c"
@@ -42,50 +42,50 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s 			page 1
   30              		.text
   31              	.Letext0:
   32              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s 			page 2
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 isatty.c
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:13     .text._isatty:0000000000000000 _isatty
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:17     .text._isatty:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:19     .text._isatty:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:20     .text._isatty:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:21     .text._isatty:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:24     .text._isatty:0000000000000002 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:27     .text._isatty:0000000000000008 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:30     .text._isatty:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:13     .text._isatty:0000000000000000 _isatty
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:17     .text._isatty:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:19     .text._isatty:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:20     .text._isatty:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:21     .text._isatty:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:24     .text._isatty:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:27     .text._isatty:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:30     .text._isatty:0000000000000008 .L0 
                      .debug_frame:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:174    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:356    .debug_str:000000000000009b .LASF17
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:346    .debug_str:0000000000000052 .LASF18
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:362    .debug_str:000000000000013f .LASF19
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:326    .debug_ranges:0000000000000000 .Ldebug_ranges0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:332    .debug_line:0000000000000000 .Ldebug_line0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:374    .debug_str:00000000000001d5 .LASF0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:348    .debug_str:0000000000000078 .LASF1
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:370    .debug_str:00000000000001c3 .LASF2
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:358    .debug_str:0000000000000123 .LASF3
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:352    .debug_str:000000000000008b .LASF4
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:340    .debug_str:0000000000000022 .LASF5
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:334    .debug_str:0000000000000000 .LASF6
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:342    .debug_str:0000000000000034 .LASF7
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:336    .debug_str:000000000000000e .LASF8
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:350    .debug_str:0000000000000086 .LASF9
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:364    .debug_str:00000000000001a8 .LASF10
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:372    .debug_str:00000000000001cd .LASF11
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:368    .debug_str:00000000000001bc .LASF12
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:338    .debug_str:000000000000001b .LASF13
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:344    .debug_str:000000000000004b .LASF14
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:354    .debug_str:0000000000000094 .LASF15
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:360    .debug_str:0000000000000136 .LASF16
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:366    .debug_str:00000000000001b4 .LASF20
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:14     .text._isatty:0000000000000000 .LFB0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:28     .text._isatty:0000000000000008 .LFE0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:293    .debug_loc:0000000000000000 .LLST0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:18     .text._isatty:0000000000000000 .LVL0
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:22     .text._isatty:0000000000000002 .LVL1
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:25     .text._isatty:0000000000000006 .LVL2
-C:\Users\hanna\AppData\Local\Temp\ccr1u3mg.s:34     .debug_info:0000000000000000 .Ldebug_info0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:174    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:356    .debug_str:000000000000009b .LASF17
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:346    .debug_str:0000000000000052 .LASF18
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:362    .debug_str:000000000000013f .LASF19
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:326    .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:332    .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:374    .debug_str:00000000000001d5 .LASF0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:348    .debug_str:0000000000000078 .LASF1
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:370    .debug_str:00000000000001c3 .LASF2
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:358    .debug_str:0000000000000123 .LASF3
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:352    .debug_str:000000000000008b .LASF4
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:340    .debug_str:0000000000000022 .LASF5
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:334    .debug_str:0000000000000000 .LASF6
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:342    .debug_str:0000000000000034 .LASF7
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:336    .debug_str:000000000000000e .LASF8
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:350    .debug_str:0000000000000086 .LASF9
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:364    .debug_str:00000000000001a8 .LASF10
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:372    .debug_str:00000000000001cd .LASF11
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:368    .debug_str:00000000000001bc .LASF12
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:338    .debug_str:000000000000001b .LASF13
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:344    .debug_str:000000000000004b .LASF14
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:354    .debug_str:0000000000000094 .LASF15
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:360    .debug_str:0000000000000136 .LASF16
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:366    .debug_str:00000000000001b4 .LASF20
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:14     .text._isatty:0000000000000000 .LFB0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:28     .text._isatty:0000000000000008 .LFE0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:293    .debug_loc:0000000000000000 .LLST0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:18     .text._isatty:0000000000000000 .LVL0
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:22     .text._isatty:0000000000000002 .LVL1
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:25     .text._isatty:0000000000000006 .LVL2
+C:\Users\hanna\AppData\Local\Temp\ccRjUwJf.s:34     .debug_info:0000000000000000 .Ldebug_info0
 
 NO UNDEFINED SYMBOLS

@@ -1719,237 +1719,237 @@ END GROUP
  *(.text.unlikely .text.unlikely.*)
  *(.text.startup .text.startup.*)
  .text.startup.main
-                0x0000000008000a5c       0xcc build/main.o
+                0x0000000008000a5c       0xb6 build/main.o
                 0x0000000008000a5c                main
  *(.text .text.*)
  .text.eclic_global_interrupt_enable
-                0x0000000008000b28        0x6 build/gd32vf103_eclic.o
-                0x0000000008000b28                eclic_global_interrupt_enable
+                0x0000000008000b12        0x6 build/gd32vf103_eclic.o
+                0x0000000008000b12                eclic_global_interrupt_enable
  .text.gpio_init
-                0x0000000008000b2e       0xa4 build/gd32vf103_gpio.o
-                0x0000000008000b2e                gpio_init
+                0x0000000008000b18       0xa4 build/gd32vf103_gpio.o
+                0x0000000008000b18                gpio_init
  .text.gpio_bit_set
-                0x0000000008000bd2        0x4 build/gd32vf103_gpio.o
-                0x0000000008000bd2                gpio_bit_set
+                0x0000000008000bbc        0x4 build/gd32vf103_gpio.o
+                0x0000000008000bbc                gpio_bit_set
  .text.gpio_bit_reset
-                0x0000000008000bd6        0x4 build/gd32vf103_gpio.o
-                0x0000000008000bd6                gpio_bit_reset
+                0x0000000008000bc0        0x4 build/gd32vf103_gpio.o
+                0x0000000008000bc0                gpio_bit_reset
  .text.gpio_bit_write
-                0x0000000008000bda        0xa build/gd32vf103_gpio.o
-                0x0000000008000bda                gpio_bit_write
+                0x0000000008000bc4        0xa build/gd32vf103_gpio.o
+                0x0000000008000bc4                gpio_bit_write
  .text.gpio_input_bit_get
-                0x0000000008000be4        0xa build/gd32vf103_gpio.o
-                0x0000000008000be4                gpio_input_bit_get
+                0x0000000008000bce        0xa build/gd32vf103_gpio.o
+                0x0000000008000bce                gpio_input_bit_get
  .text.rcu_periph_clock_enable
-                0x0000000008000bee       0x18 build/gd32vf103_rcu.o
-                0x0000000008000bee                rcu_periph_clock_enable
+                0x0000000008000bd8       0x18 build/gd32vf103_rcu.o
+                0x0000000008000bd8                rcu_periph_clock_enable
  .text.rcu_periph_reset_enable
-                0x0000000008000c06       0x18 build/gd32vf103_rcu.o
-                0x0000000008000c06                rcu_periph_reset_enable
+                0x0000000008000bf0       0x18 build/gd32vf103_rcu.o
+                0x0000000008000bf0                rcu_periph_reset_enable
  .text.rcu_periph_reset_disable
-                0x0000000008000c1e       0x1c build/gd32vf103_rcu.o
-                0x0000000008000c1e                rcu_periph_reset_disable
+                0x0000000008000c08       0x1c build/gd32vf103_rcu.o
+                0x0000000008000c08                rcu_periph_reset_disable
  .text.rcu_clock_freq_get
-                0x0000000008000c3a      0x13a build/gd32vf103_rcu.o
-                0x0000000008000c3a                rcu_clock_freq_get
+                0x0000000008000c24      0x13a build/gd32vf103_rcu.o
+                0x0000000008000c24                rcu_clock_freq_get
  .text.spi_struct_para_init
-                0x0000000008000d74       0x1a build/gd32vf103_spi.o
-                0x0000000008000d74                spi_struct_para_init
+                0x0000000008000d5e       0x1a build/gd32vf103_spi.o
+                0x0000000008000d5e                spi_struct_para_init
  .text.spi_init
-                0x0000000008000d8e       0x36 build/gd32vf103_spi.o
-                0x0000000008000d8e                spi_init
+                0x0000000008000d78       0x36 build/gd32vf103_spi.o
+                0x0000000008000d78                spi_init
  .text.spi_enable
-                0x0000000008000dc4        0xa build/gd32vf103_spi.o
-                0x0000000008000dc4                spi_enable
+                0x0000000008000dae        0xa build/gd32vf103_spi.o
+                0x0000000008000dae                spi_enable
  .text.spi_i2s_data_transmit
-                0x0000000008000dce        0x4 build/gd32vf103_spi.o
-                0x0000000008000dce                spi_i2s_data_transmit
+                0x0000000008000db8        0x4 build/gd32vf103_spi.o
+                0x0000000008000db8                spi_i2s_data_transmit
  .text.spi_crc_polynomial_set
-                0x0000000008000dd2        0xc build/gd32vf103_spi.o
-                0x0000000008000dd2                spi_crc_polynomial_set
+                0x0000000008000dbc        0xc build/gd32vf103_spi.o
+                0x0000000008000dbc                spi_crc_polynomial_set
  .text.spi_i2s_flag_get
-                0x0000000008000dde        0xa build/gd32vf103_spi.o
-                0x0000000008000dde                spi_i2s_flag_get
+                0x0000000008000dc8        0xa build/gd32vf103_spi.o
+                0x0000000008000dc8                spi_i2s_flag_get
  .text.timer_deinit
-                0x0000000008000de8       0xd2 build/gd32vf103_timer.o
-                0x0000000008000de8                timer_deinit
+                0x0000000008000dd2       0xd2 build/gd32vf103_timer.o
+                0x0000000008000dd2                timer_deinit
  .text.timer_struct_para_init
-                0x0000000008000eba       0x18 build/gd32vf103_timer.o
-                0x0000000008000eba                timer_struct_para_init
+                0x0000000008000ea4       0x18 build/gd32vf103_timer.o
+                0x0000000008000ea4                timer_struct_para_init
  .text.timer_init
-                0x0000000008000ed2       0x8e build/gd32vf103_timer.o
-                0x0000000008000ed2                timer_init
+                0x0000000008000ebc       0x8e build/gd32vf103_timer.o
+                0x0000000008000ebc                timer_init
  .text.timer_enable
-                0x0000000008000f60        0xa build/gd32vf103_timer.o
-                0x0000000008000f60                timer_enable
+                0x0000000008000f4a        0xa build/gd32vf103_timer.o
+                0x0000000008000f4a                timer_enable
  .text.timer_auto_reload_shadow_enable
-                0x0000000008000f6a        0xa build/gd32vf103_timer.o
-                0x0000000008000f6a                timer_auto_reload_shadow_enable
+                0x0000000008000f54        0xa build/gd32vf103_timer.o
+                0x0000000008000f54                timer_auto_reload_shadow_enable
  .text.timer_channel_output_struct_para_init
-                0x0000000008000f74       0x1a build/gd32vf103_timer.o
-                0x0000000008000f74                timer_channel_output_struct_para_init
+                0x0000000008000f5e       0x1a build/gd32vf103_timer.o
+                0x0000000008000f5e                timer_channel_output_struct_para_init
  .text.timer_channel_output_config
-                0x0000000008000f8e      0x23c build/gd32vf103_timer.o
-                0x0000000008000f8e                timer_channel_output_config
+                0x0000000008000f78      0x23c build/gd32vf103_timer.o
+                0x0000000008000f78                timer_channel_output_config
  .text.timer_channel_output_mode_config
-                0x00000000080011ca       0x56 build/gd32vf103_timer.o
-                0x00000000080011ca                timer_channel_output_mode_config
+                0x00000000080011b4       0x56 build/gd32vf103_timer.o
+                0x00000000080011b4                timer_channel_output_mode_config
  .text.timer_channel_output_pulse_value_config
-                0x0000000008001220       0x26 build/gd32vf103_timer.o
-                0x0000000008001220                timer_channel_output_pulse_value_config
+                0x000000000800120a       0x26 build/gd32vf103_timer.o
+                0x000000000800120a                timer_channel_output_pulse_value_config
  .text.timer_channel_output_shadow_config
-                0x0000000008001246       0x56 build/gd32vf103_timer.o
-                0x0000000008001246                timer_channel_output_shadow_config
+                0x0000000008001230       0x56 build/gd32vf103_timer.o
+                0x0000000008001230                timer_channel_output_shadow_config
  .text.usart_deinit
-                0x000000000800129c       0xa2 build/gd32vf103_usart.o
-                0x000000000800129c                usart_deinit
+                0x0000000008001286       0xa2 build/gd32vf103_usart.o
+                0x0000000008001286                usart_deinit
  .text.usart_baudrate_set
-                0x000000000800133e       0x6c build/gd32vf103_usart.o
-                0x000000000800133e                usart_baudrate_set
+                0x0000000008001328       0x6c build/gd32vf103_usart.o
+                0x0000000008001328                usart_baudrate_set
  .text.usart_parity_config
-                0x00000000080013aa       0x10 build/gd32vf103_usart.o
-                0x00000000080013aa                usart_parity_config
+                0x0000000008001394       0x10 build/gd32vf103_usart.o
+                0x0000000008001394                usart_parity_config
  .text.usart_word_length_set
-                0x00000000080013ba       0x12 build/gd32vf103_usart.o
-                0x00000000080013ba                usart_word_length_set
+                0x00000000080013a4       0x12 build/gd32vf103_usart.o
+                0x00000000080013a4                usart_word_length_set
  .text.usart_stop_bit_set
-                0x00000000080013cc       0x12 build/gd32vf103_usart.o
-                0x00000000080013cc                usart_stop_bit_set
+                0x00000000080013b6       0x12 build/gd32vf103_usart.o
+                0x00000000080013b6                usart_stop_bit_set
  .text.usart_enable
-                0x00000000080013de        0xa build/gd32vf103_usart.o
-                0x00000000080013de                usart_enable
+                0x00000000080013c8        0xa build/gd32vf103_usart.o
+                0x00000000080013c8                usart_enable
  .text.usart_transmit_config
-                0x00000000080013e8        0xa build/gd32vf103_usart.o
-                0x00000000080013e8                usart_transmit_config
+                0x00000000080013d2        0xa build/gd32vf103_usart.o
+                0x00000000080013d2                usart_transmit_config
  .text.usart_receive_config
-                0x00000000080013f2        0xa build/gd32vf103_usart.o
-                0x00000000080013f2                usart_receive_config
+                0x00000000080013dc        0xa build/gd32vf103_usart.o
+                0x00000000080013dc                usart_receive_config
  .text.usart_data_transmit
-                0x00000000080013fc        0x8 build/gd32vf103_usart.o
-                0x00000000080013fc                usart_data_transmit
+                0x00000000080013e6        0x8 build/gd32vf103_usart.o
+                0x00000000080013e6                usart_data_transmit
  .text.usart_hardware_flow_rts_config
-                0x0000000008001404        0xc build/gd32vf103_usart.o
-                0x0000000008001404                usart_hardware_flow_rts_config
+                0x00000000080013ee        0xc build/gd32vf103_usart.o
+                0x00000000080013ee                usart_hardware_flow_rts_config
  .text.usart_hardware_flow_cts_config
-                0x0000000008001410        0xc build/gd32vf103_usart.o
-                0x0000000008001410                usart_hardware_flow_cts_config
+                0x00000000080013fa        0xc build/gd32vf103_usart.o
+                0x00000000080013fa                usart_hardware_flow_cts_config
  .text.usart_flag_get
-                0x000000000800141c       0x14 build/gd32vf103_usart.o
-                0x000000000800141c                usart_flag_get
+                0x0000000008001406       0x14 build/gd32vf103_usart.o
+                0x0000000008001406                usart_flag_get
  .text.usart_interrupt_disable
-                0x0000000008001430       0x1c build/gd32vf103_usart.o
-                0x0000000008001430                usart_interrupt_disable
+                0x000000000800141a       0x1c build/gd32vf103_usart.o
+                0x000000000800141a                usart_interrupt_disable
  .text.SystemInit
-                0x000000000800144c      0x11c build/system_gd32vf103.o
-                0x000000000800144c                SystemInit
- .text._exit    0x0000000008001568       0x4c build/_exit.o
-                0x0000000008001568                _exit
+                0x0000000008001436      0x11c build/system_gd32vf103.o
+                0x0000000008001436                SystemInit
+ .text._exit    0x0000000008001552       0x4c build/_exit.o
+                0x0000000008001552                _exit
  .text.write_hex
-                0x00000000080015b4       0x7c build/write_hex.o
-                0x00000000080015b4                write_hex
+                0x000000000800159e       0x7c build/write_hex.o
+                0x000000000800159e                write_hex
  .text.get_timer_value
-                0x0000000008001630       0x10 build/n200_func.o
-                0x0000000008001630                get_timer_value
+                0x000000000800161a       0x10 build/n200_func.o
+                0x000000000800161a                get_timer_value
  .text.eclic_init
-                0x0000000008001640       0x22 build/n200_func.o
-                0x0000000008001640                eclic_init
+                0x000000000800162a       0x22 build/n200_func.o
+                0x000000000800162a                eclic_init
  .text.eclic_enable_interrupt
-                0x0000000008001662       0x12 build/n200_func.o
-                0x0000000008001662                eclic_enable_interrupt
+                0x000000000800164c       0x12 build/n200_func.o
+                0x000000000800164c                eclic_enable_interrupt
  .text.eclic_get_nlbits
-                0x0000000008001674        0xe build/n200_func.o
-                0x0000000008001674                eclic_get_nlbits
+                0x000000000800165e        0xe build/n200_func.o
+                0x000000000800165e                eclic_get_nlbits
  .text.eclic_set_irq_lvl_abs
-                0x0000000008001682       0x58 build/n200_func.o
-                0x0000000008001682                eclic_set_irq_lvl_abs
+                0x000000000800166c       0x58 build/n200_func.o
+                0x000000000800166c                eclic_set_irq_lvl_abs
  .text.eclic_set_irq_priority
-                0x00000000080016da       0x52 build/n200_func.o
-                0x00000000080016da                eclic_set_irq_priority
+                0x00000000080016c4       0x52 build/n200_func.o
+                0x00000000080016c4                eclic_set_irq_priority
  .text.eclic_mode_enable
-                0x000000000800172c       0x12 build/n200_func.o
-                0x000000000800172c                eclic_mode_enable
+                0x0000000008001716       0x12 build/n200_func.o
+                0x0000000008001716                eclic_mode_enable
  .text.eclic_set_vmode
-                0x000000000800173e       0x18 build/n200_func.o
-                0x000000000800173e                eclic_set_vmode
+                0x0000000008001728       0x18 build/n200_func.o
+                0x0000000008001728                eclic_set_vmode
  .text.handle_nmi
-                0x0000000008001756       0x22 build/handlers.o
-                0x0000000008001756                handle_nmi
+                0x0000000008001740       0x22 build/handlers.o
+                0x0000000008001740                handle_nmi
  .text.handle_trap
-                0x0000000008001778       0x38 build/handlers.o
-                0x0000000008001778                handle_trap
- .text._init    0x00000000080017b0       0x2c build/init.o
-                0x00000000080017b0                _init
- .text._fini    0x00000000080017dc        0x2 build/init.o
-                0x00000000080017dc                _fini
+                0x0000000008001762       0x38 build/handlers.o
+                0x0000000008001762                handle_trap
+ .text._init    0x000000000800179a       0x2c build/init.o
+                0x000000000800179a                _init
+ .text._fini    0x00000000080017c6        0x2 build/init.o
+                0x00000000080017c6                _fini
  .text.ds18B20fsm
-                0x00000000080017de      0x128 build/ds18b20.o
-                0x00000000080017de                ds18B20fsm
+                0x00000000080017c8      0x128 build/ds18b20.o
+                0x00000000080017c8                ds18B20fsm
  .text.ds18B20init
-                0x0000000008001906       0x70 build/ds18b20.o
-                0x0000000008001906                ds18B20init
+                0x00000000080018f0       0x70 build/ds18b20.o
+                0x00000000080018f0                ds18B20init
  .text.eclicw_enable
-                0x0000000008001976       0x9a build/eclicw.o
-                0x0000000008001976                eclicw_enable
+                0x0000000008001960       0x9a build/eclicw.o
+                0x0000000008001960                eclicw_enable
  .text.eclic_mtip_handler
-                0x0000000008001a10       0x52 build/eclicw.o
-                0x0000000008001a10                eclic_mtip_handler
+                0x00000000080019fa       0x52 build/eclicw.o
+                0x00000000080019fa                eclic_mtip_handler
  .text.USART0_IRQHandler
-                0x0000000008001a62       0x52 build/eclicw.o
-                0x0000000008001a62                USART0_IRQHandler
+                0x0000000008001a4c       0x52 build/eclicw.o
+                0x0000000008001a4c                USART0_IRQHandler
  .text.lcd_delay_1ms
-                0x0000000008001ab4       0xce build/lcd.o
-                0x0000000008001ab4                lcd_delay_1ms
+                0x0000000008001a9e       0xce build/lcd.o
+                0x0000000008001a9e                lcd_delay_1ms
  .text.LCD_WR_Queue
-                0x0000000008001b82       0xc2 build/lcd.o
-                0x0000000008001b82                LCD_WR_Queue
+                0x0000000008001b6c       0xc2 build/lcd.o
+                0x0000000008001b6c                LCD_WR_Queue
  .text.LCD_Wait_On_Queue
-                0x0000000008001c44       0x30 build/lcd.o
-                0x0000000008001c44                LCD_Wait_On_Queue
+                0x0000000008001c2e       0x30 build/lcd.o
+                0x0000000008001c2e                LCD_Wait_On_Queue
  .text.LCD_Write_Bus
-                0x0000000008001c74       0x58 build/lcd.o
-                0x0000000008001c74                LCD_Write_Bus
+                0x0000000008001c5e       0x58 build/lcd.o
+                0x0000000008001c5e                LCD_Write_Bus
  .text.LCD_WR_DATA
-                0x0000000008001ccc       0x2c build/lcd.o
-                0x0000000008001ccc                LCD_WR_DATA
+                0x0000000008001cb6       0x2c build/lcd.o
+                0x0000000008001cb6                LCD_WR_DATA
  .text.LCD_Address_Set
-                0x0000000008001cf8       0x82 build/lcd.o
-                0x0000000008001cf8                LCD_Address_Set
+                0x0000000008001ce2       0x82 build/lcd.o
+                0x0000000008001ce2                LCD_Address_Set
  .text.spi_config
-                0x0000000008001d7a       0x6c build/lcd.o
-                0x0000000008001d7a                spi_config
+                0x0000000008001d64       0x6c build/lcd.o
+                0x0000000008001d64                spi_config
  .text.Lcd_SetType
-                0x0000000008001de6       0x26 build/lcd.o
-                0x0000000008001de6                Lcd_SetType
+                0x0000000008001dd0       0x26 build/lcd.o
+                0x0000000008001dd0                Lcd_SetType
  .text.Lcd_Init
-                0x0000000008001e0c      0x464 build/lcd.o
-                0x0000000008001e0c                Lcd_Init
+                0x0000000008001df6      0x464 build/lcd.o
+                0x0000000008001df6                Lcd_Init
  .text.LCD_Clear
-                0x0000000008002270       0x46 build/lcd.o
-                0x0000000008002270                LCD_Clear
+                0x000000000800225a       0x46 build/lcd.o
+                0x000000000800225a                LCD_Clear
  .text.LCD_DrawPoint
-                0x00000000080022b6       0x24 build/lcd.o
-                0x00000000080022b6                LCD_DrawPoint
+                0x00000000080022a0       0x24 build/lcd.o
+                0x00000000080022a0                LCD_DrawPoint
  .text.LCD_ShowChar
-                0x00000000080022da       0xde build/lcd.o
-                0x00000000080022da                LCD_ShowChar
+                0x00000000080022c4       0xde build/lcd.o
+                0x00000000080022c4                LCD_ShowChar
  .text.LCD_ShowString
-                0x00000000080023b8       0x76 build/lcd.o
-                0x00000000080023b8                LCD_ShowString
+                0x00000000080023a2       0x76 build/lcd.o
+                0x00000000080023a2                LCD_ShowString
  .text.LCD_ShowNum
-                0x000000000800242e       0xa8 build/lcd.o
-                0x000000000800242e                LCD_ShowNum
+                0x0000000008002418       0xa8 build/lcd.o
+                0x0000000008002418                LCD_ShowNum
  .text.ds18B20callBack
-                0x00000000080024d6       0x5a build/main.o
-                0x00000000080024d6                ds18B20callBack
+                0x00000000080024c0       0x5a build/main.o
+                0x00000000080024c0                ds18B20callBack
  .text.TpowerUpInitPWM
-                0x0000000008002530      0x26e build/pwm.o
-                0x0000000008002530                TpowerUpInitPWM
+                0x000000000800251a      0x26e build/pwm.o
+                0x000000000800251a                TpowerUpInitPWM
  .text.u0_TX_Queue
-                0x000000000800279e       0x88 build/usart.o
-                0x000000000800279e                u0_TX_Queue
- .text.u0init   0x0000000008002826      0x10a build/usart.o
-                0x0000000008002826                u0init
- *fill*         0x0000000008002930       0x10 
+                0x0000000008002788       0x88 build/usart.o
+                0x0000000008002788                u0_TX_Queue
+ .text.u0init   0x0000000008002810      0x10a build/usart.o
+                0x0000000008002810                u0init
+ *fill*         0x000000000800291a       0x26 
  .text.trap     0x0000000008002940       0x82 build/entry.o
                 0x0000000008002940                trap_entry
  *fill*         0x00000000080029c2        0x2 
@@ -2025,8 +2025,6 @@ END GROUP
  .rela.text.handle_trap
                 0x0000000008003d50        0x0 build/gd32vf103_eclic.o
  .rela.text.LCD_ShowChar
-                0x0000000008003d50        0x0 build/gd32vf103_eclic.o
- .rela.text.startup.main
                 0x0000000008003d50        0x0 build/gd32vf103_eclic.o
  .rela.init     0x0000000008003d50        0x0 build/gd32vf103_eclic.o
  .rela.text.trap
@@ -2180,7 +2178,7 @@ END GROUP
                 [!provide]                        PROVIDE (_dbg_sp = .)
 OUTPUT(build/gd32vf103.elf elf32-littleriscv)
 
-.debug_info     0x0000000000000000    0x11a8e
+.debug_info     0x0000000000000000    0x11a59
  .debug_info    0x0000000000000000      0x2ac build/gd32vf103_eclic.o
  .debug_info    0x00000000000002ac      0x6f6 build/gd32vf103_gpio.o
  .debug_info    0x00000000000009a2      0xf51 build/gd32vf103_rcu.o
@@ -2196,22 +2194,22 @@ OUTPUT(build/gd32vf103.elf elf32-littleriscv)
  .debug_info    0x0000000000007d51      0x434 build/ds18b20.o
  .debug_info    0x0000000000008185      0x3da build/eclicw.o
  .debug_info    0x000000000000855f     0x2fa5 build/lcd.o
- .debug_info    0x000000000000b504      0xddc build/main.o
- .debug_info    0x000000000000c2e0      0x822 build/pwm.o
- .debug_info    0x000000000000cb02      0x816 build/usart.o
- .debug_info    0x000000000000d318       0x26 build/start.o
- .debug_info    0x000000000000d33e       0x22 build/entry.o
- .debug_info    0x000000000000d360       0x26 build/drivers.o
- .debug_info    0x000000000000d386       0x26 build/switch1.o
- .debug_info    0x000000000000d3ac      0x734 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(divdf3.o)
- .debug_info    0x000000000000dae0      0x286 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(ledf2.o)
- .debug_info    0x000000000000dd66      0x76c c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(muldf3.o)
- .debug_info    0x000000000000e4d2      0x2af c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
- .debug_info    0x000000000000e781      0x2e8 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
- .debug_info    0x000000000000ea69      0xc72 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
- .debug_info    0x000000000000f6db      0xc72 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
- .debug_info    0x000000000001034d      0xbd7 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
- .debug_info    0x0000000000010f24      0xb6a c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clz.o)
+ .debug_info    0x000000000000b504      0xda7 build/main.o
+ .debug_info    0x000000000000c2ab      0x822 build/pwm.o
+ .debug_info    0x000000000000cacd      0x816 build/usart.o
+ .debug_info    0x000000000000d2e3       0x26 build/start.o
+ .debug_info    0x000000000000d309       0x22 build/entry.o
+ .debug_info    0x000000000000d32b       0x26 build/drivers.o
+ .debug_info    0x000000000000d351       0x26 build/switch1.o
+ .debug_info    0x000000000000d377      0x734 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(divdf3.o)
+ .debug_info    0x000000000000daab      0x286 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(ledf2.o)
+ .debug_info    0x000000000000dd31      0x76c c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(muldf3.o)
+ .debug_info    0x000000000000e49d      0x2af c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
+ .debug_info    0x000000000000e74c      0x2e8 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
+ .debug_info    0x000000000000ea34      0xc72 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
+ .debug_info    0x000000000000f6a6      0xc72 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
+ .debug_info    0x0000000000010318      0xbd7 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
+ .debug_info    0x0000000000010eef      0xb6a c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clz.o)
 
 .debug_abbrev   0x0000000000000000     0x37af
  .debug_abbrev  0x0000000000000000      0x112 build/gd32vf103_eclic.o
@@ -2365,7 +2363,7 @@ OUTPUT(build/gd32vf103.elf elf32-littleriscv)
  .debug_ranges  0x00000000000010a8       0x68 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
  .debug_ranges  0x0000000000001110       0x20 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
 
-.debug_line     0x0000000000000000    0x1059b
+.debug_line     0x0000000000000000    0x1058f
  .debug_line    0x0000000000000000      0x380 build/gd32vf103_eclic.o
  .debug_line    0x0000000000000380      0xb64 build/gd32vf103_gpio.o
  .debug_line    0x0000000000000ee4     0x1557 build/gd32vf103_rcu.o
@@ -2381,24 +2379,24 @@ OUTPUT(build/gd32vf103.elf elf32-littleriscv)
  .debug_line    0x000000000000906f      0x4c0 build/ds18b20.o
  .debug_line    0x000000000000952f      0x31d build/eclicw.o
  .debug_line    0x000000000000984c     0x1ef3 build/lcd.o
- .debug_line    0x000000000000b73f      0x4f6 build/main.o
- .debug_line    0x000000000000bc35      0x5b7 build/pwm.o
- .debug_line    0x000000000000c1ec      0x531 build/usart.o
- .debug_line    0x000000000000c71d      0x189 build/start.o
- .debug_line    0x000000000000c8a6       0xe5 build/entry.o
- .debug_line    0x000000000000c98b      0x526 build/drivers.o
- .debug_line    0x000000000000ceb1      0x1a2 build/switch1.o
- .debug_line    0x000000000000d053      0xe35 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(divdf3.o)
- .debug_line    0x000000000000de88      0x303 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(ledf2.o)
- .debug_line    0x000000000000e18b      0xbf8 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(muldf3.o)
- .debug_line    0x000000000000ed83      0x239 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
- .debug_line    0x000000000000efbc      0x3f5 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
- .debug_line    0x000000000000f3b1      0x4c4 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
- .debug_line    0x000000000000f875      0x4c4 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
- .debug_line    0x000000000000fd39      0x472 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
- .debug_line    0x00000000000101ab      0x3f0 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clz.o)
+ .debug_line    0x000000000000b73f      0x4ea build/main.o
+ .debug_line    0x000000000000bc29      0x5b7 build/pwm.o
+ .debug_line    0x000000000000c1e0      0x531 build/usart.o
+ .debug_line    0x000000000000c711      0x189 build/start.o
+ .debug_line    0x000000000000c89a       0xe5 build/entry.o
+ .debug_line    0x000000000000c97f      0x526 build/drivers.o
+ .debug_line    0x000000000000cea5      0x1a2 build/switch1.o
+ .debug_line    0x000000000000d047      0xe35 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(divdf3.o)
+ .debug_line    0x000000000000de7c      0x303 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(ledf2.o)
+ .debug_line    0x000000000000e17f      0xbf8 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(muldf3.o)
+ .debug_line    0x000000000000ed77      0x239 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
+ .debug_line    0x000000000000efb0      0x3f5 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
+ .debug_line    0x000000000000f3a5      0x4c4 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
+ .debug_line    0x000000000000f869      0x4c4 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
+ .debug_line    0x000000000000fd2d      0x472 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
+ .debug_line    0x000000000001019f      0x3f0 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clz.o)
 
-.debug_str      0x0000000000000000     0x400f
+.debug_str      0x0000000000000000     0x4004
  .debug_str     0x0000000000000000      0x2cd build/gd32vf103_eclic.o
                                         0x32e (size before relaxing)
  .debug_str     0x00000000000002cd      0x3fc build/gd32vf103_gpio.o
@@ -2429,37 +2427,37 @@ OUTPUT(build/gd32vf103.elf elf32-littleriscv)
                                         0x63b (size before relaxing)
  .debug_str     0x000000000000329a      0x24f build/lcd.o
                                         0xae0 (size before relaxing)
- .debug_str     0x00000000000034e9       0xb6 build/main.o
-                                        0x6da (size before relaxing)
- .debug_str     0x000000000000359f       0x6b build/pwm.o
+ .debug_str     0x00000000000034e9       0xab build/main.o
+                                        0x6cf (size before relaxing)
+ .debug_str     0x0000000000003594       0x6b build/pwm.o
                                         0x5a4 (size before relaxing)
- .debug_str     0x000000000000360a       0x7f build/usart.o
+ .debug_str     0x00000000000035ff       0x7f build/usart.o
                                         0x956 (size before relaxing)
- .debug_str     0x0000000000003689       0x37 build/start.o
+ .debug_str     0x000000000000367e       0x37 build/start.o
                                          0xa0 (size before relaxing)
- .debug_str     0x00000000000036c0       0x2b build/entry.o
+ .debug_str     0x00000000000036b5       0x2b build/entry.o
                                          0xa0 (size before relaxing)
- .debug_str     0x00000000000036eb        0xa build/drivers.o
+ .debug_str     0x00000000000036e0        0xa build/drivers.o
                                          0x7f (size before relaxing)
- .debug_str     0x00000000000036f5        0xa build/switch1.o
+ .debug_str     0x00000000000036ea        0xa build/switch1.o
                                          0x7f (size before relaxing)
- .debug_str     0x00000000000036ff      0x3c7 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(divdf3.o)
+ .debug_str     0x00000000000036f4      0x3c7 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(divdf3.o)
                                         0x452 (size before relaxing)
- .debug_str     0x0000000000003ac6       0x7b c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(ledf2.o)
+ .debug_str     0x0000000000003abb       0x7b c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(ledf2.o)
                                         0x2ce (size before relaxing)
- .debug_str     0x0000000000003b41      0x15f c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(muldf3.o)
+ .debug_str     0x0000000000003b36      0x15f c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(muldf3.o)
                                         0x4aa (size before relaxing)
- .debug_str     0x0000000000003ca0       0xfd c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
+ .debug_str     0x0000000000003c95       0xfd c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
                                         0x33a (size before relaxing)
- .debug_str     0x0000000000003d9d       0x4c c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
+ .debug_str     0x0000000000003d92       0x4c c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(floatundidf.o)
                                         0x344 (size before relaxing)
- .debug_str     0x0000000000003de9      0x20e c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
+ .debug_str     0x0000000000003dde      0x20e c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
                                         0x860 (size before relaxing)
- .debug_str     0x0000000000003ff7        0xa c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
+ .debug_str     0x0000000000003fec        0xa c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
                                         0x860 (size before relaxing)
- .debug_str     0x0000000000004001        0xe c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
+ .debug_str     0x0000000000003ff6        0xe c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
                                         0x82e (size before relaxing)
- .debug_str     0x000000000000400f      0x811 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clz.o)
+ .debug_str     0x0000000000004004      0x811 c:/users/hanna/desktop/kth/he1041/toolchain-gd32v-v202-win/toolchain-gd32v-v202-win/compiler/bin/../lib/gcc/riscv64-unknown-elf/8.3.0/rv32imac/ilp32\libgcc.a(_clz.o)
 
 .comment        0x0000000000000000       0x28
  .comment       0x0000000000000000       0x28 build/gd32vf103_eclic.o
@@ -3305,7 +3303,6 @@ rtc_interrupt_flag_get                            build/gd32vf103_rtc.o
 rtc_lwoff_wait                                    build/gd32vf103_rtc.o
 rtc_prescaler_set                                 build/gd32vf103_rtc.o
 rtc_register_sync_wait                            build/gd32vf103_rtc.o
-setPB0_PWM                                        build/main.o
 set_led_status                                    build/switch1.o
                                                   build/main.o
 spi_bidirectional_transfer_config                 build/gd32vf103_spi.o
