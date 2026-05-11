@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 1
 
 
    1              		.file	"main.c"
@@ -50,7 +50,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
   33:main.c        ****     eclic_global_interrupt_enable();
   34:main.c        ****     int last_status=-1;
   35:main.c        ****     int status=0;
-  36:main.c        ****     TpowerUpInitPWM(0);
+  36:main.c        ****    
   37:main.c        ****     while(1){
   38:main.c        ****         idle++;
   39:main.c        ****         
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
   41:main.c        ****         u0_TX_Queue();
   42:main.c        ****        
   43:main.c        ****         status=get_switch_status();
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 2
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 2
 
 
   44:main.c        ****        
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
   45 0022 8946     		li	a3,2
   46 0024 A945     		li	a1,10
   47 0026 2145     		li	a0,8
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 3
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 3
 
 
   48 0028 97000000 		call	LCD_ShowNum
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
   94              		.cfi_restore 1
   95 0052 2244     		lw	s0,8(sp)
   96              		.cfi_restore 8
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 4
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 4
 
 
   97 0054 9244     		lw	s1,4(sp)
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
  140              	.LVL9:
   25:main.c        ****     Lcd_SetType(LCD_INVERTED);              // LCD_INVERTED/LCD_NORMAL!
  141              		.loc 1 25 5
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 5
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 5
 
 
  142 0022 0145     		li	a0,0
@@ -272,442 +272,435 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 1
  161              	.LVL14:
   33:main.c        ****     eclic_global_interrupt_enable();
  162              		.loc 1 33 5
- 163 005a 97000000 		call	eclic_global_interrupt_enable
- 163      E7800000 
- 164              	.LVL15:
   34:main.c        ****     int last_status=-1;
- 165              		.loc 1 34 5
+ 163              		.loc 1 34 9 is_stmt 0
+ 164 005a 7D54     		li	s0,-1
+  33:main.c        ****     eclic_global_interrupt_enable();
+ 165              		.loc 1 33 5
+ 166 005c 97000000 		call	eclic_global_interrupt_enable
+ 166      E7800000 
+ 167              	.LVL15:
+  34:main.c        ****     int last_status=-1;
+ 168              		.loc 1 34 5 is_stmt 1
   35:main.c        ****     int status=0;
- 166              		.loc 1 35 5
-  36:main.c        ****     TpowerUpInitPWM(0);
- 167              		.loc 1 36 5
- 168 0062 0145     		li	a0,0
- 169 0064 97000000 		call	TpowerUpInitPWM
- 169      E7800000 
- 170              	.LVL16:
-  34:main.c        ****     int last_status=-1;
- 171              		.loc 1 34 9 is_stmt 0
- 172 006c 7D54     		li	s0,-1
- 173              	.LBB12:
+ 169              		.loc 1 35 5
+ 170              	.LBB12:
   45:main.c        ****         if(status==1){
- 174              		.loc 1 45 11
- 175 006e 0549     		li	s2,1
- 176              	.LVL17:
- 177              	.L5:
- 178              	.LBE12:
+ 171              		.loc 1 45 11 is_stmt 0
+ 172 0064 0549     		li	s2,1
+ 173              	.LVL16:
+ 174              	.L5:
+ 175              	.LBE12:
   37:main.c        ****     while(1){
- 179              		.loc 1 37 5 is_stmt 1
- 180              	.LBB13:
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 6
-
-
+ 176              		.loc 1 37 5 is_stmt 1
+ 177              	.LBB13:
   38:main.c        ****         idle++;
- 181              		.loc 1 38 9
+ 178              		.loc 1 38 9
   40:main.c        ****         LCD_WR_Queue();
- 182              		.loc 1 40 9
- 183 0070 97000000 		call	LCD_WR_Queue
+ 179              		.loc 1 40 9
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 6
+
+
+ 180 0066 97000000 		call	LCD_WR_Queue
+ 180      E7800000 
+ 181              	.LVL17:
+  41:main.c        ****         u0_TX_Queue();
+ 182              		.loc 1 41 9
+ 183 006e 97000000 		call	u0_TX_Queue
  183      E7800000 
  184              	.LVL18:
-  41:main.c        ****         u0_TX_Queue();
- 185              		.loc 1 41 9
- 186 0078 97000000 		call	u0_TX_Queue
- 186      E7800000 
- 187              	.LVL19:
   43:main.c        ****         status=get_switch_status();
- 188              		.loc 1 43 9
+ 185              		.loc 1 43 9
   43:main.c        ****         status=get_switch_status();
- 189              		.loc 1 43 16 is_stmt 0
- 190 0080 97000000 		call	get_switch_status
- 190      E7800000 
- 191              	.LVL20:
- 192 0088 AA84     		mv	s1,a0
- 193              	.LVL21:
+ 186              		.loc 1 43 16 is_stmt 0
+ 187 0076 97000000 		call	get_switch_status
+ 187      E7800000 
+ 188              	.LVL19:
+ 189 007e AA84     		mv	s1,a0
+ 190              	.LVL20:
   45:main.c        ****         if(status==1){
- 194              		.loc 1 45 9 is_stmt 1
+ 191              		.loc 1 45 9 is_stmt 1
   45:main.c        ****         if(status==1){
- 195              		.loc 1 45 11 is_stmt 0
- 196 008a 631D2501 		bne	a0,s2,.L6
+ 192              		.loc 1 45 11 is_stmt 0
+ 193 0080 631D2501 		bne	a0,s2,.L6
   46:main.c        ****             set_led_status(1);
- 197              		.loc 1 46 13 is_stmt 1
- 198 008e 97000000 		call	set_led_status
- 198      E7800000 
- 199              	.LVL22:
+ 194              		.loc 1 46 13 is_stmt 1
+ 195 0084 97000000 		call	set_led_status
+ 195      E7800000 
+ 196              	.LVL21:
   48:main.c        ****             if(last_status==0){
- 200              		.loc 1 48 13
+ 197              		.loc 1 48 13
   48:main.c        ****             if(last_status==0){
- 201              		.loc 1 48 15 is_stmt 0
- 202 0096 11EC     		bne	s0,zero,.L7
- 203              	.L9:
+ 198              		.loc 1 48 15 is_stmt 0
+ 199 008c 11EC     		bne	s0,zero,.L7
+ 200              	.L9:
   55:main.c        ****                 LCD_Clear(BLACK);  
- 204              		.loc 1 55 17 is_stmt 1
- 205 0098 0145     		li	a0,0
- 206 009a 97000000 		call	LCD_Clear
- 206      E7800000 
- 207              	.LVL23:
- 208 00a2 01A8     		j	.L7
- 209              	.L6:
+ 201              		.loc 1 55 17 is_stmt 1
+ 202 008e 0145     		li	a0,0
+ 203 0090 97000000 		call	LCD_Clear
+ 203      E7800000 
+ 204              	.LVL22:
+ 205 0098 01A8     		j	.L7
+ 206              	.L6:
   53:main.c        ****             set_led_status(0);
- 210              		.loc 1 53 13
- 211 00a4 0145     		li	a0,0
- 212 00a6 97000000 		call	set_led_status
- 212      E7800000 
- 213              	.LVL24:
+ 207              		.loc 1 53 13
+ 208 009a 0145     		li	a0,0
+ 209 009c 97000000 		call	set_led_status
+ 209      E7800000 
+ 210              	.LVL23:
   54:main.c        ****             if (last_status==1){ 
- 214              		.loc 1 54 13
+ 211              		.loc 1 54 13
   54:main.c        ****             if (last_status==1){ 
- 215              		.loc 1 54 16 is_stmt 0
- 216 00ae E30524FF 		beq	s0,s2,.L9
- 217              	.L7:
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 7
-
-
- 218              	.LBE13:
+ 212              		.loc 1 54 16 is_stmt 0
+ 213 00a4 E30524FF 		beq	s0,s2,.L9
+ 214              	.L7:
+ 215              	.LBE13:
   16:main.c        **** int main(void){
- 219              		.loc 1 16 15
- 220 00b2 2684     		mv	s0,s1
- 221              	.LVL25:
- 222 00b4 75BF     		j	.L5
- 223              		.cfi_endproc
- 224              	.LFE2:
- 226              		.section	.rodata.ds18B20callBack.str1.4,"aMS",@progbits,1
- 227              		.align	2
- 228              	.LC1:
- 229 0000 4300     		.string	"C"
- 230              		.text
- 231              	.Letext0:
- 232              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 233              		.file 3 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 234              		.file 4 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 235              		.file 5 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 236              		.file 6 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 237              		.file 7 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 238              		.file 8 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
- 239              		.file 9 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
- 240              		.file 10 "lcd.h"
- 241              		.file 11 "switch1.h"
- 242              		.file 12 "drivers.h"
- 243              		.file 13 "usart.h"
- 244              		.file 14 "ds18b20.h"
- 245              		.file 15 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_eclic.h"
- 246              		.file 16 "pwm.h"
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 8
+ 216              		.loc 1 16 15
+ 217 00a8 2684     		mv	s0,s1
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 7
+
+
+ 218              	.LVL24:
+ 219 00aa 75BF     		j	.L5
+ 220              		.cfi_endproc
+ 221              	.LFE2:
+ 223              		.section	.rodata.ds18B20callBack.str1.4,"aMS",@progbits,1
+ 224              		.align	2
+ 225              	.LC1:
+ 226 0000 4300     		.string	"C"
+ 227              		.text
+ 228              	.Letext0:
+ 229              		.file 2 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 230              		.file 3 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 231              		.file 4 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 232              		.file 5 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 233              		.file 6 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 234              		.file 7 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 235              		.file 8 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
+ 236              		.file 9 "c:\\users\\hanna\\desktop\\kth\\he1041\\toolchain-gd32v-v202-win\\toolchain-gd32v-v202-wi
+ 237              		.file 10 "lcd.h"
+ 238              		.file 11 "switch1.h"
+ 239              		.file 12 "drivers.h"
+ 240              		.file 13 "usart.h"
+ 241              		.file 14 "ds18b20.h"
+ 242              		.file 15 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_eclic.h"
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:13     .text.ds18B20callBack:0000000000000000 ds18B20callBack
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:17     .text.ds18B20callBack:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:19     .text.ds18B20callBack:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:20     .text.ds18B20callBack:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:21     .text.ds18B20callBack:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:23     .text.ds18B20callBack:0000000000000002 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:27     .text.ds18B20callBack:0000000000000008 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:28     .text.ds18B20callBack:0000000000000008 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:29     .text.ds18B20callBack:0000000000000008 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:31     .text.ds18B20callBack:0000000000000008 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:33     .text.ds18B20callBack:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:36     .text.ds18B20callBack:0000000000000012 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:42     .text.ds18B20callBack:0000000000000018 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:51     .text.ds18B20callBack:0000000000000030 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:55     .text.ds18B20callBack:0000000000000034 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:56     .text.ds18B20callBack:0000000000000036 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:57     .text.ds18B20callBack:0000000000000036 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:59     .text.ds18B20callBack:0000000000000038 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:61     .text.ds18B20callBack:000000000000003a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:66     .text.ds18B20callBack:000000000000003a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:72     .text.ds18B20callBack:000000000000003e .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:73     .text.ds18B20callBack:000000000000003e .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:79     .text.ds18B20callBack:0000000000000046 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:81     .text.ds18B20callBack:0000000000000048 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:85     .text.ds18B20callBack:0000000000000048 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:89     .text.ds18B20callBack:0000000000000050 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:93     .text.ds18B20callBack:0000000000000050 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:94     .text.ds18B20callBack:0000000000000052 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:96     .text.ds18B20callBack:0000000000000054 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:98     .text.ds18B20callBack:0000000000000056 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:102    .text.ds18B20callBack:0000000000000058 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:104    .text.ds18B20callBack:000000000000005a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:111    .text.startup.main:0000000000000000 main
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:114    .text.startup.main:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:115    .text.startup.main:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:116    .text.startup.main:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:117    .text.startup.main:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:119    .text.startup.main:0000000000000002 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:124    .text.startup.main:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:125    .text.startup.main:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:126    .text.startup.main:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:127    .text.startup.main:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:129    .text.startup.main:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:132    .text.startup.main:0000000000000012 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:133    .text.startup.main:0000000000000012 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:134    .text.startup.main:0000000000000012 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:135    .text.startup.main:0000000000000012 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:136    .text.startup.main:0000000000000012 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:139    .text.startup.main:000000000000001a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:142    .text.startup.main:0000000000000022 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:146    .text.startup.main:000000000000002c .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:149    .text.startup.main:0000000000000034 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:154    .text.startup.main:0000000000000040 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:158    .text.startup.main:000000000000004a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:163    .text.startup.main:000000000000005a .L0 
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 9
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:13     .text.ds18B20callBack:0000000000000000 ds18B20callBack
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:17     .text.ds18B20callBack:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:19     .text.ds18B20callBack:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:20     .text.ds18B20callBack:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:21     .text.ds18B20callBack:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:23     .text.ds18B20callBack:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:27     .text.ds18B20callBack:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:28     .text.ds18B20callBack:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:29     .text.ds18B20callBack:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:31     .text.ds18B20callBack:0000000000000008 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:33     .text.ds18B20callBack:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:36     .text.ds18B20callBack:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:42     .text.ds18B20callBack:0000000000000018 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:51     .text.ds18B20callBack:0000000000000030 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:55     .text.ds18B20callBack:0000000000000034 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:56     .text.ds18B20callBack:0000000000000036 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:57     .text.ds18B20callBack:0000000000000036 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:59     .text.ds18B20callBack:0000000000000038 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:61     .text.ds18B20callBack:000000000000003a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:66     .text.ds18B20callBack:000000000000003a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:72     .text.ds18B20callBack:000000000000003e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:73     .text.ds18B20callBack:000000000000003e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:79     .text.ds18B20callBack:0000000000000046 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:81     .text.ds18B20callBack:0000000000000048 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:85     .text.ds18B20callBack:0000000000000048 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:89     .text.ds18B20callBack:0000000000000050 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:93     .text.ds18B20callBack:0000000000000050 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:94     .text.ds18B20callBack:0000000000000052 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:96     .text.ds18B20callBack:0000000000000054 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:98     .text.ds18B20callBack:0000000000000056 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:102    .text.ds18B20callBack:0000000000000058 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:104    .text.ds18B20callBack:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:111    .text.startup.main:0000000000000000 main
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:114    .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:115    .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:116    .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:117    .text.startup.main:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:119    .text.startup.main:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:124    .text.startup.main:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:125    .text.startup.main:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:126    .text.startup.main:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:127    .text.startup.main:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:129    .text.startup.main:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:132    .text.startup.main:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:133    .text.startup.main:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:134    .text.startup.main:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:135    .text.startup.main:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:136    .text.startup.main:0000000000000012 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:139    .text.startup.main:000000000000001a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:142    .text.startup.main:0000000000000022 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:146    .text.startup.main:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:149    .text.startup.main:0000000000000034 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:154    .text.startup.main:0000000000000040 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:158    .text.startup.main:000000000000004a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:163    .text.startup.main:000000000000005a .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 9
 
 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:166    .text.startup.main:0000000000000062 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:167    .text.startup.main:0000000000000062 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:168    .text.startup.main:0000000000000062 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:172    .text.startup.main:000000000000006c .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:175    .text.startup.main:000000000000006e .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:181    .text.startup.main:0000000000000070 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:182    .text.startup.main:0000000000000070 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:183    .text.startup.main:0000000000000070 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:186    .text.startup.main:0000000000000078 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:189    .text.startup.main:0000000000000080 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:190    .text.startup.main:0000000000000080 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:195    .text.startup.main:000000000000008a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:196    .text.startup.main:000000000000008a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:198    .text.startup.main:000000000000008e .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:201    .text.startup.main:0000000000000096 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:202    .text.startup.main:0000000000000096 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:205    .text.startup.main:0000000000000098 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:211    .text.startup.main:00000000000000a4 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:215    .text.startup.main:00000000000000ae .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:216    .text.startup.main:00000000000000ae .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:220    .text.startup.main:00000000000000b2 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:223    .text.startup.main:00000000000000b6 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:107    .text.ds18B20callBack:000000000000005a .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:226    .text.startup.main:00000000000000b6 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:164    .text.startup.main:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:166    .text.startup.main:000000000000005c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:169    .text.startup.main:0000000000000064 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:171    .text.startup.main:0000000000000064 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:172    .text.startup.main:0000000000000064 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:178    .text.startup.main:0000000000000066 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:179    .text.startup.main:0000000000000066 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:180    .text.startup.main:0000000000000066 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:183    .text.startup.main:000000000000006e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:186    .text.startup.main:0000000000000076 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:187    .text.startup.main:0000000000000076 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:192    .text.startup.main:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:193    .text.startup.main:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:195    .text.startup.main:0000000000000084 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:198    .text.startup.main:000000000000008c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:199    .text.startup.main:000000000000008c .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:202    .text.startup.main:000000000000008e .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:208    .text.startup.main:000000000000009a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:212    .text.startup.main:00000000000000a4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:213    .text.startup.main:00000000000000a4 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:217    .text.startup.main:00000000000000a8 .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:220    .text.startup.main:00000000000000ac .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:107    .text.ds18B20callBack:000000000000005a .L0 
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:223    .text.startup.main:00000000000000ac .L0 
                      .debug_frame:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:228    .rodata.ds18B20callBack.str1.4:0000000000000000 .LC1
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:87     .text.ds18B20callBack:0000000000000050 .L1
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:209    .text.startup.main:00000000000000a4 .L6
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:217    .text.startup.main:00000000000000b2 .L7
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:203    .text.startup.main:0000000000000098 .L9
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:177    .text.startup.main:0000000000000070 .L5
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2131   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3269   .debug_str:0000000000000524 .LASF148
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3155   .debug_str:00000000000002a4 .LASF149
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3263   .debug_str:00000000000004a8 .LASF150
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2997   .debug_ranges:0000000000000000 .Ldebug_ranges0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3021   .debug_line:0000000000000000 .Ldebug_line0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3261   .debug_str:000000000000049b .LASF0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3065   .debug_str:00000000000000ee .LASF1
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3201   .debug_str:0000000000000394 .LASF2
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3025   .debug_str:000000000000000c .LASF3
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3275   .debug_str:00000000000005c1 .LASF4
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3037   .debug_str:0000000000000049 .LASF5
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3107   .debug_str:00000000000001ae .LASF9
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3131   .debug_str:0000000000000217 .LASF6
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3093   .debug_str:0000000000000160 .LASF7
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3047   .debug_str:000000000000008a .LASF8
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3287   .debug_str:0000000000000608 .LASF10
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3125   .debug_str:00000000000001f7 .LASF120
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3251   .debug_str:0000000000000474 .LASF11
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3185   .debug_str:0000000000000330 .LASF12
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3061   .debug_str:00000000000000e0 .LASF13
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3249   .debug_str:000000000000046c .LASF14
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3297   .debug_str:0000000000000630 .LASF15
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3153   .debug_str:000000000000029e .LASF16
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3123   .debug_str:00000000000001f0 .LASF17
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3241   .debug_str:000000000000044c .LASF18
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 10
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:225    .rodata.ds18B20callBack.str1.4:0000000000000000 .LC1
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:87     .text.ds18B20callBack:0000000000000050 .L1
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:206    .text.startup.main:000000000000009a .L6
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:214    .text.startup.main:00000000000000a8 .L7
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:200    .text.startup.main:000000000000008e .L9
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:174    .text.startup.main:0000000000000066 .L5
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2110   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3248   .debug_str:0000000000000524 .LASF147
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3134   .debug_str:00000000000002a4 .LASF148
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3242   .debug_str:00000000000004a8 .LASF149
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2976   .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3000   .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3240   .debug_str:000000000000049b .LASF0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3044   .debug_str:00000000000000ee .LASF1
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3180   .debug_str:0000000000000394 .LASF2
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3004   .debug_str:000000000000000c .LASF3
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3254   .debug_str:00000000000005c1 .LASF4
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3016   .debug_str:0000000000000049 .LASF5
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3086   .debug_str:00000000000001ae .LASF9
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3110   .debug_str:0000000000000217 .LASF6
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3072   .debug_str:0000000000000160 .LASF7
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3026   .debug_str:000000000000008a .LASF8
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3266   .debug_str:0000000000000608 .LASF10
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3104   .debug_str:00000000000001f7 .LASF120
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3230   .debug_str:0000000000000474 .LASF11
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3164   .debug_str:0000000000000330 .LASF12
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3040   .debug_str:00000000000000e0 .LASF13
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3228   .debug_str:000000000000046c .LASF14
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3276   .debug_str:0000000000000630 .LASF15
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3132   .debug_str:000000000000029e .LASF16
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3102   .debug_str:00000000000001f0 .LASF17
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3220   .debug_str:000000000000044c .LASF18
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 10
 
 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3243   .debug_str:0000000000000454 .LASF19
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3217   .debug_str:00000000000003da .LASF20
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3281   .debug_str:00000000000005e0 .LASF21
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3193   .debug_str:0000000000000353 .LASF22
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3207   .debug_str:00000000000003b1 .LASF23
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3115   .debug_str:00000000000001d3 .LASF28
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3265   .debug_str:0000000000000511 .LASF24
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3235   .debug_str:0000000000000437 .LASF25
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3109   .debug_str:00000000000001b9 .LASF26
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3293   .debug_str:0000000000000625 .LASF27
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3121   .debug_str:00000000000001eb .LASF29
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3059   .debug_str:00000000000000d7 .LASF30
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3311   .debug_str:0000000000000675 .LASF31
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3073   .debug_str:000000000000010e .LASF32
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3325   .debug_str:00000000000006ae .LASF33
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3175   .debug_str:00000000000002fb .LASF34
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3167   .debug_str:00000000000002d2 .LASF35
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3247   .debug_str:0000000000000462 .LASF36
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3209   .debug_str:00000000000003ba .LASF37
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3307   .debug_str:000000000000065b .LASF38
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3077   .debug_str:000000000000011d .LASF39
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3029   .debug_str:0000000000000025 .LASF40
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3023   .debug_str:0000000000000000 .LASF41
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3271   .debug_str:00000000000005ac .LASF42
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3089   .debug_str:0000000000000151 .LASF43
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3177   .debug_str:0000000000000304 .LASF44
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3227   .debug_str:0000000000000407 .LASF45
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3105   .debug_str:00000000000001a9 .LASF46
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3211   .debug_str:00000000000003c4 .LASF47
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3071   .debug_str:0000000000000108 .LASF48
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3259   .debug_str:0000000000000495 .LASF49
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3219   .debug_str:00000000000003e5 .LASF50
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3087   .debug_str:000000000000014a .LASF51
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3133   .debug_str:0000000000000229 .LASF52
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3049   .debug_str:00000000000000a1 .LASF53
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3079   .debug_str:000000000000012b .LASF54
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3117   .debug_str:00000000000001db .LASF55
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3165   .debug_str:00000000000002cb .LASF56
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3245   .debug_str:000000000000045c .LASF57
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3063   .debug_str:00000000000000e7 .LASF58
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3067   .debug_str:00000000000000fa .LASF59
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3303   .debug_str:000000000000064d .LASF60
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3257   .debug_str:000000000000048c .LASF61
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3099   .debug_str:0000000000000182 .LASF62
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3137   .debug_str:000000000000023b .LASF63
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3159   .debug_str:00000000000002b0 .LASF64
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3221   .debug_str:00000000000003ed .LASF65
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3213   .debug_str:00000000000003cb .LASF66
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3237   .debug_str:000000000000043f .LASF67
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3253   .debug_str:0000000000000480 .LASF68
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3091   .debug_str:0000000000000159 .LASF69
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3127   .debug_str:0000000000000207 .LASF70
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3113   .debug_str:00000000000001cb .LASF71
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3225   .debug_str:0000000000000402 .LASF72
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3033   .debug_str:0000000000000035 .LASF73
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3233   .debug_str:000000000000041e .LASF74
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3229   .debug_str:000000000000040c .LASF75
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 11
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3222   .debug_str:0000000000000454 .LASF19
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3196   .debug_str:00000000000003da .LASF20
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3260   .debug_str:00000000000005e0 .LASF21
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3172   .debug_str:0000000000000353 .LASF22
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3186   .debug_str:00000000000003b1 .LASF23
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3094   .debug_str:00000000000001d3 .LASF28
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3244   .debug_str:0000000000000511 .LASF24
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3214   .debug_str:0000000000000437 .LASF25
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3088   .debug_str:00000000000001b9 .LASF26
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3272   .debug_str:0000000000000625 .LASF27
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3100   .debug_str:00000000000001eb .LASF29
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3038   .debug_str:00000000000000d7 .LASF30
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3290   .debug_str:0000000000000675 .LASF31
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3052   .debug_str:000000000000010e .LASF32
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3304   .debug_str:00000000000006ae .LASF33
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3154   .debug_str:00000000000002fb .LASF34
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3146   .debug_str:00000000000002d2 .LASF35
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3226   .debug_str:0000000000000462 .LASF36
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3188   .debug_str:00000000000003ba .LASF37
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3286   .debug_str:000000000000065b .LASF38
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3056   .debug_str:000000000000011d .LASF39
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3008   .debug_str:0000000000000025 .LASF40
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3002   .debug_str:0000000000000000 .LASF41
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3250   .debug_str:00000000000005ac .LASF42
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3068   .debug_str:0000000000000151 .LASF43
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3156   .debug_str:0000000000000304 .LASF44
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3206   .debug_str:0000000000000407 .LASF45
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3084   .debug_str:00000000000001a9 .LASF46
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3190   .debug_str:00000000000003c4 .LASF47
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3050   .debug_str:0000000000000108 .LASF48
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3238   .debug_str:0000000000000495 .LASF49
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3198   .debug_str:00000000000003e5 .LASF50
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3066   .debug_str:000000000000014a .LASF51
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3112   .debug_str:0000000000000229 .LASF52
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3028   .debug_str:00000000000000a1 .LASF53
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3058   .debug_str:000000000000012b .LASF54
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3096   .debug_str:00000000000001db .LASF55
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3144   .debug_str:00000000000002cb .LASF56
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3224   .debug_str:000000000000045c .LASF57
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3042   .debug_str:00000000000000e7 .LASF58
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3046   .debug_str:00000000000000fa .LASF59
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3282   .debug_str:000000000000064d .LASF60
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3236   .debug_str:000000000000048c .LASF61
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3078   .debug_str:0000000000000182 .LASF62
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3116   .debug_str:000000000000023b .LASF63
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3138   .debug_str:00000000000002b0 .LASF64
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3200   .debug_str:00000000000003ed .LASF65
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3192   .debug_str:00000000000003cb .LASF66
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3216   .debug_str:000000000000043f .LASF67
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3232   .debug_str:0000000000000480 .LASF68
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3070   .debug_str:0000000000000159 .LASF69
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3106   .debug_str:0000000000000207 .LASF70
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3092   .debug_str:00000000000001cb .LASF71
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3204   .debug_str:0000000000000402 .LASF72
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3012   .debug_str:0000000000000035 .LASF73
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3212   .debug_str:000000000000041e .LASF74
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3208   .debug_str:000000000000040c .LASF75
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 11
 
 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3181   .debug_str:0000000000000316 .LASF76
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3231   .debug_str:0000000000000414 .LASF77
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3151   .debug_str:0000000000000296 .LASF78
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3119   .debug_str:00000000000001e1 .LASF79
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3321   .debug_str:00000000000006a4 .LASF80
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3189   .debug_str:000000000000033c .LASF81
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3129   .debug_str:000000000000020f .LASF82
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3097   .debug_str:000000000000017a .LASF83
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3157   .debug_str:00000000000002ab .LASF84
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3035   .debug_str:0000000000000040 .LASF85
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3301   .debug_str:0000000000000643 .LASF86
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3081   .debug_str:0000000000000133 .LASF87
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3075   .debug_str:0000000000000118 .LASF88
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3255   .debug_str:0000000000000487 .LASF89
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3215   .debug_str:00000000000003d3 .LASF90
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3295   .debug_str:000000000000062a .LASF91
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3139   .debug_str:0000000000000241 .LASF92
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3203   .debug_str:00000000000003a2 .LASF93
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3031   .debug_str:000000000000002d .LASF94
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3239   .debug_str:0000000000000446 .LASF95
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3163   .debug_str:00000000000002c5 .LASF96
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3277   .debug_str:00000000000005d4 .LASF97
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3289   .debug_str:0000000000000611 .LASF98
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3267   .debug_str:0000000000000517 .LASF99
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3149   .debug_str:0000000000000289 .LASF100
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3309   .debug_str:0000000000000666 .LASF101
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3183   .debug_str:0000000000000321 .LASF102
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3143   .debug_str:0000000000000266 .LASF103
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3313   .debug_str:000000000000067e .LASF104
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3197   .debug_str:0000000000000375 .LASF105
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3319   .debug_str:0000000000000696 .LASF106
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3057   .debug_str:00000000000000c9 .LASF107
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3299   .debug_str:0000000000000639 .LASF108
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3147   .debug_str:000000000000027d .LASF109
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3283   .debug_str:00000000000005e8 .LASF110
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3103   .debug_str:000000000000019b .LASF111
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3055   .debug_str:00000000000000ba .LASF112
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3101   .debug_str:000000000000018a .LASF113
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3039   .debug_str:0000000000000052 .LASF114
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3041   .debug_str:0000000000000061 .LASF115
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3205   .debug_str:00000000000003a8 .LASF116
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3173   .debug_str:00000000000002f4 .LASF117
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3169   .debug_str:00000000000002dc .LASF118
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3305   .debug_str:0000000000000653 .LASF119
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3051   .debug_str:00000000000000aa .LASF151
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3111   .debug_str:00000000000001bf .LASF121
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3285   .debug_str:00000000000005f5 .LASF122
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3179   .debug_str:000000000000030c .LASF123
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3045   .debug_str:000000000000007f .LASF124
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3195   .debug_str:0000000000000365 .LASF131
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3083   .debug_str:000000000000013b .LASF152
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3323   .debug_str:00000000000006a9 .LASF153
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:112    .text.startup.main:0000000000000000 .LFB2
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:224    .text.startup.main:00000000000000b6 .LFE2
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2865   .debug_loc:0000000000000000 .LLST3
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3053   .debug_str:00000000000000b5 .LASF125
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3187   .debug_str:0000000000000337 .LASF126
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 12
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3160   .debug_str:0000000000000316 .LASF76
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3210   .debug_str:0000000000000414 .LASF77
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3130   .debug_str:0000000000000296 .LASF78
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3098   .debug_str:00000000000001e1 .LASF79
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3300   .debug_str:00000000000006a4 .LASF80
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3168   .debug_str:000000000000033c .LASF81
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3108   .debug_str:000000000000020f .LASF82
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3076   .debug_str:000000000000017a .LASF83
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3136   .debug_str:00000000000002ab .LASF84
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3014   .debug_str:0000000000000040 .LASF85
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3280   .debug_str:0000000000000643 .LASF86
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3060   .debug_str:0000000000000133 .LASF87
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3054   .debug_str:0000000000000118 .LASF88
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3234   .debug_str:0000000000000487 .LASF89
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3194   .debug_str:00000000000003d3 .LASF90
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3274   .debug_str:000000000000062a .LASF91
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3118   .debug_str:0000000000000241 .LASF92
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3182   .debug_str:00000000000003a2 .LASF93
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3010   .debug_str:000000000000002d .LASF94
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3218   .debug_str:0000000000000446 .LASF95
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3142   .debug_str:00000000000002c5 .LASF96
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3256   .debug_str:00000000000005d4 .LASF97
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3268   .debug_str:0000000000000611 .LASF98
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3246   .debug_str:0000000000000517 .LASF99
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3128   .debug_str:0000000000000289 .LASF100
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3288   .debug_str:0000000000000666 .LASF101
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3162   .debug_str:0000000000000321 .LASF102
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3122   .debug_str:0000000000000266 .LASF103
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3292   .debug_str:000000000000067e .LASF104
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3176   .debug_str:0000000000000375 .LASF105
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3298   .debug_str:0000000000000696 .LASF106
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3036   .debug_str:00000000000000c9 .LASF107
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3278   .debug_str:0000000000000639 .LASF108
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3126   .debug_str:000000000000027d .LASF109
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3262   .debug_str:00000000000005e8 .LASF110
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3082   .debug_str:000000000000019b .LASF111
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3034   .debug_str:00000000000000ba .LASF112
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3080   .debug_str:000000000000018a .LASF113
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3018   .debug_str:0000000000000052 .LASF114
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3020   .debug_str:0000000000000061 .LASF115
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3184   .debug_str:00000000000003a8 .LASF116
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3152   .debug_str:00000000000002f4 .LASF117
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3148   .debug_str:00000000000002dc .LASF118
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3284   .debug_str:0000000000000653 .LASF119
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3030   .debug_str:00000000000000aa .LASF150
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3090   .debug_str:00000000000001bf .LASF121
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3264   .debug_str:00000000000005f5 .LASF122
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3158   .debug_str:000000000000030c .LASF123
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3024   .debug_str:000000000000007f .LASF124
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3174   .debug_str:0000000000000365 .LASF131
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3062   .debug_str:000000000000013b .LASF151
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3302   .debug_str:00000000000006a9 .LASF152
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:112    .text.startup.main:0000000000000000 .LFB2
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:221    .text.startup.main:00000000000000ac .LFE2
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2844   .debug_loc:0000000000000000 .LLST3
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3032   .debug_str:00000000000000b5 .LASF125
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3166   .debug_str:0000000000000337 .LASF126
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 12
 
 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2878   .debug_loc:0000000000000020 .LLST4
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3315   .debug_str:0000000000000683 .LASF127
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3043   .debug_str:0000000000000072 .LASF128
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3145   .debug_str:0000000000000271 .LASF129
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2886   .debug_loc:0000000000000034 .LLST5
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3291   .debug_str:000000000000061e .LASF130
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2899   .debug_loc:0000000000000054 .LLST6
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3135   .debug_str:000000000000022f .LASF132
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:184    .text.startup.main:0000000000000078 .LVL18
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:187    .text.startup.main:0000000000000080 .LVL19
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:191    .text.startup.main:0000000000000088 .LVL20
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:199    .text.startup.main:0000000000000096 .LVL22
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:207    .text.startup.main:00000000000000a2 .LVL23
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:213    .text.startup.main:00000000000000ae .LVL24
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:130    .text.startup.main:0000000000000012 .LVL7
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:137    .text.startup.main:000000000000001a .LVL8
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:140    .text.startup.main:0000000000000022 .LVL9
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:144    .text.startup.main:000000000000002c .LVL10
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:147    .text.startup.main:0000000000000034 .LVL11
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:152    .text.startup.main:0000000000000040 .LVL12
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:156    .text.startup.main:000000000000004a .LVL13
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:161    .text.startup.main:000000000000005a .LVL14
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:164    .text.startup.main:0000000000000062 .LVL15
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:170    .text.startup.main:000000000000006c .LVL16
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:14     .text.ds18B20callBack:0000000000000000 .LFB3
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:105    .text.ds18B20callBack:000000000000005a .LFE3
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2911   .debug_loc:0000000000000073 .LLST0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2939   .debug_loc:00000000000000b7 .LLST1
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:39     .text.ds18B20callBack:0000000000000018 .LBB4
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:2968   .debug_loc:00000000000000fc .LLST2
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:49     .text.ds18B20callBack:0000000000000030 .LVL3
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:86     .text.ds18B20callBack:0000000000000050 .LVL5
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:34     .text.ds18B20callBack:0000000000000012 .LVL1
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3191   .debug_str:0000000000000346 .LASF133
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3199   .debug_str:0000000000000382 .LASF134
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3161   .debug_str:00000000000002b6 .LASF135
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3085   .debug_str:0000000000000140 .LASF136
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3027   .debug_str:0000000000000016 .LASF137
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3279   .debug_str:00000000000005d9 .LASF138
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3069   .debug_str:0000000000000100 .LASF139
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3223   .debug_str:00000000000003f6 .LASF140
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3317   .debug_str:000000000000068d .LASF141
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3329   .debug_str:00000000000006c8 .LASF142
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3095   .debug_str:000000000000016e .LASF143
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3141   .debug_str:0000000000000248 .LASF144
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3327   .debug_str:00000000000006b8 .LASF145
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3273   .debug_str:00000000000005b5 .LASF146
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:3171   .debug_str:00000000000002e5 .LASF147
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:118    .text.startup.main:0000000000000002 .LCFI4
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:176    .text.startup.main:0000000000000070 .LVL17
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:221    .text.startup.main:00000000000000b4 .LVL25
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:193    .text.startup.main:000000000000008a .LVL21
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:22     .text.ds18B20callBack:0000000000000002 .LCFI0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:80     .text.ds18B20callBack:0000000000000048 .LCFI1
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:88     .text.ds18B20callBack:0000000000000050 .LCFI2
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:101    .text.ds18B20callBack:0000000000000058 .LCFI3
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:18     .text.ds18B20callBack:0000000000000000 .LVL0
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s 			page 13
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2857   .debug_loc:0000000000000020 .LLST4
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3294   .debug_str:0000000000000683 .LASF127
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3022   .debug_str:0000000000000072 .LASF128
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3124   .debug_str:0000000000000271 .LASF129
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2865   .debug_loc:0000000000000034 .LLST5
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3270   .debug_str:000000000000061e .LASF130
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2878   .debug_loc:0000000000000054 .LLST6
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3114   .debug_str:000000000000022f .LASF132
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:181    .text.startup.main:000000000000006e .LVL17
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:184    .text.startup.main:0000000000000076 .LVL18
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:188    .text.startup.main:000000000000007e .LVL19
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:196    .text.startup.main:000000000000008c .LVL21
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:204    .text.startup.main:0000000000000098 .LVL22
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:210    .text.startup.main:00000000000000a4 .LVL23
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:130    .text.startup.main:0000000000000012 .LVL7
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:137    .text.startup.main:000000000000001a .LVL8
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:140    .text.startup.main:0000000000000022 .LVL9
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:144    .text.startup.main:000000000000002c .LVL10
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:147    .text.startup.main:0000000000000034 .LVL11
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:152    .text.startup.main:0000000000000040 .LVL12
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:156    .text.startup.main:000000000000004a .LVL13
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:161    .text.startup.main:000000000000005a .LVL14
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:167    .text.startup.main:0000000000000064 .LVL15
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:14     .text.ds18B20callBack:0000000000000000 .LFB3
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:105    .text.ds18B20callBack:000000000000005a .LFE3
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2890   .debug_loc:0000000000000073 .LLST0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2918   .debug_loc:00000000000000b7 .LLST1
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:39     .text.ds18B20callBack:0000000000000018 .LBB4
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:2947   .debug_loc:00000000000000fc .LLST2
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:49     .text.ds18B20callBack:0000000000000030 .LVL3
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:86     .text.ds18B20callBack:0000000000000050 .LVL5
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:34     .text.ds18B20callBack:0000000000000012 .LVL1
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3170   .debug_str:0000000000000346 .LASF133
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3178   .debug_str:0000000000000382 .LASF134
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3140   .debug_str:00000000000002b6 .LASF135
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3064   .debug_str:0000000000000140 .LASF136
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3006   .debug_str:0000000000000016 .LASF137
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3258   .debug_str:00000000000005d9 .LASF138
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3048   .debug_str:0000000000000100 .LASF139
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3202   .debug_str:00000000000003f6 .LASF140
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3296   .debug_str:000000000000068d .LASF141
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3306   .debug_str:00000000000006b8 .LASF142
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3074   .debug_str:000000000000016e .LASF143
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3120   .debug_str:0000000000000248 .LASF144
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3252   .debug_str:00000000000005b5 .LASF145
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:3150   .debug_str:00000000000002e5 .LASF146
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:118    .text.startup.main:0000000000000002 .LCFI4
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:173    .text.startup.main:0000000000000066 .LVL16
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:218    .text.startup.main:00000000000000aa .LVL24
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:190    .text.startup.main:0000000000000080 .LVL20
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:22     .text.ds18B20callBack:0000000000000002 .LCFI0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:80     .text.ds18B20callBack:0000000000000048 .LCFI1
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:88     .text.ds18B20callBack:0000000000000050 .LCFI2
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:101    .text.ds18B20callBack:0000000000000058 .LCFI3
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:18     .text.ds18B20callBack:0000000000000000 .LVL0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:62     .text.ds18B20callBack:000000000000003a .LVL4
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:99     .text.ds18B20callBack:0000000000000056 .LVL6
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s 			page 13
 
 
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:62     .text.ds18B20callBack:000000000000003a .LVL4
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:99     .text.ds18B20callBack:0000000000000056 .LVL6
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:38     .text.ds18B20callBack:0000000000000018 .LVL2
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:248    .debug_info:0000000000000000 .Ldebug_info0
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:53     .text.ds18B20callBack:0000000000000034 .LBE4
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:63     .text.ds18B20callBack:000000000000003a .LBB9
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:68     .text.ds18B20callBack:000000000000003e .LBE9
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:70     .text.ds18B20callBack:000000000000003e .LBB10
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:77     .text.ds18B20callBack:0000000000000046 .LBE10
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:82     .text.ds18B20callBack:0000000000000048 .LBB11
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:91     .text.ds18B20callBack:0000000000000050 .LBE11
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:173    .text.startup.main:000000000000006e .LBB12
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:178    .text.startup.main:0000000000000070 .LBE12
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:180    .text.startup.main:0000000000000070 .LBB13
-C:\Users\hanna\AppData\Local\Temp\ccKUxqEQ.s:218    .text.startup.main:00000000000000b2 .LBE13
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:38     .text.ds18B20callBack:0000000000000018 .LVL2
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:244    .debug_info:0000000000000000 .Ldebug_info0
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:53     .text.ds18B20callBack:0000000000000034 .LBE4
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:63     .text.ds18B20callBack:000000000000003a .LBB9
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:68     .text.ds18B20callBack:000000000000003e .LBE9
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:70     .text.ds18B20callBack:000000000000003e .LBB10
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:77     .text.ds18B20callBack:0000000000000046 .LBE10
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:82     .text.ds18B20callBack:0000000000000048 .LBB11
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:91     .text.ds18B20callBack:0000000000000050 .LBE11
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:170    .text.startup.main:0000000000000064 .LBB12
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:175    .text.startup.main:0000000000000066 .LBE12
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:177    .text.startup.main:0000000000000066 .LBB13
+C:\Users\hanna\AppData\Local\Temp\ccw5RnQA.s:215    .text.startup.main:00000000000000a8 .LBE13
 
 UNDEFINED SYMBOLS
 get_switch_status
@@ -722,7 +715,6 @@ LCD_Clear
 u0init
 ds18B20init
 eclic_global_interrupt_enable
-TpowerUpInitPWM
 LCD_WR_Queue
 u0_TX_Queue
 set_led_status

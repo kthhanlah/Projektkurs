@@ -33,7 +33,7 @@ int main(void){
     eclic_global_interrupt_enable();
     int last_status=-1;
     int status=0;
-    TpowerUpInitPWM(0);
+   
     while(1){
         idle++;
         

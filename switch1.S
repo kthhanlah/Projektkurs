@@ -30,10 +30,10 @@ switch_hw_init:
     call gpioi
 
     // 3. Konfigurera GPIOB Pin 0 som Output (LED)
-    li a0, GPIOA
+    li a0, GPIOB //ändrat A-->B
     li a1, GPIO_PP //push pull 
     li a2, GPIO_50 //  50MHz
-    li a3, 1         // Pin 0
+    li a3, 1        // Pin B1 lyser 
     call gpioi
 
     lw ra, 0(sp)
@@ -61,7 +61,7 @@ set_led_status:
 set_led_status:
     // a0 innehåller 'state' (1 eller 0)
     slli a1, a0, 1          // SKIFTA: Flytta 1:an från bit 0 till bit 1
-    li a0, GPIOA            // Målport
+    li a0, GPIOB            // B1 lyser 
     li a2, 2                // Mask för pinne 1 (bit 1 satt)
     j gpiobo               // Använd din befintliga Bit Operation-rutin
 
