@@ -1,4 +1,4 @@
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 1
 
 
    1              		.file	"pwm.c"
@@ -58,7 +58,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
    8:pwm.c         ****    rcu_periph_clock_enable(RCU_AF);
   46              		.loc 1 8 4 is_stmt 1
   47 001c 13050060 		li	a0,1536
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 2
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 2
 
 
   48 0020 93791400 		andi	s3,s0,1
@@ -118,7 +118,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
   94 0084 37150140 		li	a0,1073811456
   95 0088 A146     		li	a3,8
   96 008a 0D46     		li	a2,3
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 3
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 3
 
 
   97 008c E145     		li	a1,24
@@ -178,7 +178,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  131 00d4 231A0100 		sh	zero,20(sp)
   21:pwm.c         ****    timer_initpara.period            = 999;
  132              		.loc 1 21 4 is_stmt 1
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 4
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 4
 
 
   22:pwm.c         ****    timer_initpara.repetitioncounter = 0;
@@ -238,7 +238,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  167              	.LVL13:
  168              	.L6:
   35:pwm.c         ****    if (ch&0x2) timer_channel_output_config(TIMER2,TIMER_CH_2,&timer_ocinitpara);
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 5
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 5
 
 
  169              		.loc 1 35 4
@@ -298,7 +298,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
   42:pwm.c         ****        timer_channel_output_mode_config(TIMER2,TIMER_CH_2,TIMER_OC_MODE_PWM0);
  213              		.loc 1 42 8
  214 016e 13060006 		li	a2,96
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 6
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 6
 
 
  215 0172 8945     		li	a1,2
@@ -358,7 +358,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  255 01d4 1306F6ED 		addi	a2,a2,-289
  256 01d8 8945     		li	a1,2
  257 01da 13850440 		addi	a0,s1,1024
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 7
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 7
 
 
  258 01de 97000000 		call	timer_channel_output_pulse_value_config
@@ -418,7 +418,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  296              		.loc 1 61 4
  297 0242 37040040 		li	s0,1073741824
  298 0246 13050440 		addi	a0,s0,1024
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 8
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 8
 
 
  299 024a 97000000 		call	timer_auto_reload_shadow_enable
@@ -478,7 +478,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  347              		.globl	T2setLEDPercent
  349              	T2setLEDPercent:
  350              	.LFB4:
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 9
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 9
 
 
   68:pwm.c         **** }
@@ -538,7 +538,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  390 0006 06CE     		sw	ra,28(sp)
  391 0008 22CC     		sw	s0,24(sp)
  392 000a 4EC6     		sw	s3,12(sp)
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 10
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 10
 
 
  393              		.cfi_offset 9, -12
@@ -598,7 +598,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  435 0064 F240     		lw	ra,28(sp)
  436              		.cfi_restore 1
  437 0066 D244     		lw	s1,20(sp)
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 11
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 11
 
 
  438              		.cfi_restore 9
@@ -658,7 +658,7 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  479              		.loc 1 86 7
  480 00ba 97000000 		call	__fixunsdfsi
  480      E7800000 
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 12
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 12
 
 
  481              	.LVL48:
@@ -682,367 +682,367 @@ GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 1
  500              		.file 5 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_rcu.h"
  501              		.file 6 "./../../firmware/GD32VF103_standard_peripheral/Include/gd32vf103_gpio.h"
  502              		.file 7 "./../../firmware/GD32VF103_standard_peripheral/system_gd32vf103.h"
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 13
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 pwm.c
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:13     .text.TpowerUpInitPWM:0000000000000000 TpowerUpInitPWM
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:17     .text.TpowerUpInitPWM:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:19     .text.TpowerUpInitPWM:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:20     .text.TpowerUpInitPWM:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:21     .text.TpowerUpInitPWM:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:22     .text.TpowerUpInitPWM:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:23     .text.TpowerUpInitPWM:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:25     .text.TpowerUpInitPWM:0000000000000002 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:27     .text.TpowerUpInitPWM:0000000000000004 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:30     .text.TpowerUpInitPWM:0000000000000006 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:33     .text.TpowerUpInitPWM:000000000000000a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:38     .text.TpowerUpInitPWM:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:39     .text.TpowerUpInitPWM:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:40     .text.TpowerUpInitPWM:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:41     .text.TpowerUpInitPWM:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:42     .text.TpowerUpInitPWM:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:44     .text.TpowerUpInitPWM:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:47     .text.TpowerUpInitPWM:000000000000001c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:52     .text.TpowerUpInitPWM:000000000000002c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:53     .text.TpowerUpInitPWM:000000000000002c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:55     .text.TpowerUpInitPWM:0000000000000030 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:64     .text.TpowerUpInitPWM:0000000000000046 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:66     .text.TpowerUpInitPWM:000000000000004a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:68     .text.TpowerUpInitPWM:000000000000004e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:77     .text.TpowerUpInitPWM:0000000000000064 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:79     .text.TpowerUpInitPWM:0000000000000068 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:81     .text.TpowerUpInitPWM:000000000000006a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:90     .text.TpowerUpInitPWM:0000000000000080 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:92     .text.TpowerUpInitPWM:0000000000000082 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:94     .text.TpowerUpInitPWM:0000000000000084 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:103    .text.TpowerUpInitPWM:000000000000009a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:107    .text.TpowerUpInitPWM:00000000000000a6 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:112    .text.TpowerUpInitPWM:00000000000000b6 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:116    .text.TpowerUpInitPWM:00000000000000c0 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:117    .text.TpowerUpInitPWM:00000000000000c0 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:118    .text.TpowerUpInitPWM:00000000000000c0 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:119    .text.TpowerUpInitPWM:00000000000000c0 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:123    .text.TpowerUpInitPWM:00000000000000c8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:125    .text.TpowerUpInitPWM:00000000000000ca .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:127    .text.TpowerUpInitPWM:00000000000000ce .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:129    .text.TpowerUpInitPWM:00000000000000d2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:131    .text.TpowerUpInitPWM:00000000000000d4 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:133    .text.TpowerUpInitPWM:00000000000000d8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:134    .text.TpowerUpInitPWM:00000000000000d8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:135    .text.TpowerUpInitPWM:00000000000000d8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:137    .text.TpowerUpInitPWM:00000000000000dc .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:138    .text.TpowerUpInitPWM:00000000000000dc .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:140    .text.TpowerUpInitPWM:00000000000000e0 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:143    .text.TpowerUpInitPWM:00000000000000e8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:147    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:148    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:149    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:150    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:151    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:152    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 14
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:13     .text.TpowerUpInitPWM:0000000000000000 TpowerUpInitPWM
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:17     .text.TpowerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:19     .text.TpowerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:20     .text.TpowerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:21     .text.TpowerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:22     .text.TpowerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:23     .text.TpowerUpInitPWM:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:25     .text.TpowerUpInitPWM:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:27     .text.TpowerUpInitPWM:0000000000000004 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:30     .text.TpowerUpInitPWM:0000000000000006 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:33     .text.TpowerUpInitPWM:000000000000000a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:38     .text.TpowerUpInitPWM:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:39     .text.TpowerUpInitPWM:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:40     .text.TpowerUpInitPWM:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:41     .text.TpowerUpInitPWM:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:42     .text.TpowerUpInitPWM:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:44     .text.TpowerUpInitPWM:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:47     .text.TpowerUpInitPWM:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:52     .text.TpowerUpInitPWM:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:53     .text.TpowerUpInitPWM:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:55     .text.TpowerUpInitPWM:0000000000000030 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:64     .text.TpowerUpInitPWM:0000000000000046 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:66     .text.TpowerUpInitPWM:000000000000004a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:68     .text.TpowerUpInitPWM:000000000000004e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:77     .text.TpowerUpInitPWM:0000000000000064 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:79     .text.TpowerUpInitPWM:0000000000000068 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:81     .text.TpowerUpInitPWM:000000000000006a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:90     .text.TpowerUpInitPWM:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:92     .text.TpowerUpInitPWM:0000000000000082 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:94     .text.TpowerUpInitPWM:0000000000000084 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:103    .text.TpowerUpInitPWM:000000000000009a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:107    .text.TpowerUpInitPWM:00000000000000a6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:112    .text.TpowerUpInitPWM:00000000000000b6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:116    .text.TpowerUpInitPWM:00000000000000c0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:117    .text.TpowerUpInitPWM:00000000000000c0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:118    .text.TpowerUpInitPWM:00000000000000c0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:119    .text.TpowerUpInitPWM:00000000000000c0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:123    .text.TpowerUpInitPWM:00000000000000c8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:125    .text.TpowerUpInitPWM:00000000000000ca .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:127    .text.TpowerUpInitPWM:00000000000000ce .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:129    .text.TpowerUpInitPWM:00000000000000d2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:131    .text.TpowerUpInitPWM:00000000000000d4 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:133    .text.TpowerUpInitPWM:00000000000000d8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:134    .text.TpowerUpInitPWM:00000000000000d8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:135    .text.TpowerUpInitPWM:00000000000000d8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:137    .text.TpowerUpInitPWM:00000000000000dc .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:138    .text.TpowerUpInitPWM:00000000000000dc .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:140    .text.TpowerUpInitPWM:00000000000000e0 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:143    .text.TpowerUpInitPWM:00000000000000e8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:147    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:148    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:149    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:150    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:151    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:152    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 14
 
 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:153    .text.TpowerUpInitPWM:00000000000000f2 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:156    .text.TpowerUpInitPWM:00000000000000f6 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:158    .text.TpowerUpInitPWM:00000000000000f8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:160    .text.TpowerUpInitPWM:00000000000000fa .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:161    .text.TpowerUpInitPWM:00000000000000fa .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:163    .text.TpowerUpInitPWM:00000000000000fe .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:170    .text.TpowerUpInitPWM:000000000000010e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:171    .text.TpowerUpInitPWM:000000000000010e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:173    .text.TpowerUpInitPWM:0000000000000112 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:181    .text.TpowerUpInitPWM:0000000000000126 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:182    .text.TpowerUpInitPWM:0000000000000126 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:184    .text.TpowerUpInitPWM:0000000000000128 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:192    .text.TpowerUpInitPWM:000000000000013c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:193    .text.TpowerUpInitPWM:000000000000013c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:195    .text.TpowerUpInitPWM:000000000000013e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:203    .text.TpowerUpInitPWM:0000000000000152 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:204    .text.TpowerUpInitPWM:0000000000000152 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:206    .text.TpowerUpInitPWM:0000000000000156 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:214    .text.TpowerUpInitPWM:000000000000016e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:220    .text.TpowerUpInitPWM:0000000000000180 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:227    .text.TpowerUpInitPWM:0000000000000190 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:228    .text.TpowerUpInitPWM:0000000000000190 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:230    .text.TpowerUpInitPWM:0000000000000194 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:237    .text.TpowerUpInitPWM:00000000000001aa .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:243    .text.TpowerUpInitPWM:00000000000001bc .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:250    .text.TpowerUpInitPWM:00000000000001cc .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:251    .text.TpowerUpInitPWM:00000000000001cc .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:253    .text.TpowerUpInitPWM:00000000000001ce .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:261    .text.TpowerUpInitPWM:00000000000001e6 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:267    .text.TpowerUpInitPWM:00000000000001f8 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:274    .text.TpowerUpInitPWM:0000000000000208 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:275    .text.TpowerUpInitPWM:0000000000000208 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:277    .text.TpowerUpInitPWM:000000000000020a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:284    .text.TpowerUpInitPWM:0000000000000220 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:290    .text.TpowerUpInitPWM:0000000000000232 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:297    .text.TpowerUpInitPWM:0000000000000242 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:302    .text.TpowerUpInitPWM:0000000000000252 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:306    .text.TpowerUpInitPWM:000000000000025e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:307    .text.TpowerUpInitPWM:0000000000000260 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:309    .text.TpowerUpInitPWM:0000000000000262 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:311    .text.TpowerUpInitPWM:0000000000000264 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:313    .text.TpowerUpInitPWM:0000000000000266 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:315    .text.TpowerUpInitPWM:0000000000000268 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:317    .text.TpowerUpInitPWM:000000000000026a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:320    .text.TpowerUpInitPWM:000000000000026c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:322    .text.TpowerUpInitPWM:000000000000026e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:329    .text.T2setPWMch2:0000000000000000 T2setPWMch2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:332    .text.T2setPWMch2:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:334    .text.T2setPWMch2:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:335    .text.T2setPWMch2:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:342    .text.T2setPWMch2:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:349    .text.T2setLEDPercent:0000000000000000 T2setLEDPercent
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:352    .text.T2setLEDPercent:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:354    .text.T2setLEDPercent:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:355    .text.T2setLEDPercent:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:356    .text.T2setLEDPercent:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:357    .text.T2setLEDPercent:0000000000000000 .L0 
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 15
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:153    .text.TpowerUpInitPWM:00000000000000f2 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:156    .text.TpowerUpInitPWM:00000000000000f6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:158    .text.TpowerUpInitPWM:00000000000000f8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:160    .text.TpowerUpInitPWM:00000000000000fa .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:161    .text.TpowerUpInitPWM:00000000000000fa .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:163    .text.TpowerUpInitPWM:00000000000000fe .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:170    .text.TpowerUpInitPWM:000000000000010e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:171    .text.TpowerUpInitPWM:000000000000010e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:173    .text.TpowerUpInitPWM:0000000000000112 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:181    .text.TpowerUpInitPWM:0000000000000126 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:182    .text.TpowerUpInitPWM:0000000000000126 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:184    .text.TpowerUpInitPWM:0000000000000128 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:192    .text.TpowerUpInitPWM:000000000000013c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:193    .text.TpowerUpInitPWM:000000000000013c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:195    .text.TpowerUpInitPWM:000000000000013e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:203    .text.TpowerUpInitPWM:0000000000000152 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:204    .text.TpowerUpInitPWM:0000000000000152 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:206    .text.TpowerUpInitPWM:0000000000000156 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:214    .text.TpowerUpInitPWM:000000000000016e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:220    .text.TpowerUpInitPWM:0000000000000180 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:227    .text.TpowerUpInitPWM:0000000000000190 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:228    .text.TpowerUpInitPWM:0000000000000190 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:230    .text.TpowerUpInitPWM:0000000000000194 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:237    .text.TpowerUpInitPWM:00000000000001aa .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:243    .text.TpowerUpInitPWM:00000000000001bc .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:250    .text.TpowerUpInitPWM:00000000000001cc .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:251    .text.TpowerUpInitPWM:00000000000001cc .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:253    .text.TpowerUpInitPWM:00000000000001ce .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:261    .text.TpowerUpInitPWM:00000000000001e6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:267    .text.TpowerUpInitPWM:00000000000001f8 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:274    .text.TpowerUpInitPWM:0000000000000208 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:275    .text.TpowerUpInitPWM:0000000000000208 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:277    .text.TpowerUpInitPWM:000000000000020a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:284    .text.TpowerUpInitPWM:0000000000000220 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:290    .text.TpowerUpInitPWM:0000000000000232 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:297    .text.TpowerUpInitPWM:0000000000000242 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:302    .text.TpowerUpInitPWM:0000000000000252 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:306    .text.TpowerUpInitPWM:000000000000025e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:307    .text.TpowerUpInitPWM:0000000000000260 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:309    .text.TpowerUpInitPWM:0000000000000262 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:311    .text.TpowerUpInitPWM:0000000000000264 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:313    .text.TpowerUpInitPWM:0000000000000266 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:315    .text.TpowerUpInitPWM:0000000000000268 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:317    .text.TpowerUpInitPWM:000000000000026a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:320    .text.TpowerUpInitPWM:000000000000026c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:322    .text.TpowerUpInitPWM:000000000000026e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:329    .text.T2setPWMch2:0000000000000000 T2setPWMch2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:332    .text.T2setPWMch2:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:334    .text.T2setPWMch2:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:335    .text.T2setPWMch2:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:342    .text.T2setPWMch2:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:349    .text.T2setLEDPercent:0000000000000000 T2setLEDPercent
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:352    .text.T2setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:354    .text.T2setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:355    .text.T2setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:356    .text.T2setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:357    .text.T2setLEDPercent:0000000000000000 .L0 
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 15
 
 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:358    .text.T2setLEDPercent:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:363    .text.T2setLEDPercent:000000000000000c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:367    .text.T2setLEDPercent:000000000000001c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:378    .text.T2setPWMmotorB:0000000000000000 T2setPWMmotorB
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:381    .text.T2setPWMmotorB:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:383    .text.T2setPWMmotorB:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:384    .text.T2setPWMmotorB:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:385    .text.T2setPWMmotorB:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:387    .text.T2setPWMmotorB:0000000000000002 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:393    .text.T2setPWMmotorB:000000000000000c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:394    .text.T2setPWMmotorB:000000000000000c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:395    .text.T2setPWMmotorB:000000000000000c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:396    .text.T2setPWMmotorB:000000000000000c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:397    .text.T2setPWMmotorB:000000000000000c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:401    .text.T2setPWMmotorB:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:403    .text.T2setPWMmotorB:0000000000000018 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:404    .text.T2setPWMmotorB:0000000000000018 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:409    .text.T2setPWMmotorB:0000000000000028 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:411    .text.T2setPWMmotorB:000000000000002c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:414    .text.T2setPWMmotorB:0000000000000034 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:419    .text.T2setPWMmotorB:0000000000000044 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:427    .text.T2setPWMmotorB:000000000000005c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:430    .text.T2setPWMmotorB:000000000000005e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:432    .text.T2setPWMmotorB:0000000000000062 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:433    .text.T2setPWMmotorB:0000000000000064 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:434    .text.T2setPWMmotorB:0000000000000064 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:436    .text.T2setPWMmotorB:0000000000000066 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:438    .text.T2setPWMmotorB:0000000000000068 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:440    .text.T2setPWMmotorB:000000000000006a .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:442    .text.T2setPWMmotorB:000000000000006c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:444    .text.T2setPWMmotorB:000000000000006c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:446    .text.T2setPWMmotorB:000000000000006e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:448    .text.T2setPWMmotorB:0000000000000070 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:450    .text.T2setPWMmotorB:0000000000000070 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:454    .text.T2setPWMmotorB:0000000000000078 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:456    .text.T2setPWMmotorB:0000000000000078 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:460    .text.T2setPWMmotorB:0000000000000080 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:466    .text.T2setPWMmotorB:000000000000008e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:467    .text.T2setPWMmotorB:000000000000008e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:475    .text.T2setPWMmotorB:00000000000000aa .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:480    .text.T2setPWMmotorB:00000000000000ba .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:484    .text.T2setPWMmotorB:00000000000000c6 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:325    .text.TpowerUpInitPWM:000000000000026e .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:345    .text.T2setPWMch2:0000000000000014 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:374    .text.T2setLEDPercent:000000000000001c .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:487    .text.T2setPWMmotorB:00000000000000c6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:358    .text.T2setLEDPercent:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:363    .text.T2setLEDPercent:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:367    .text.T2setLEDPercent:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:378    .text.T2setPWMmotorB:0000000000000000 T2setPWMmotorB
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:381    .text.T2setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:383    .text.T2setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:384    .text.T2setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:385    .text.T2setPWMmotorB:0000000000000000 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:387    .text.T2setPWMmotorB:0000000000000002 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:393    .text.T2setPWMmotorB:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:394    .text.T2setPWMmotorB:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:395    .text.T2setPWMmotorB:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:396    .text.T2setPWMmotorB:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:397    .text.T2setPWMmotorB:000000000000000c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:401    .text.T2setPWMmotorB:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:403    .text.T2setPWMmotorB:0000000000000018 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:404    .text.T2setPWMmotorB:0000000000000018 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:409    .text.T2setPWMmotorB:0000000000000028 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:411    .text.T2setPWMmotorB:000000000000002c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:414    .text.T2setPWMmotorB:0000000000000034 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:419    .text.T2setPWMmotorB:0000000000000044 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:427    .text.T2setPWMmotorB:000000000000005c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:430    .text.T2setPWMmotorB:000000000000005e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:432    .text.T2setPWMmotorB:0000000000000062 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:433    .text.T2setPWMmotorB:0000000000000064 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:434    .text.T2setPWMmotorB:0000000000000064 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:436    .text.T2setPWMmotorB:0000000000000066 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:438    .text.T2setPWMmotorB:0000000000000068 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:440    .text.T2setPWMmotorB:000000000000006a .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:442    .text.T2setPWMmotorB:000000000000006c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:444    .text.T2setPWMmotorB:000000000000006c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:446    .text.T2setPWMmotorB:000000000000006e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:448    .text.T2setPWMmotorB:0000000000000070 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:450    .text.T2setPWMmotorB:0000000000000070 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:454    .text.T2setPWMmotorB:0000000000000078 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:456    .text.T2setPWMmotorB:0000000000000078 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:460    .text.T2setPWMmotorB:0000000000000080 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:466    .text.T2setPWMmotorB:000000000000008e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:467    .text.T2setPWMmotorB:000000000000008e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:475    .text.T2setPWMmotorB:00000000000000aa .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:480    .text.T2setPWMmotorB:00000000000000ba .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:484    .text.T2setPWMmotorB:00000000000000c6 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:325    .text.TpowerUpInitPWM:000000000000026e .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:345    .text.T2setPWMch2:0000000000000014 .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:374    .text.T2setLEDPercent:000000000000001c .L0 
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:487    .text.T2setPWMmotorB:00000000000000c6 .L0 
                      .debug_frame:0000000000000000 .L0 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:62     .text.TpowerUpInitPWM:0000000000000046 .L2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:75     .text.TpowerUpInitPWM:0000000000000064 .L3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:88     .text.TpowerUpInitPWM:0000000000000080 .L4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:101    .text.TpowerUpInitPWM:000000000000009a .L5
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:168    .text.TpowerUpInitPWM:000000000000010e .L6
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:179    .text.TpowerUpInitPWM:0000000000000126 .L7
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:190    .text.TpowerUpInitPWM:000000000000013c .L8
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:201    .text.TpowerUpInitPWM:0000000000000152 .L9
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:225    .text.TpowerUpInitPWM:0000000000000190 .L10
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:248    .text.TpowerUpInitPWM:00000000000001cc .L11
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 16
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:62     .text.TpowerUpInitPWM:0000000000000046 .L2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:75     .text.TpowerUpInitPWM:0000000000000064 .L3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:88     .text.TpowerUpInitPWM:0000000000000080 .L4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:101    .text.TpowerUpInitPWM:000000000000009a .L5
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:168    .text.TpowerUpInitPWM:000000000000010e .L6
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:179    .text.TpowerUpInitPWM:0000000000000126 .L7
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:190    .text.TpowerUpInitPWM:000000000000013c .L8
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:201    .text.TpowerUpInitPWM:0000000000000152 .L9
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:225    .text.TpowerUpInitPWM:0000000000000190 .L10
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:248    .text.TpowerUpInitPWM:00000000000001cc .L11
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 16
 
 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:272    .text.TpowerUpInitPWM:0000000000000208 .L12
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:295    .text.TpowerUpInitPWM:0000000000000242 .L13
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:361    .text.T2setLEDPercent:000000000000000c .L53
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:489    .rodata.T2setPWMmotorB.cst8:0000000000000000 .LC0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:492    .rodata.T2setPWMmotorB.cst8:0000000000000008 .LC1
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:452    .text.T2setPWMmotorB:0000000000000078 .L55
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:428    .text.T2setPWMmotorB:000000000000005e .L57
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:1702   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2255   .debug_str:0000000000000000 .LASF88
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2287   .debug_str:0000000000000157 .LASF89
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2391   .debug_str:00000000000003fa .LASF90
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2241   .debug_ranges:0000000000000000 .Ldebug_ranges0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2253   .debug_line:0000000000000000 .Ldebug_line0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2361   .debug_str:0000000000000330 .LASF0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2355   .debug_str:0000000000000304 .LASF1
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2439   .debug_str:000000000000059a .LASF4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2345   .debug_str:00000000000002c3 .LASF2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2323   .debug_str:0000000000000215 .LASF3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2277   .debug_str:00000000000000fb .LASF5
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2371   .debug_str:0000000000000369 .LASF6
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2311   .debug_str:00000000000001d8 .LASF7
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2273   .debug_str:00000000000000e8 .LASF8
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2397   .debug_str:0000000000000471 .LASF9
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2271   .debug_str:00000000000000da .LASF10
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2357   .debug_str:0000000000000310 .LASF11
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2291   .debug_str:000000000000016c .LASF12
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2363   .debug_str:000000000000033d .LASF13
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2359   .debug_str:0000000000000327 .LASF14
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2387   .debug_str:00000000000003e1 .LASF91
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2293   .debug_str:0000000000000174 .LASF15
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2389   .debug_str:00000000000003f1 .LASF16
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2433   .debug_str:0000000000000569 .LASF17
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2429   .debug_str:0000000000000554 .LASF18
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2411   .debug_str:00000000000004c8 .LASF19
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2329   .debug_str:0000000000000252 .LASF20
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2331   .debug_str:000000000000025d .LASF21
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2333   .debug_str:0000000000000268 .LASF22
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2335   .debug_str:0000000000000273 .LASF23
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2337   .debug_str:000000000000027e .LASF24
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2339   .debug_str:0000000000000289 .LASF25
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2305   .debug_str:00000000000001b3 .LASF26
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2315   .debug_str:00000000000001ea .LASF27
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2317   .debug_str:00000000000001f3 .LASF28
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2407   .debug_str:00000000000004b2 .LASF29
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2409   .debug_str:00000000000004bd .LASF30
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2413   .debug_str:00000000000004d2 .LASF31
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2415   .debug_str:00000000000004dc .LASF32
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2379   .debug_str:00000000000003ae .LASF33
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2381   .debug_str:00000000000003b7 .LASF34
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2299   .debug_str:0000000000000195 .LASF35
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2301   .debug_str:000000000000019e .LASF36
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2353   .debug_str:00000000000002fb .LASF37
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2369   .debug_str:0000000000000361 .LASF38
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2435   .debug_str:0000000000000571 .LASF39
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2275   .debug_str:00000000000000f3 .LASF40
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2395   .debug_str:000000000000046a .LASF41
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2257   .debug_str:0000000000000088 .LASF42
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 17
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:272    .text.TpowerUpInitPWM:0000000000000208 .L12
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:295    .text.TpowerUpInitPWM:0000000000000242 .L13
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:361    .text.T2setLEDPercent:000000000000000c .L53
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:489    .rodata.T2setPWMmotorB.cst8:0000000000000000 .LC0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:492    .rodata.T2setPWMmotorB.cst8:0000000000000008 .LC1
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:452    .text.T2setPWMmotorB:0000000000000078 .L55
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:428    .text.T2setPWMmotorB:000000000000005e .L57
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:1702   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2255   .debug_str:0000000000000000 .LASF88
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2287   .debug_str:0000000000000157 .LASF89
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2391   .debug_str:00000000000003fa .LASF90
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2241   .debug_ranges:0000000000000000 .Ldebug_ranges0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2253   .debug_line:0000000000000000 .Ldebug_line0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2361   .debug_str:0000000000000330 .LASF0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2355   .debug_str:0000000000000304 .LASF1
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2439   .debug_str:000000000000059a .LASF4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2345   .debug_str:00000000000002c3 .LASF2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2323   .debug_str:0000000000000215 .LASF3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2277   .debug_str:00000000000000fb .LASF5
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2371   .debug_str:0000000000000369 .LASF6
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2311   .debug_str:00000000000001d8 .LASF7
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2273   .debug_str:00000000000000e8 .LASF8
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2397   .debug_str:0000000000000471 .LASF9
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2271   .debug_str:00000000000000da .LASF10
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2357   .debug_str:0000000000000310 .LASF11
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2291   .debug_str:000000000000016c .LASF12
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2363   .debug_str:000000000000033d .LASF13
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2359   .debug_str:0000000000000327 .LASF14
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2387   .debug_str:00000000000003e1 .LASF91
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2293   .debug_str:0000000000000174 .LASF15
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2389   .debug_str:00000000000003f1 .LASF16
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2433   .debug_str:0000000000000569 .LASF17
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2429   .debug_str:0000000000000554 .LASF18
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2411   .debug_str:00000000000004c8 .LASF19
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2329   .debug_str:0000000000000252 .LASF20
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2331   .debug_str:000000000000025d .LASF21
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2333   .debug_str:0000000000000268 .LASF22
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2335   .debug_str:0000000000000273 .LASF23
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2337   .debug_str:000000000000027e .LASF24
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2339   .debug_str:0000000000000289 .LASF25
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2305   .debug_str:00000000000001b3 .LASF26
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2315   .debug_str:00000000000001ea .LASF27
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2317   .debug_str:00000000000001f3 .LASF28
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2407   .debug_str:00000000000004b2 .LASF29
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2409   .debug_str:00000000000004bd .LASF30
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2413   .debug_str:00000000000004d2 .LASF31
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2415   .debug_str:00000000000004dc .LASF32
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2379   .debug_str:00000000000003ae .LASF33
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2381   .debug_str:00000000000003b7 .LASF34
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2299   .debug_str:0000000000000195 .LASF35
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2301   .debug_str:000000000000019e .LASF36
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2353   .debug_str:00000000000002fb .LASF37
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2369   .debug_str:0000000000000361 .LASF38
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2435   .debug_str:0000000000000571 .LASF39
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2275   .debug_str:00000000000000f3 .LASF40
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2395   .debug_str:000000000000046a .LASF41
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2257   .debug_str:0000000000000088 .LASF42
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 17
 
 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2259   .debug_str:0000000000000092 .LASF43
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2261   .debug_str:000000000000009c .LASF44
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2263   .debug_str:00000000000000a6 .LASF45
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2265   .debug_str:00000000000000b0 .LASF46
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2349   .debug_str:00000000000002e9 .LASF47
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2351   .debug_str:00000000000002f2 .LASF48
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2327   .debug_str:0000000000000247 .LASF49
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2313   .debug_str:00000000000001e1 .LASF50
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2405   .debug_str:00000000000004a7 .LASF51
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2367   .debug_str:0000000000000357 .LASF52
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2319   .debug_str:00000000000001fc .LASF53
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2385   .debug_str:00000000000003d0 .LASF54
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2393   .debug_str:0000000000000463 .LASF55
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2283   .debug_str:0000000000000143 .LASF56
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2419   .debug_str:00000000000004ee .LASF57
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2281   .debug_str:000000000000012c .LASF58
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2297   .debug_str:0000000000000189 .LASF59
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2403   .debug_str:000000000000049a .LASF60
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2423   .debug_str:0000000000000520 .LASF61
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2431   .debug_str:000000000000055d .LASF62
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2295   .debug_str:000000000000017d .LASF63
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2399   .debug_str:0000000000000483 .LASF64
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2375   .debug_str:000000000000038b .LASF65
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2341   .debug_str:0000000000000294 .LASF66
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2373   .debug_str:000000000000037c .LASF67
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:379    .text.T2setPWMmotorB:0000000000000000 .LFB5
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:485    .text.T2setPWMmotorB:00000000000000c6 .LFE5
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2120   .debug_loc:0000000000000000 .LLST4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2269   .debug_str:00000000000000d1 .LASF69
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2143   .debug_loc:0000000000000038 .LLST5
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:425    .text.T2setPWMmotorB:000000000000005c .LVL41
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:451    .text.T2setPWMmotorB:0000000000000078 .LVL42
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:464    .text.T2setPWMmotorB:000000000000008e .LVL44
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2307   .debug_str:00000000000001bd .LASF68
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:350    .text.T2setLEDPercent:0000000000000000 .LFB4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:368    .text.T2setLEDPercent:000000000000001c .LFE4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2417   .debug_str:00000000000004e6 .LASF70
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2165   .debug_loc:000000000000006f .LLST3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2377   .debug_str:00000000000003a5 .LASF92
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:366    .text.T2setLEDPercent:000000000000001c .LVL35
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2303   .debug_str:00000000000001a7 .LASF71
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:330    .text.T2setPWMch2:0000000000000000 .LFB3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:343    .text.T2setPWMch2:0000000000000014 .LFE3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2285   .debug_str:0000000000000151 .LASF72
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2172   .debug_loc:0000000000000082 .LLST2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:341    .text.T2setPWMch2:0000000000000014 .LVL33
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2383   .debug_str:00000000000003c0 .LASF73
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:14     .text.TpowerUpInitPWM:0000000000000000 .LFB2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:323    .text.TpowerUpInitPWM:000000000000026e .LFE2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2190   .debug_loc:00000000000000ae .LLST0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2208   .debug_loc:00000000000000db .LLST1
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2365   .debug_str:0000000000000346 .LASF74
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2289   .debug_str:000000000000015d .LASF75
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:45     .text.TpowerUpInitPWM:000000000000001c .LVL2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:50     .text.TpowerUpInitPWM:000000000000002c .LVL3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:61     .text.TpowerUpInitPWM:0000000000000046 .LVL4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:74     .text.TpowerUpInitPWM:0000000000000064 .LVL5
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 18
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2259   .debug_str:0000000000000092 .LASF43
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2261   .debug_str:000000000000009c .LASF44
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2263   .debug_str:00000000000000a6 .LASF45
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2265   .debug_str:00000000000000b0 .LASF46
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2349   .debug_str:00000000000002e9 .LASF47
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2351   .debug_str:00000000000002f2 .LASF48
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2327   .debug_str:0000000000000247 .LASF49
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2313   .debug_str:00000000000001e1 .LASF50
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2405   .debug_str:00000000000004a7 .LASF51
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2367   .debug_str:0000000000000357 .LASF52
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2319   .debug_str:00000000000001fc .LASF53
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2385   .debug_str:00000000000003d0 .LASF54
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2393   .debug_str:0000000000000463 .LASF55
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2283   .debug_str:0000000000000143 .LASF56
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2419   .debug_str:00000000000004ee .LASF57
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2281   .debug_str:000000000000012c .LASF58
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2297   .debug_str:0000000000000189 .LASF59
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2403   .debug_str:000000000000049a .LASF60
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2423   .debug_str:0000000000000520 .LASF61
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2431   .debug_str:000000000000055d .LASF62
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2295   .debug_str:000000000000017d .LASF63
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2399   .debug_str:0000000000000483 .LASF64
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2375   .debug_str:000000000000038b .LASF65
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2341   .debug_str:0000000000000294 .LASF66
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2373   .debug_str:000000000000037c .LASF67
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:379    .text.T2setPWMmotorB:0000000000000000 .LFB5
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:485    .text.T2setPWMmotorB:00000000000000c6 .LFE5
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2120   .debug_loc:0000000000000000 .LLST4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2269   .debug_str:00000000000000d1 .LASF69
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2143   .debug_loc:0000000000000038 .LLST5
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:425    .text.T2setPWMmotorB:000000000000005c .LVL41
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:451    .text.T2setPWMmotorB:0000000000000078 .LVL42
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:464    .text.T2setPWMmotorB:000000000000008e .LVL44
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2307   .debug_str:00000000000001bd .LASF68
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:350    .text.T2setLEDPercent:0000000000000000 .LFB4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:368    .text.T2setLEDPercent:000000000000001c .LFE4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2417   .debug_str:00000000000004e6 .LASF70
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2165   .debug_loc:000000000000006f .LLST3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2377   .debug_str:00000000000003a5 .LASF92
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:366    .text.T2setLEDPercent:000000000000001c .LVL35
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2303   .debug_str:00000000000001a7 .LASF71
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:330    .text.T2setPWMch2:0000000000000000 .LFB3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:343    .text.T2setPWMch2:0000000000000014 .LFE3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2285   .debug_str:0000000000000151 .LASF72
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2172   .debug_loc:0000000000000082 .LLST2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:341    .text.T2setPWMch2:0000000000000014 .LVL33
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2383   .debug_str:00000000000003c0 .LASF73
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:14     .text.TpowerUpInitPWM:0000000000000000 .LFB2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:323    .text.TpowerUpInitPWM:000000000000026e .LFE2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2190   .debug_loc:00000000000000ae .LLST0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2208   .debug_loc:00000000000000db .LLST1
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2365   .debug_str:0000000000000346 .LASF74
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2289   .debug_str:000000000000015d .LASF75
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:45     .text.TpowerUpInitPWM:000000000000001c .LVL2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:50     .text.TpowerUpInitPWM:000000000000002c .LVL3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:61     .text.TpowerUpInitPWM:0000000000000046 .LVL4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:74     .text.TpowerUpInitPWM:0000000000000064 .LVL5
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 18
 
 
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:87     .text.TpowerUpInitPWM:0000000000000080 .LVL6
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:100    .text.TpowerUpInitPWM:000000000000009a .LVL7
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:105    .text.TpowerUpInitPWM:00000000000000a6 .LVL8
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:110    .text.TpowerUpInitPWM:00000000000000b6 .LVL9
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:114    .text.TpowerUpInitPWM:00000000000000c0 .LVL10
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:141    .text.TpowerUpInitPWM:00000000000000e8 .LVL11
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:145    .text.TpowerUpInitPWM:00000000000000f2 .LVL12
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:167    .text.TpowerUpInitPWM:000000000000010e .LVL13
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:178    .text.TpowerUpInitPWM:0000000000000126 .LVL14
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:189    .text.TpowerUpInitPWM:000000000000013c .LVL15
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:200    .text.TpowerUpInitPWM:0000000000000152 .LVL16
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:212    .text.TpowerUpInitPWM:000000000000016e .LVL17
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:218    .text.TpowerUpInitPWM:0000000000000180 .LVL18
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:224    .text.TpowerUpInitPWM:0000000000000190 .LVL19
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:235    .text.TpowerUpInitPWM:00000000000001aa .LVL20
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:241    .text.TpowerUpInitPWM:00000000000001bc .LVL21
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:247    .text.TpowerUpInitPWM:00000000000001cc .LVL22
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:259    .text.TpowerUpInitPWM:00000000000001e6 .LVL23
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:265    .text.TpowerUpInitPWM:00000000000001f8 .LVL24
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:271    .text.TpowerUpInitPWM:0000000000000208 .LVL25
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:282    .text.TpowerUpInitPWM:0000000000000220 .LVL26
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:288    .text.TpowerUpInitPWM:0000000000000232 .LVL27
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:294    .text.TpowerUpInitPWM:0000000000000242 .LVL28
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:300    .text.TpowerUpInitPWM:0000000000000252 .LVL29
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:304    .text.TpowerUpInitPWM:000000000000025e .LVL30
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2325   .debug_str:000000000000021f .LASF76
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2347   .debug_str:00000000000002d1 .LASF77
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2401   .debug_str:0000000000000490 .LASF78
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2427   .debug_str:0000000000000547 .LASF79
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2267   .debug_str:00000000000000ba .LASF80
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2309   .debug_str:00000000000001cd .LASF81
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2279   .debug_str:0000000000000106 .LASF82
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2425   .debug_str:000000000000052b .LASF83
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2437   .debug_str:0000000000000579 .LASF84
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2343   .debug_str:00000000000002a0 .LASF85
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2421   .debug_str:0000000000000500 .LASF86
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:2321   .debug_str:0000000000000208 .LASF87
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:386    .text.T2setPWMmotorB:0000000000000002 .LCFI2
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:447    .text.T2setPWMmotorB:0000000000000070 .LCFI3
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:453    .text.T2setPWMmotorB:0000000000000078 .LCFI4
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:382    .text.T2setPWMmotorB:0000000000000000 .LVL36
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:405    .text.T2setPWMmotorB:0000000000000020 .LVL37
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:462    .text.T2setPWMmotorB:0000000000000086 .LVL43
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:353    .text.T2setLEDPercent:0000000000000000 .LVL34
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:333    .text.T2setPWMch2:0000000000000000 .LVL31
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:337    .text.T2setPWMch2:0000000000000006 .LVL32
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:24     .text.TpowerUpInitPWM:0000000000000002 .LCFI0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:319    .text.TpowerUpInitPWM:000000000000026c .LCFI1
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:18     .text.TpowerUpInitPWM:0000000000000000 .LVL0
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:31     .text.TpowerUpInitPWM:000000000000000a .LVL1
-C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s:504    .debug_info:0000000000000000 .Ldebug_info0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:87     .text.TpowerUpInitPWM:0000000000000080 .LVL6
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:100    .text.TpowerUpInitPWM:000000000000009a .LVL7
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:105    .text.TpowerUpInitPWM:00000000000000a6 .LVL8
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:110    .text.TpowerUpInitPWM:00000000000000b6 .LVL9
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:114    .text.TpowerUpInitPWM:00000000000000c0 .LVL10
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:141    .text.TpowerUpInitPWM:00000000000000e8 .LVL11
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:145    .text.TpowerUpInitPWM:00000000000000f2 .LVL12
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:167    .text.TpowerUpInitPWM:000000000000010e .LVL13
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:178    .text.TpowerUpInitPWM:0000000000000126 .LVL14
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:189    .text.TpowerUpInitPWM:000000000000013c .LVL15
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:200    .text.TpowerUpInitPWM:0000000000000152 .LVL16
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:212    .text.TpowerUpInitPWM:000000000000016e .LVL17
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:218    .text.TpowerUpInitPWM:0000000000000180 .LVL18
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:224    .text.TpowerUpInitPWM:0000000000000190 .LVL19
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:235    .text.TpowerUpInitPWM:00000000000001aa .LVL20
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:241    .text.TpowerUpInitPWM:00000000000001bc .LVL21
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:247    .text.TpowerUpInitPWM:00000000000001cc .LVL22
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:259    .text.TpowerUpInitPWM:00000000000001e6 .LVL23
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:265    .text.TpowerUpInitPWM:00000000000001f8 .LVL24
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:271    .text.TpowerUpInitPWM:0000000000000208 .LVL25
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:282    .text.TpowerUpInitPWM:0000000000000220 .LVL26
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:288    .text.TpowerUpInitPWM:0000000000000232 .LVL27
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:294    .text.TpowerUpInitPWM:0000000000000242 .LVL28
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:300    .text.TpowerUpInitPWM:0000000000000252 .LVL29
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:304    .text.TpowerUpInitPWM:000000000000025e .LVL30
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2325   .debug_str:000000000000021f .LASF76
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2347   .debug_str:00000000000002d1 .LASF77
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2401   .debug_str:0000000000000490 .LASF78
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2427   .debug_str:0000000000000547 .LASF79
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2267   .debug_str:00000000000000ba .LASF80
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2309   .debug_str:00000000000001cd .LASF81
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2279   .debug_str:0000000000000106 .LASF82
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2425   .debug_str:000000000000052b .LASF83
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2437   .debug_str:0000000000000579 .LASF84
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2343   .debug_str:00000000000002a0 .LASF85
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2421   .debug_str:0000000000000500 .LASF86
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:2321   .debug_str:0000000000000208 .LASF87
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:386    .text.T2setPWMmotorB:0000000000000002 .LCFI2
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:447    .text.T2setPWMmotorB:0000000000000070 .LCFI3
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:453    .text.T2setPWMmotorB:0000000000000078 .LCFI4
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:382    .text.T2setPWMmotorB:0000000000000000 .LVL36
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:405    .text.T2setPWMmotorB:0000000000000020 .LVL37
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:462    .text.T2setPWMmotorB:0000000000000086 .LVL43
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:353    .text.T2setLEDPercent:0000000000000000 .LVL34
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:333    .text.T2setPWMch2:0000000000000000 .LVL31
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:337    .text.T2setPWMch2:0000000000000006 .LVL32
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:24     .text.TpowerUpInitPWM:0000000000000002 .LCFI0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:319    .text.TpowerUpInitPWM:000000000000026c .LCFI1
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:18     .text.TpowerUpInitPWM:0000000000000000 .LVL0
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:31     .text.TpowerUpInitPWM:000000000000000a .LVL1
+C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s:504    .debug_info:0000000000000000 .Ldebug_info0
 
 UNDEFINED SYMBOLS
 rcu_periph_clock_enable
 gpio_init
 timer_deinit
 timer_struct_para_init
-GAS LISTING C:\Users\hanna\AppData\Local\Temp\cclOt4gh.s 			page 19
+GAS LISTING C:\Users\hanna\AppData\Local\Temp\cctD7nQ4.s 			page 19
 
 
 timer_init
